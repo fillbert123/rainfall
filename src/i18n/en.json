@@ -1,5 +1,5 @@
 {
-    "main": {
-        "test": "hello test"
-    }
+  "data": {
+    "view_button": "View data"
+  }
 }

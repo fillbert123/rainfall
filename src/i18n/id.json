@@ -1,5 +1,5 @@
 {
-    "main": {
-        "test": "halo coba"
-    }
+	"data": {
+		"view_button": "Lihat data"
+	}
 }
