@@ -17,6 +17,11 @@ export default {
 </script>
 
 <style lang="scss">
+@font-face { font-family: SFRoundedB; font-weight: bold; src: url(@/fonts/SF-Pro-Rounded-Bold.otf)}
+@font-face { font-family: SFRoundedSB; font-weight: bold; src: url(@/fonts/SF-Pro-Rounded-Semibold.otf)}
+@font-face { font-family: SFRoundedM; font-weight: bold; src: url(@/fonts/SF-Pro-Rounded-Medium.otf)}
+@font-face { font-family: SFRoundedR; font-weight: bold; src: url(@/fonts/SF-Pro-Rounded-Regular.otf)}
+
 :root {
   --darker: rgba(49, 60, 68, 1)
   --dark: rgba(72, 89, 100, 1)
@@ -31,7 +36,7 @@ export default {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: SFRoundedR;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
