@@ -16,7 +16,7 @@ export default {
 
 <style lang="scss" scoped>
 .data {
-  width: 336px;
+  width: 304px;
   height: 52px;
   background-color: var(--darker_tr);
   padding: 16px;
