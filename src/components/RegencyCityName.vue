@@ -37,6 +37,7 @@ export default {
     &__type {
       font-family: SFRoundedR;
       font-size: 36px;
+      font-variant: all-small-caps;
     }
     &__name {
       font-family: SFRoundedB;
