@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: 'fullSizeInformationSlider',
+  name: 'fullSizeInfoSlider',
   data() {
     return {
       value: 250

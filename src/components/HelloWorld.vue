@@ -29,18 +29,20 @@
     </ul>
     <ViewDataButton></ViewDataButton>
     <RegencyCityName></RegencyCityName>
-    <HalfSizeInformation></HalfSizeInformation>
-    <FullSizeInformationSlider></FullSizeInformationSlider>
+    <HalfSizeInfo></HalfSizeInfo>
+    <FullSizeInfoSlider></FullSizeInfoSlider>
     <WearherStationInfo></WearherStationInfo>
+    <WindDirectionInfo></WindDirectionInfo>
   </div>
 </template>
 
 <script>
 import ViewDataButton from '@/components/ViewDataButton.vue'
 import RegencyCityName from '@/components/RegencyCityName.vue'
-import HalfSizeInformation from '@/components/HalfSizeInformation.vue'
-import FullSizeInformationSlider from '@/components/FullSizeInformationSlider.vue'
+import HalfSizeInfo from '@/components/HalfSizeInfo.vue'
+import FullSizeInfoSlider from '@/components/FullSizeInfoSlider.vue'
 import WearherStationInfo from '@/components/WeatherStationInfo.vue'
+import WindDirectionInfo from './WindDirectionInfo.vue'
 
 export default {
   name: 'HelloWorld',
@@ -50,9 +52,10 @@ export default {
   components: {
     ViewDataButton,
     RegencyCityName,
-    HalfSizeInformation,
-    FullSizeInformationSlider,
-    WearherStationInfo
+    HalfSizeInfo,
+    FullSizeInfoSlider,
+    WearherStationInfo,
+    WindDirectionInfo
   }
 }
 </script>
