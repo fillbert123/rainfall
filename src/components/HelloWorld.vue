@@ -28,11 +28,15 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
     <ViewDataButton></ViewDataButton>
+    <RegencyCityName></RegencyCityName>
+    <HalfSizeInformation></HalfSizeInformation>
   </div>
 </template>
 
 <script>
 import ViewDataButton from '@/components/ViewDataButton.vue'
+import RegencyCityName from '@/components/RegencyCityName.vue'
+import HalfSizeInformation from '@/components/HalfSizeInformation.vue'
 
 export default {
   name: 'HelloWorld',
@@ -40,7 +44,9 @@ export default {
     msg: String
   },
   components: {
-    ViewDataButton
+    ViewDataButton,
+    RegencyCityName,
+    HalfSizeInformation
   }
 }
 </script>
