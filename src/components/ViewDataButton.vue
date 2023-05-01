@@ -1,7 +1,7 @@
 <template>
   <div class="button">
     <div class="button__text">{{ $t('data.view_button') }}</div>
-    <img class="button__icon" src="@/assets/icons/forwardIcon.svg" alt="">
+    <img class="button__icon" src="@/assets/icons/forward.svg" alt="">
   </div>
 </template>
 
