@@ -31,8 +31,9 @@
     <RegencyCityName></RegencyCityName>
     <HalfSizeInfo></HalfSizeInfo>
     <FullSizeInfoSlider></FullSizeInfoSlider>
-    <WearherStationInfo></WearherStationInfo>
+    <WeatherStationInfo></WeatherStationInfo>
     <WindDirectionInfo></WindDirectionInfo>
+    <ImagePlaceholder></ImagePlaceholder>
   </div>
 </template>
 
@@ -41,8 +42,9 @@ import ViewDataButton from '@/components/ViewDataButton.vue'
 import RegencyCityName from '@/components/RegencyCityName.vue'
 import HalfSizeInfo from '@/components/HalfSizeInfo.vue'
 import FullSizeInfoSlider from '@/components/FullSizeInfoSlider.vue'
-import WearherStationInfo from '@/components/WeatherStationInfo.vue'
+import WeatherStationInfo from '@/components/WeatherStationInfo.vue'
 import WindDirectionInfo from './WindDirectionInfo.vue'
+import ImagePlaceholder from './ImagePlaceholder.vue'
 
 export default {
   name: 'HelloWorld',
@@ -54,8 +56,9 @@ export default {
     RegencyCityName,
     HalfSizeInfo,
     FullSizeInfoSlider,
-    WearherStationInfo,
-    WindDirectionInfo
+    WeatherStationInfo,
+    WindDirectionInfo,
+    ImagePlaceholder
   }
 }
 </script>
