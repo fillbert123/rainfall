@@ -27,24 +27,12 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
-    <ViewDataButton></ViewDataButton>
-    <RegencyCityName></RegencyCityName>
-    <HalfSizeInfo></HalfSizeInfo>
-    <FullSizeInfoSlider></FullSizeInfoSlider>
-    <WeatherStationInfo></WeatherStationInfo>
-    <WindDirectionInfo></WindDirectionInfo>
-    <ImagePlaceholder></ImagePlaceholder>
+    <AreaModal class="modal"></AreaModal>
   </div>
 </template>
 
 <script>
-import ViewDataButton from '@/components/ViewDataButton.vue'
-import RegencyCityName from '@/components/RegencyCityName.vue'
-import HalfSizeInfo from '@/components/HalfSizeInfo.vue'
-import FullSizeInfoSlider from '@/components/FullSizeInfoSlider.vue'
-import WeatherStationInfo from '@/components/WeatherStationInfo.vue'
-import WindDirectionInfo from './WindDirectionInfo.vue'
-import ImagePlaceholder from './ImagePlaceholder.vue'
+import AreaModal from '@/modals/AreaModal.vue'
 
 export default {
   name: 'HelloWorld',
@@ -52,13 +40,7 @@ export default {
     msg: String
   },
   components: {
-    ViewDataButton,
-    RegencyCityName,
-    HalfSizeInfo,
-    FullSizeInfoSlider,
-    WeatherStationInfo,
-    WindDirectionInfo,
-    ImagePlaceholder
+    AreaModal
   }
 }
 </script>
@@ -78,5 +60,8 @@ li {
 }
 a {
   color: #42b983;
+}
+.modal {
+  zoom: 80%;
 }
 </style>

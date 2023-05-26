@@ -23,7 +23,7 @@ export default {
 @font-face { font-family: SFRoundedR; font-weight: bold; src: url(@/fonts/SF-Pro-Rounded-Regular.otf)}
 
 :root {
-  background-color: var(--dark);
+  background-color: var(--white);
   --darker: rgba(49, 60, 68, 1);
   --darker_tr: rgba(24, 31, 35, 0.5);
   --dark: rgba(72, 89, 100, 1);
