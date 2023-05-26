@@ -27,12 +27,12 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
-    <AreaModal class="modal"></AreaModal>
+    <ResultChip></ResultChip>
   </div>
 </template>
 
 <script>
-import AreaModal from '@/modals/AreaModal.vue'
+import ResultChip from './ResultChip.vue';
 
 export default {
   name: 'HelloWorld',
@@ -40,7 +40,7 @@ export default {
     msg: String
   },
   components: {
-    AreaModal
+    ResultChip
   }
 }
 </script>
