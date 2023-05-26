@@ -19,12 +19,16 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
-    <NavigationBar></NavigationBar>
+    <div class="navbar">
+      <NavigationBar></NavigationBar>
+      <LanguageSwitcher class="navbar__language"></LanguageSwitcher>
+    </div>
   </div>
 </template>
 
 <script>
 import NavigationBar from './NavigationBar.vue';
+import LanguageSwitcher from './LanguageSwitcher.vue';
 
 export default {
   name: 'HelloWorld',
@@ -32,7 +36,8 @@ export default {
     msg: String
   },
   components: {
-    NavigationBar
+    NavigationBar,
+    LanguageSwitcher
   }
 }
 </script>
@@ -52,5 +57,13 @@ li {
 }
 a {
   color: #42b983;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  &__language {
+    margin-inline-start: 20px;
+  }
 }
 </style>
