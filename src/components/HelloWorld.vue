@@ -11,14 +11,6 @@
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
       <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
     </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
     <h3>Ecosystem</h3>
     <ul>
       <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
@@ -27,24 +19,12 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
-    <ViewDataButton></ViewDataButton>
-    <RegencyCityName></RegencyCityName>
-    <HalfSizeInfo></HalfSizeInfo>
-    <FullSizeInfoSlider></FullSizeInfoSlider>
-    <WeatherStationInfo></WeatherStationInfo>
-    <WindDirectionInfo></WindDirectionInfo>
-    <ImagePlaceholder></ImagePlaceholder>
+    <NavigationBar></NavigationBar>
   </div>
 </template>
 
 <script>
-import ViewDataButton from '@/components/ViewDataButton.vue'
-import RegencyCityName from '@/components/RegencyCityName.vue'
-import HalfSizeInfo from '@/components/HalfSizeInfo.vue'
-import FullSizeInfoSlider from '@/components/FullSizeInfoSlider.vue'
-import WeatherStationInfo from '@/components/WeatherStationInfo.vue'
-import WindDirectionInfo from './WindDirectionInfo.vue'
-import ImagePlaceholder from './ImagePlaceholder.vue'
+import NavigationBar from './NavigationBar.vue';
 
 export default {
   name: 'HelloWorld',
@@ -52,13 +32,7 @@ export default {
     msg: String
   },
   components: {
-    ViewDataButton,
-    RegencyCityName,
-    HalfSizeInfo,
-    FullSizeInfoSlider,
-    WeatherStationInfo,
-    WindDirectionInfo,
-    ImagePlaceholder
+    NavigationBar
   }
 }
 </script>
