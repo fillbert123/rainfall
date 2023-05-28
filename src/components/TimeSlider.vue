@@ -2,9 +2,9 @@
   <div class="data">
     <div class="data__slider">
       <div class="data__slider__minval">0</div>
-      <img class="data__slider__decrease" @click="decreaseValue" src="@/assets/icons/minus.svg" alt="">
-      <input class="data__slider__range" type="range" min="0" max="60" v-model="value">
-      <img class="data__slider__increase" @click="increaseValue" src="@/assets/icons/plus.svg" alt="">
+      <img class="data__slider__decrease" @click="decreaseTime" src="@/assets/icons/minus.svg" alt="">
+      <input class="data__slider__range" @input="emitTime" type="range" min="0" max="60" v-model="time">
+      <img class="data__slider__increase" @click="increaseTime" src="@/assets/icons/plus.svg" alt="">
       <div class="data__slider__maxval">60</div>
     </div>
     <div class="data__value">
@@ -20,28 +20,33 @@ export default {
   name: 'timeSlider',
   data() {
     return {
-      value: 5
+      time: 5
     }
   },
   methods: {
-    decreaseValue () {
-      if (this.value != 0) {
-        this.value = this.value - 1
+    emitTime () {
+      this.$emit('timeUpdate', this.time)
+    },
+    decreaseTime () {
+      if (this.time > 0) {
+        this.time -= 1
+        this.$emit('timeDecrease', this.time)
       }
     },
-    increaseValue () {
-      if (this.value != 60) {
-        this.value = this.value + 1
+    increaseTime () {
+      if (this.time < 60) {
+        this.time -= (-1)
+        this.$emit('timeIncrease', this.time)
       }
     }
   },
   computed: {
     calculateMonth () {
-      const month = this.value % 12
+      const month = this.time % 12
       return month === 0 ? 12 : month
     },
     calculateYear () {
-      return Math.ceil(this.value / 12) + 2022
+      return Math.ceil(this.time / 12) + 2022
     }
   }
 }

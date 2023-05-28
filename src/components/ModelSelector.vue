@@ -1,7 +1,7 @@
 <template>
   <div class="selector">
-    <div class="selector__field" @click="showOption = !showOption">
-      <div class="selector__field__value">Pilih metode estimasi</div>
+    <div class="selector__field">
+      <div class="selector__field__value">Pilih model</div>
       <img class="selector__field__dropup" src="@/assets/icons/chevron.svg" alt="">
       <!-- <img class="selector__field__dropdown" src="@/assets/icons/chevron.svg" alt=""> -->
     </div>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'estimationSelector',
+  name: 'modelSelector',
 }
 </script>
 
