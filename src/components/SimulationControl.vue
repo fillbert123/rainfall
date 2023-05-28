@@ -121,6 +121,8 @@ export default {
       &__label {
         padding-block: 16px;
         margin-inline-end: 16px;
+        font-family: SFRoundedM;
+        font-size: 14px;
       }
       &__parameter {
         width: 816px;

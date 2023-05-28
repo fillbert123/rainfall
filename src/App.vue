@@ -21,8 +21,12 @@ export default {
 @font-face { font-family: SFRoundedM; font-weight: bold; src: url(@/fonts/SF-Pro-Rounded-Medium.otf)}
 @font-face { font-family: SFRoundedR; font-weight: bold; src: url(@/fonts/SF-Pro-Rounded-Regular.otf)}
 
+body {
+  margin: 0;
+}
+
 :root {
-  background-color: var(--white);
+  background-color: var(--dark);
   --darker: rgba(49, 60, 68, 1);
   --darker_tr: rgba(24, 31, 35, 0.5);
   --dark: rgba(72, 89, 100, 1);
