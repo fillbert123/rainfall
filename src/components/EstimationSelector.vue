@@ -1,68 +1,27 @@
 <template>
   <div class="selector">
     <div class="selector__field" @click="showOption = !showOption">
-      <div class="selector__field__value">{{ estimationMethod }}</div>
-      <img v-if="!showOption" class="selector__field__dropup" src="@/assets/icons/chevron.svg" alt="">
-      <img v-if="showOption" class="selector__field__dropdown" src="@/assets/icons/chevron.svg" alt="">
+      <div class="selector__field__value">Pilih metode estimasi</div>
+      <img class="selector__field__dropup" src="@/assets/icons/chevron.svg" alt="">
+      <!-- <img class="selector__field__dropdown" src="@/assets/icons/chevron.svg" alt=""> -->
     </div>
-    <EstimationOption 
-      v-if="showOption"
-      @amemiya="amemiyaSelected"
-      @nerlove="nerloveSelected"
-      @swar="swarSelected"
-      @walhus="walhusSelected">
-    </EstimationOption>
   </div>
 </template>
 
 <script>
-import EstimationOption from './EstimationOption.vue'
-
 export default {
   name: 'estimationSelector',
-  components: {
-    EstimationOption
-  },
-  data() {
-    return {
-      showOption: false,
-      estimationMethod: 'Pilih metode estimasi'
-    }
-  },
-  methods: {
-    amemiyaSelected() {
-      this.estimationMethod = 'Metode estimasi Amemiya'
-      this.showOption = false
-    },
-    nerloveSelected() {
-      this.estimationMethod = 'Metode estimasi Nerlove'
-      this.showOption = false
-    },
-    swarSelected() {
-      this.estimationMethod = 'Metode estimasi Swamy-Arora'
-      this.showOption = false
-    },
-    walhusSelected() {
-      this.estimationMethod = 'Metode estimasi Wallace-Hussain'
-      this.showOption = false
-    }
-  }
 }
 </script>
 
 <style lang="scss" scoped>
 .selector {
-  height: 256px;
-  position: relative;
   width: fit-content;
   color: var(--white);
   display: flex;
   flex-direction: column;
   align-items: center;
   &__field {
-    position: absolute;
-    left: 0;
-    bottom: 0;
     background-color: var(--light_tr);
     width: 276px;
     height: 24px;

@@ -1,14 +1,25 @@
 <template>
   <div class="option">
-    <div class="option__opt" @click="$emit('com')">Model efek umum</div>
-    <div class="option__opt" @click="$emit('fix')">Model efek tetap</div>
-    <div class="option__opt" @click="$emit('ran')">Model efek acak</div>
+    <div class="option__opt" @click="emitCommon">Model efek umum</div>
+    <div class="option__opt" @click="emitFixed">Model efek tetap</div>
+    <div class="option__opt" @click="emitRandom">Model efek acak</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'modelOption'
+  name: 'modelOption',
+  methods: {
+    emitCommon () {
+      this.$emit('commonSelected')
+    },
+    emitFixed () {
+      this.$emit('fixedSelected')
+    },
+    emitRandom () {
+      this.$emit('randomSelected')
+    }
+  }
 }
 </script>
 
