@@ -99,7 +99,7 @@ export default {
     background-color: var(--light_tr);
     border-radius: 20px;
     height: 48px;
-    width: 250px;
+    width: 244px;
     display: flex;
     flex-direction: row;
     justify-content: center;
