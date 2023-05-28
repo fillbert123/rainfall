@@ -9,7 +9,7 @@
         </div>
         <div class="data__left__desc__slider">
           <img class="data__left__desc__slider__minicon" src="@/assets/icons/rain0.svg" alt="">
-          <input class="data__left__desc__slider__range" type="range" name="" min="0" max="500" v-model="value" disabled="true">
+          <input class="data__left__desc__slider__range" type="range" min="0" max="500" v-model="value" disabled="true">
           <img class="data__left__desc__slider__maxicon" src="@/assets/icons/rain3.svg" alt="">
         </div>
       </div>
