@@ -13,12 +13,12 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
-    <SimulationControl></SimulationControl>
+    <SimulationPage></SimulationPage>
   </div>
 </template>
 
 <script>
-import SimulationControl from '@/components/SimulationControl.vue'
+import SimulationPage from '@/pages/SimulationPage.vue';
 
 export default {
   name: 'HelloWorld',
@@ -26,7 +26,7 @@ export default {
     msg: String
   },
   components: {
-    SimulationControl
+    SimulationPage
   }
 }
 </script>

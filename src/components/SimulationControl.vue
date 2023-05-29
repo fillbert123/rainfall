@@ -4,8 +4,8 @@
       <div class="simulation__upper__label">BULAN</div>
       <TimeSlider 
         @timeUpdate="timeUpdate"
-        @timeIncrease="timeIncrease"
-        @timeDecrease="timeDecrease">
+        @timeIncrease="timeUpdate"
+        @timeDecrease="timeUpdate">
       </TimeSlider>
     </div>
     <div class="simulation__lower">
@@ -13,12 +13,15 @@
         <div class="simulation__lower__left__model">
           <div class="simulation__lower__left__model__label">MODEL</div>
           <img class="simulation__lower__left__model__info" src="@/assets/icons/info.svg" alt="">
-          <ModelSelector></ModelSelector>
+          <ModelSelector 
+            @unlockEstimation="unlockEstimation = true"
+            @lockEstimation="unlockEstimation = false">
+          </ModelSelector>
         </div>
         <div class="simulation__lower__left__method">
           <div class="simulation__lower__left__method__label">METODE</div>
           <img class="simulation__lower__left__method__info" src="@/assets/icons/info.svg" alt="">
-          <EstimationSelector></EstimationSelector>
+          <EstimationSelector :unlockEstimation="unlockEstimation"></EstimationSelector>
         </div>
       </div>
       <div class="simulation__lower__right">
@@ -48,7 +51,8 @@ export default {
   name: 'simulationControl',
   data () {
     return {
-      time: 5
+      time: 5,
+      unlockEstimation: false
     }
   },
   components: {
@@ -59,12 +63,6 @@ export default {
   },
   methods: {
     timeUpdate (time) {
-      this.time = time
-    },
-    timeIncrease (time) {
-      this.time = time
-    },
-    timeDecrease (time) {
       this.time = time
     }
   }

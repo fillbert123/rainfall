@@ -1,5 +1,35 @@
 {
-	"data": {
-		"view_button": "Lihat data"
-	}
+  "data": {
+    "view_button": "Lihat data"
+  },
+  "simulation": {
+    "model": {
+      "choose": "Pilih model",
+      "common": "Model efek umum",
+      "fixed": "Model efek tetap",
+      "random": "Model efek acak"
+    },
+    "method": {
+      "choose": "Pilih metode estimasi",
+      "amemiya": "Metode Amemiya",
+      "nerlove": "Metode Nerlove",
+      "swar": "Metode Swamy-Arora",
+      "walhus": "Metode Wallace-Hussain",
+      "locked": "Tidak dapat diganti"
+    },
+    "month": {
+      "1": "Januari",
+      "2": "Februari",
+      "3": "Maret",
+      "4": "April",
+      "5": "Mei",
+      "6": "Juni",
+      "7": "Juli",
+      "8": "Agustus",
+      "9": "September",
+      "10": "Oktober",
+      "11": "November",
+      "12": "Desember"
+    }
+  }
 }

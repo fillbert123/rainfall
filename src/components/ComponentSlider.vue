@@ -60,7 +60,7 @@ export default {
       font-family: SFRoundedB;
       font-size: 16px;
       text-align: center;
-      background-color: var(--light_tr);
+      background-color: var(--dark_tr);
       border-style: none;
       border-radius: 8px;
       color: var(--white);

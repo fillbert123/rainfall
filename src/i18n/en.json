@@ -1,5 +1,35 @@
 {
   "data": {
     "view_button": "View data"
+  },
+  "simulation": {
+    "model": {
+      "choose": "Choose a model",
+      "common": "Common effect model",
+      "fixed": "Fixed effect model",
+      "random": "Random effect model"
+    },
+    "method": {
+      "choose": "Choose an estimation method",
+      "amemiya": "Amemiya method",
+      "nerlove": "Nerlove method",
+      "swar": "Swamy-Arora method",
+      "walhus": "Wallace-Hussain method",
+      "locked": "Inalterable"
+    },
+    "month": {
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December"
+    }
   }
 }
