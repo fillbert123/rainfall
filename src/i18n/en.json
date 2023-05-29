@@ -2,6 +2,36 @@
   "data": {
     "view_button": "View data"
   },
+  "administrative": {
+    "province": "East Nusa Tenggara",
+    "admArea": {
+      "district": "District",
+      "city": "City"
+    },
+    "admName": {
+      "mgb": "West Manggarai",
+      "mgr": "Manggarai",
+      "mgt": "East Manggarai",
+      "nga": "Ngada",
+      "nag": "Nagakeo",
+      "end": "Ende",
+      "sik": "Sikka",
+      "flo": "East Flores",
+      "sbd": "Southwest Sumba",
+      "sbb": "West Sumba",
+      "sbg": "Central Sumba",
+      "sbt": "East Sumba",
+      "sab": "Sabu Raijua",
+      "rot": "Rote",
+      "kup": "Kupang",
+      "ttu": "North Central Timor",
+      "tts": "South Central Timor",
+      "mal": "Malaka",
+      "bel": "Belu",
+      "lem": "Lembata",
+      "alo": "Alor"
+    }
+  },
   "simulation": {
     "model": {
       "choose": "Choose a model",

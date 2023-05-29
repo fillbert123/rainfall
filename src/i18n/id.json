@@ -2,6 +2,36 @@
   "data": {
     "view_button": "Lihat data"
   },
+  "administrative": {
+    "province": "Nusa Tenggara Timur",
+    "admArea": {
+      "district": "Kabupaten",
+      "city": "Kota"
+    },
+    "admName": {
+      "mgb": "Manggarai Barat",
+      "mgr": "Manggarai",
+      "mgt": "Manggarai Timur",
+      "nga": "Ngada",
+      "nag": "Nagakeo",
+      "end": "Ende",
+      "sik": "Sikka",
+      "flo": "Flores Timur",
+      "sbd": "Sumba Barat Daya",
+      "sbb": "Sumba Barat",
+      "sbg": "Sumba Tengah",
+      "sbt": "Sumba Timur",
+      "sab": "Sabu Raijua",
+      "rot": "Rote",
+      "kup": "Kupang",
+      "ttu": "Timor Tengah Utara",
+      "tts": "Timor Tengah Selatan",
+      "mal": "Malaka",
+      "bel": "Belu",
+      "lem": "Lembata",
+      "alo": "Alor"
+    }
+  },
   "simulation": {
     "model": {
       "choose": "Pilih model",

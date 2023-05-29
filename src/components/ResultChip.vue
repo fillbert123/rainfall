@@ -1,8 +1,8 @@
 <template>
   <div class="chip">
     <div class="chip__info">
-      <div class="chip__info__adm">{{ adm }}</div>
-      <div class="chip__info__name">{{ admName }}</div>
+      <div class="chip__info__adm">{{ adm | uppercase }}</div>
+      <div class="chip__info__name">{{ admName | uppercase }}</div>
     </div>
     <div class="chip__data">
       <div class="chip__data__icon">
@@ -22,6 +22,11 @@ export default {
   props: {
     adm: String,
     admName: String
+  },
+  filters: {
+    uppercase (text) {
+      return text.toUpperCase()
+    }
   }
 }
 </script>
