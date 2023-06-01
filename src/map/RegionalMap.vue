@@ -62,30 +62,35 @@ export default {
   },
   created () {
     this.marginLeft = (1440 - window.innerWidth)/2
-    this.position.ntb.left = this.position.ntb.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.mgb.left = this.position.mgb.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.mgr.left = this.position.mgr.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.mgt.left = this.position.mgt.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.nga.left = this.position.nga.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.nag.left = this.position.nag.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.end.left = this.position.end.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.sik.left = this.position.sik.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.flo.left = this.position.flo.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.sbd.left = this.position.sbd.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.sbb.left = this.position.sbb.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.sbg.left = this.position.sbg.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.sbt.left = this.position.sbt.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.sab.left = this.position.sab.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.rot.left = this.position.rot.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.kot.left = this.position.kot.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.kup.left = this.position.kup.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.ttu.left = this.position.ttu.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.tts.left = this.position.tts.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.mal.left = this.position.mal.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.bel.left = this.position.bel.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.lem.left = this.position.lem.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.alo.left = this.position.alo.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.position.tim.left = this.position.tim.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
+    this.position.ntb.left = this.position.ntb.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.mgb.left = this.position.mgb.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.mgr.left = this.position.mgr.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.mgt.left = this.position.mgt.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.nga.left = this.position.nga.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.nag.left = this.position.nag.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.end.left = this.position.end.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.sik.left = this.position.sik.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.flo.left = this.position.flo.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.sbd.left = this.position.sbd.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.sbb.left = this.position.sbb.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.sbg.left = this.position.sbg.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.sbt.left = this.position.sbt.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.sab.left = this.position.sab.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.rot.left = this.position.rot.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.kot.left = this.position.kot.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.kup.left = this.position.kup.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.ttu.left = this.position.ttu.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.tts.left = this.position.tts.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.mal.left = this.position.mal.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.bel.left = this.position.bel.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.lem.left = this.position.lem.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.alo.left = this.position.alo.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.position.tim.left = this.position.tim.left - this.marginLeft - this.countWindowAdditionalMargin
+  },
+  computed: {
+    countWindowAdditionalMargin () {
+      return (30 / 240 * (1440 - window.innerWidth))
+    }
   }
 }
 </script>

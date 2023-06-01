@@ -28,12 +28,36 @@
         <div class="simulation__lower__right__label">PARAMETER</div>
         <div class="simulation__lower__right__parameter">
           <div class="simulation__lower__right__parameter__row1">
-            <ComponentSlider class="simulation__lower__right__parameter__row1__col1"></ComponentSlider>
-            <ComponentSlider class="simulation__lower__right__parameter__row1__col2"></ComponentSlider>
+            <ComponentSlider 
+              variable="temperature"
+              val="27"
+              minval="10"
+              maxval="40"
+              class="simulation__lower__right__parameter__row1__col1">
+            </ComponentSlider>
+            <ComponentSlider 
+              variable="humidity"
+              val="80"
+              minval="50"
+              maxval="100"
+              class="simulation__lower__right__parameter__row1__col2">
+            </ComponentSlider>
           </div>
           <div class="simulation__lower__right__parameter__row2">
-            <ComponentSlider class="simulation__lower__right__parameter__row2__col1"></ComponentSlider>
-            <ComponentSlider class="simulation__lower__right__parameter__row2__col2"></ComponentSlider>
+            <ComponentSlider 
+              variable="sunshine"
+              val="10"
+              minval="0"
+              maxval="14"
+              class="simulation__lower__right__parameter__row2__col1">
+            </ComponentSlider>
+            <ComponentSlider 
+              variable="windspeed"
+              val="2"
+              minval="0"
+              maxval="8"
+              class="simulation__lower__right__parameter__row2__col2">
+            </ComponentSlider>
           </div>
         </div>
       </div>

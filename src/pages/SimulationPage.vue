@@ -4,9 +4,9 @@
       <RegionalMap class="page__upper__map"></RegionalMap>
       <div 
         class="page__upper__chip page__upper__chip__group1"
-        :style="{ top: group1.top + 'px', left: group1.left + 'px' }">
+        :style="{ top: chipCluster.group1.top + 'px', left: chipCluster.group1.left + 'px' }">
         <ResultChip 
-          v-for="area in group1"
+          v-for="area in chipCluster.group1"
           :adm=area.adm
           :admName=area.admName
           :key="area.admName">
@@ -14,9 +14,9 @@
       </div>
       <div 
         class="page__upper__chip page__upper__chip__group2"
-        :style="{ top: group2.top + 'px', left: group2.left + 'px' }">
+        :style="{ top: chipCluster.group2.top + 'px', left: chipCluster.group2.left + 'px' }">
         <ResultChip 
-          v-for="area in group2"
+          v-for="area in chipCluster.group2"
           :adm=area.adm
           :admName=area.admName
           :key="area.admName">
@@ -24,9 +24,9 @@
       </div>
       <div
         class="page__upper__chip page__upper__chip__group3"
-        :style="{ top: group3.top + 'px', left: group3.left + 'px' }">
+        :style="{ top: chipCluster.group3.top + 'px', left: chipCluster.group3.left + 'px' }">
         <ResultChip 
-          v-for="area in group3"
+          v-for="area in chipCluster.group3"
           :adm=area.adm
           :admName=area.admName
           :key="area.admName">
@@ -34,9 +34,9 @@
       </div>
       <div 
         class="page__upper__chip page__upper__chip__group4"
-        :style="{ top: group4.top + 'px', left: group4.left + 'px' }">
+        :style="{ top: chipCluster.group4.top + 'px', left: chipCluster.group4.left + 'px' }">
         <ResultChip 
-          v-for="area in group4"
+          v-for="area in chipCluster.group4"
           :adm=area.adm
           :admName=area.admName
           :key="area.admName">
@@ -44,9 +44,9 @@
       </div>
       <div 
         class="page__upper__chip page__upper__chip__group5"
-        :style="{ top: group5.top + 'px', left: group5.left + 'px' }">
+        :style="{ top: chipCluster.group5.top + 'px', left: chipCluster.group5.left + 'px' }">
         <ResultChip 
-          v-for="area in group5"
+          v-for="area in chipCluster.group5"
           :adm=area.adm
           :admName=area.admName
           :key="area.admName">
@@ -54,9 +54,9 @@
       </div>
       <div 
         class="page__upper__chip page__upper__chip__group6"
-        :style="{ top: group6.top + 'px', left: group6.left + 'px' }">
+        :style="{ top: chipCluster.group6.top + 'px', left: chipCluster.group6.left + 'px' }">
         <ResultChip 
-          v-for="area in group6"
+          v-for="area in chipCluster.group6"
           :adm=area.adm
           :admName=area.admName
           :key="area.admName">
@@ -73,109 +73,113 @@
 import RegionalMap from '@/map/RegionalMap.vue';
 import SimulationControlVue from '@/components/SimulationControl.vue';
 import ResultChip from '@/components/ResultChip.vue';
+import modelData from '@/data/modelData.json'
 
 export default {
   name: 'simulationPage',
   data () {
     return {
       marginLeft: 0,
-      group1: {
-        top: 90,
-        left: 150,
-        mgb: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.mgb')
+      model: modelData,
+      chipCluster: {
+        group1: {
+          top: 90,
+          left: 150,
+          mgb: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.mgb')
+          },
+          mgr: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.mgr')
+          },
+          mgt: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.mgt')
+          }
         },
-        mgr: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.mgr')
+        group2: {
+          top: 90,
+          left: 1361,
+          lem: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.lem')
+          },
+          alo: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.alo')
+          }
         },
-        mgt: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.mgt')
-        }
-      },
-      group2: {
-        top: 90,
-        left: 1361,
-        lem: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.lem')
+        group3: {
+          top: 370,
+          left: 150,
+          sbd: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sbd')
+          },
+          sbb: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sbb')
+          },
+          sbg: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sbg')
+          },
+          sbt: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sbt')
+          }
         },
-        alo: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.alo')
-        }
-      },
-      group3: {
-        top: 370,
-        left: 150,
-        sbd: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sbd')
+        group4: {
+          top: 370,
+          left: 1310,
+          dummy: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.ttu')
+          },
+          bel: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.bel')
+          },
+          ttu: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.ttu')
+          },
+          mal: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.mal')
+          },
+          tts: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.tts')
+          }
         },
-        sbb: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sbb')
+        group5: {
+          top: 386,
+          left: 690,
+          dummy2: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sab')
+          },
+          dummy3: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.rot')
+          },
+          kot: {
+            adm: this.$t('administrative.admArea.city'), admName: this.$t('administrative.admName.kup')
+          },
+          sab: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sab')
+          },
+          rot: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.rot')
+          },
+          kup: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.kup')
+          }
         },
-        sbg: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sbg')
-        },
-        sbt: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sbt')
-        }
-      },
-      group4: {
-        top: 370,
-        left: 1310,
-        dummy: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.ttu')
-        },
-        bel: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.bel')
-        },
-        ttu: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.ttu')
-        },
-        mal: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.mal')
-        },
-        tts: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.tts')
-        }
-      },
-      group5: {
-        top: 386,
-        left: 690,
-        dummy2: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sab')
-        },
-        dummy3: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.rot')
-        },
-        kot: {
-          adm: this.$t('administrative.admArea.city'), admName: this.$t('administrative.admName.kup')
-        },
-        sab: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sab')
-        },
-        rot: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.rot')
-        },
-        kup: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.kup')
-        }
-      },
-      group6: {
-        top: 290,
-        left: 500,
-        nga: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.nga')
-        },
-        nag: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.nag')
-        },
-        end: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.end')
-        },
-        sik: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sik')
-        },
-        flo: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.flo')
+        group6: {
+          top: 290,
+          left: 500,
+          nga: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.nga')
+          },
+          nag: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.nag')
+          },
+          end: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.end')
+          },
+          sik: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sik')
+          },
+          flo: {
+            adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.flo')
+          }
         }
       }
     }
@@ -187,15 +191,17 @@ export default {
   },
   created () {
     this.marginLeft = (1440 - window.innerWidth)/2
-    this.group1.left = this.group1.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.group2.left = this.group2.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.group3.left = this.group3.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.group4.left = this.group4.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.group5.left = this.group5.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
-    this.group6.left = this.group6.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
+    this.chipCluster.group1.left = this.chipCluster.group1.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.chipCluster.group2.left = this.chipCluster.group2.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.chipCluster.group3.left = this.chipCluster.group3.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.chipCluster.group4.left = this.chipCluster.group4.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.chipCluster.group5.left = this.chipCluster.group5.left - this.marginLeft - this.countWindowAdditionalMargin
+    this.chipCluster.group6.left = this.chipCluster.group6.left - this.marginLeft - this.countWindowAdditionalMargin
   },
-  methods: {
-
+  computed: {
+    countWindowAdditionalMargin () {
+      return (30 / 240 * (1440 - window.innerWidth))
+    }
   }
 }
 </script>
