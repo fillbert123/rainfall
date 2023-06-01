@@ -2,58 +2,64 @@
   <div class="page">
     <div class="page__upper">
       <RegionalMap class="page__upper__map"></RegionalMap>
-      <div class="page__upper__chip page__upper__chip__group1">
+      <div 
+        class="page__upper__chip page__upper__chip__group1"
+        :style="{ top: group1.top + 'px', left: group1.left + 'px' }">
         <ResultChip 
           v-for="area in group1"
           :adm=area.adm
           :admName=area.admName
-          :key="area.admName"
-          :style="{ 'left' : area.left + 'px', 'top' : area.top + 'px' }">
+          :key="area.admName">
         </ResultChip>
       </div>
-      <div class="page__upper__chip page__upper__chip__group2">
+      <div 
+        class="page__upper__chip page__upper__chip__group2"
+        :style="{ top: group2.top + 'px', left: group2.left + 'px' }">
         <ResultChip 
           v-for="area in group2"
           :adm=area.adm
           :admName=area.admName
-          :key="area.admName"
-          :style="{ 'left' : area.left + 'px', 'top' : area.top + 'px' }">
+          :key="area.admName">
         </ResultChip>
       </div>
-      <div class="page__upper__chip page__upper__chip__group3">
+      <div
+        class="page__upper__chip page__upper__chip__group3"
+        :style="{ top: group3.top + 'px', left: group3.left + 'px' }">
         <ResultChip 
           v-for="area in group3"
           :adm=area.adm
           :admName=area.admName
-          :key="area.admName"
-          :style="{ 'left' : area.left + 'px', 'top' : area.top + 'px' }">
+          :key="area.admName">
         </ResultChip>
       </div>
-      <div class="page__upper__chip page__upper__chip__group4">
+      <div 
+        class="page__upper__chip page__upper__chip__group4"
+        :style="{ top: group4.top + 'px', left: group4.left + 'px' }">
         <ResultChip 
           v-for="area in group4"
           :adm=area.adm
           :admName=area.admName
-          :key="area.admName"
-          :style="{ 'left' : area.left + 'px', 'top' : area.top + 'px' }">
+          :key="area.admName">
         </ResultChip>
       </div>
-      <div class="page__upper__chip page__upper__chip__group5">
+      <div 
+        class="page__upper__chip page__upper__chip__group5"
+        :style="{ top: group5.top + 'px', left: group5.left + 'px' }">
         <ResultChip 
           v-for="area in group5"
           :adm=area.adm
           :admName=area.admName
-          :key="area.admName"
-          :style="{ 'left' : area.left + 'px', 'top' : area.top + 'px' }">
+          :key="area.admName">
         </ResultChip>
       </div>
-      <div class="page__upper__chip page__upper__chip__group6">
+      <div 
+        class="page__upper__chip page__upper__chip__group6"
+        :style="{ top: group6.top + 'px', left: group6.left + 'px' }">
         <ResultChip 
           v-for="area in group6"
           :adm=area.adm
           :admName=area.admName
-          :key="area.admName"
-          :style="{ 'left' : area.left + 'px', 'top' : area.top + 'px' }">
+          :key="area.admName">
         </ResultChip>
       </div>
     </div>
@@ -72,7 +78,10 @@ export default {
   name: 'simulationPage',
   data () {
     return {
+      marginLeft: 0,
       group1: {
+        top: 90,
+        left: 150,
         mgb: {
           adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.mgb')
         },
@@ -84,6 +93,8 @@ export default {
         }
       },
       group2: {
+        top: 90,
+        left: 1361,
         lem: {
           adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.lem')
         },
@@ -92,6 +103,8 @@ export default {
         }
       },
       group3: {
+        top: 370,
+        left: 150,
         sbd: {
           adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sbd')
         },
@@ -106,6 +119,8 @@ export default {
         }
       },
       group4: {
+        top: 370,
+        left: 1310,
         dummy: {
           adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.ttu')
         },
@@ -123,6 +138,8 @@ export default {
         }
       },
       group5: {
+        top: 386,
+        left: 690,
         dummy2: {
           adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sab')
         },
@@ -143,6 +160,8 @@ export default {
         }
       },
       group6: {
+        top: 290,
+        left: 500,
         nga: {
           adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.nga')
         },
@@ -165,6 +184,18 @@ export default {
     RegionalMap,
     SimulationControlVue,
     ResultChip
+  },
+  created () {
+    this.marginLeft = (1440 - window.innerWidth)/2
+    this.group1.left = this.group1.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
+    this.group2.left = this.group2.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
+    this.group3.left = this.group3.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
+    this.group4.left = this.group4.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
+    this.group5.left = this.group5.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
+    this.group6.left = this.group6.left - this.marginLeft - (30 / 240 * (1440 - window.innerWidth))
+  },
+  methods: {
+
   }
 }
 </script>
@@ -191,22 +222,16 @@ export default {
       &__group1 {
         display: flex;
         flex-direction: row;
-        top: 90px;
-        left: 150px;
       }
       &__group2 {
         display: flex;
         flex-direction: row;
-        top: 90px;
-        left: 1350px;
       }
       &__group3 {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         width: 300px;
-        top: 370px;
-        left: 150px;
         &>*:nth-child(1) {
           margin-inline-end: 100px;
         }
@@ -218,8 +243,7 @@ export default {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        top: 370px;
-        left: 1300px;
+        width: 350px;
         &>*:nth-child(1) {
           visibility: hidden;
         }
@@ -229,8 +253,6 @@ export default {
         flex-direction: row;
         flex-wrap: wrap;
         width: 500px;
-        top: 386px;
-        left: 690px;
         &>*:nth-child(1), &>*:nth-child(2) {
           visibility: hidden;
         }
@@ -239,8 +261,6 @@ export default {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        top: 290px;
-        left: 500px;
       }
     }
   }

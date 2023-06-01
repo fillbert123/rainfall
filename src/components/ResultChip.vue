@@ -1,8 +1,9 @@
 <template>
   <div class="chip">
     <div class="chip__info">
-      <div class="chip__info__adm">{{ adm | uppercase }}</div>
+      <div v-if="!this.isLanguageEnglish" class="chip__info__adm">{{ adm | uppercase }}</div>
       <div class="chip__info__name">{{ admName | uppercase }}</div>
+      <div v-if="this.isLanguageEnglish" class="chip__info__adm">{{ adm | uppercase }}</div>
     </div>
     <div class="chip__data">
       <div class="chip__data__icon">
@@ -10,7 +11,7 @@
       </div>
       <div class="chip__data__value">
         <div class="chip__data__value__rainfall">400</div>
-        <div class="chip__data__value__unit">mm/bulan</div>
+        <div class="chip__data__value__unit">mm/bln</div>
       </div>
     </div>
   </div>
@@ -22,6 +23,11 @@ export default {
   props: {
     adm: String,
     admName: String
+  },
+  computed: {
+    isLanguageEnglish () {
+      return this.$i18n.locale === 'en'
+    }
   },
   filters: {
     uppercase (text) {
