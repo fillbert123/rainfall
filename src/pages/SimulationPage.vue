@@ -20,6 +20,42 @@
           :style="{ 'left' : area.left + 'px', 'top' : area.top + 'px' }">
         </ResultChip>
       </div>
+      <div class="page__upper__chip page__upper__chip__group3">
+        <ResultChip 
+          v-for="area in group3"
+          :adm=area.adm
+          :admName=area.admName
+          :key="area.admName"
+          :style="{ 'left' : area.left + 'px', 'top' : area.top + 'px' }">
+        </ResultChip>
+      </div>
+      <div class="page__upper__chip page__upper__chip__group4">
+        <ResultChip 
+          v-for="area in group4"
+          :adm=area.adm
+          :admName=area.admName
+          :key="area.admName"
+          :style="{ 'left' : area.left + 'px', 'top' : area.top + 'px' }">
+        </ResultChip>
+      </div>
+      <div class="page__upper__chip page__upper__chip__group5">
+        <ResultChip 
+          v-for="area in group5"
+          :adm=area.adm
+          :admName=area.admName
+          :key="area.admName"
+          :style="{ 'left' : area.left + 'px', 'top' : area.top + 'px' }">
+        </ResultChip>
+      </div>
+      <div class="page__upper__chip page__upper__chip__group6">
+        <ResultChip 
+          v-for="area in group6"
+          :adm=area.adm
+          :admName=area.admName
+          :key="area.admName"
+          :style="{ 'left' : area.left + 'px', 'top' : area.top + 'px' }">
+        </ResultChip>
+      </div>
     </div>
     <div class="page__lower">
       <SimulationControlVue class="page__lower__controller"></SimulationControlVue>
@@ -38,76 +74,89 @@ export default {
     return {
       group1: {
         mgb: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.mgb'), left: 100, top: 100
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.mgb')
         },
         mgr: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.mgr'), left: 252, top: 100
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.mgr')
         },
         mgt: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.mgt'), left: 389, top: 100
-        },
-        nga: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.nga'), left: 537, top: 100
-        },
-        nag: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.nag'), left: 674, top: 100
-        },
-        end: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.end'), left: 811, top: 100
-        },
-        sik: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sik'), left: 948, top: 100
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.mgt')
         }
       },
       group2: {
-        flo: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.flo'), left: 200, top: 400
-        },
         lem: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.lem'), left: 400, top: 1200
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.lem')
         },
         alo: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.alo'), left: 0, top: 1400
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.alo')
         }
       },
       group3: {
         sbd: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sbd'), left: 400, top: 400
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sbd')
         },
         sbb: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sbb'), left: 0, top: 600
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sbb')
         },
         sbg: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sbg'), left: 200, top: 600
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sbg')
         },
         sbt: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sbt'), left: 400, top: 600
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sbt')
         }
       },
-      considerations: {
-        sab: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sab'), left: 0, top: 800
-        },
-        rot: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.rot'), left: 200, top: 800
-        },
-        kot: {
-          adm: this.$t('administrative.admArea.city'), admName: this.$t('administrative.admName.kup'), left: 400, top: 800
-        },
-        kup: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.kup'), left: 0, top: 1000
-        },
-        ttu: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.ttu'), left: 200, top: 1000
-        },
-        tts: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.tts'), left: 400, top: 1000
-        },
-        mal: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.mal'), left: 0, top: 1200
+      group4: {
+        dummy: {
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.ttu')
         },
         bel: {
-          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.bel'), left: 200, top: 1200
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.bel')
+        },
+        ttu: {
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.ttu')
+        },
+        mal: {
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.mal')
+        },
+        tts: {
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.tts')
+        }
+      },
+      group5: {
+        dummy2: {
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sab')
+        },
+        dummy3: {
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.rot')
+        },
+        kot: {
+          adm: this.$t('administrative.admArea.city'), admName: this.$t('administrative.admName.kup')
+        },
+        sab: {
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sab')
+        },
+        rot: {
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.rot')
+        },
+        kup: {
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.kup')
+        }
+      },
+      group6: {
+        nga: {
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.nga')
+        },
+        nag: {
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.nag')
+        },
+        end: {
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.end')
+        },
+        sik: {
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sik')
+        },
+        flo: {
+          adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.flo')
         }
       }
     }
@@ -143,13 +192,55 @@ export default {
         display: flex;
         flex-direction: row;
         top: 90px;
-        left: 30px;
+        left: 150px;
       }
       &__group2 {
         display: flex;
         flex-direction: row;
-        top: 230px;
-        left: 1000px;
+        top: 90px;
+        left: 1350px;
+      }
+      &__group3 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 300px;
+        top: 370px;
+        left: 150px;
+        &>*:nth-child(1) {
+          margin-inline-end: 100px;
+        }
+        &>*:nth-child(4) {
+          margin-inline-start: 290px;
+        }
+      }
+      &__group4 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        top: 370px;
+        left: 1300px;
+        &>*:nth-child(1) {
+          visibility: hidden;
+        }
+      }
+      &__group5 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 500px;
+        top: 386px;
+        left: 690px;
+        &>*:nth-child(1), &>*:nth-child(2) {
+          visibility: hidden;
+        }
+      }
+      &__group6 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        top: 290px;
+        left: 500px;
       }
     }
   }
