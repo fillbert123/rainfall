@@ -9,8 +9,8 @@
     </div>
     <div class="data__value">
       <img class="data__value__icon" src="@/assets/icons/calendar.svg" alt="">
-      <div class="data__value__month">{{ calculateMonth }}</div>
-      <div class="data__value__year">{{ calculateYear }}</div>
+      <div class="data__value__month">{{ showMonth }}</div>
+      <div class="data__value__year">{{ showYear }}</div>
     </div>
   </div>
 </template>
@@ -41,11 +41,16 @@ export default {
     }
   },
   computed: {
+    showMonth () {
+      var month = this.calculateMonth
+      month = this.$t('simulation.month.' + month)
+      return month
+    },
     calculateMonth () {
-      const month = this.time % 12
+      var month = this.time % 12
       return month === 0 ? 12 : month
     },
-    calculateYear () {
+    showYear () {
       return Math.ceil(this.time / 12) + 2022
     }
   }
@@ -61,7 +66,7 @@ export default {
     background-color: var(--light_tr);
     border-radius: 20px;
     height: 48px;
-    width: 971px;
+    width: 969px;
     padding-inline: 20px;
     display: flex;
     flex-direction: row;
