@@ -48,18 +48,22 @@ export default {
     amemiyaSelected () {
       this.selectedMethod = this.$t('simulation.method.amemiya'),
       this.optionDisplay = 'none'
+      this.$emit('amemiyaSelected')
     },
     nerloveSelected () {
       this.selectedMethod = this.$t('simulation.method.nerlove'),
       this.optionDisplay = 'none'
+      this.$emit('nerloveSelected')
     },
     swarSelected () {
       this.selectedMethod = this.$t('simulation.method.swar'),
       this.optionDisplay = 'none'
+      this.$emit('swarSelected')
     },
     walhusSelected () {
       this.selectedMethod = this.$t('simulation.method.walhus'),
       this.optionDisplay = 'none'
+      this.$emit('walhusSelected')
     }
   },
   watch: {
@@ -71,6 +75,7 @@ export default {
       else {
         this.selectedMethod = this.$t('simulation.method.choose'),
         this.backgroundCol = 'var(--light_tr)'
+        this.selectedMethod = this.$t('simulation.method.walhus')
       }
     }
   }

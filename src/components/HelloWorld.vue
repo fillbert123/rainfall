@@ -13,11 +13,13 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <DataPage></DataPage>
     <SimulationPage></SimulationPage>
   </div>
 </template>
 
 <script>
+import DataPage from '@/pages/DataPage.vue';
 import SimulationPage from '@/pages/SimulationPage.vue';
 
 export default {
@@ -26,6 +28,7 @@ export default {
     msg: String
   },
   components: {
+    DataPage,
     SimulationPage
   }
 }

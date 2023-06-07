@@ -22,7 +22,7 @@ export default {
   name: 'modelSelector',
   data () {
     return {
-      selectedModel: this.$t('simulation.model.choose'),
+      selectedModel: this.$t('simulation.model.common'),
       optionDisplay: 'none'
     }
   },
@@ -42,16 +42,19 @@ export default {
       this.selectedModel = this.$t('simulation.model.common'),
       this.optionDisplay = 'none'
       this.$emit('lockEstimation')
+      this.$emit('commonSelected')
     },
     fixedSelected () {
       this.selectedModel = this.$t('simulation.model.fixed'),
       this.optionDisplay = 'none'
       this.$emit('lockEstimation')
+      this.$emit('fixedSelected')
     },
     randomSelected () {
       this.selectedModel = this.$t('simulation.model.random'),
       this.optionDisplay = 'none',
       this.$emit('unlockEstimation')
+      this.$emit('randomSelected')
     }
   }
 }

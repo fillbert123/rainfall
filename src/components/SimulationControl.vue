@@ -15,13 +15,22 @@
           <img class="simulation__lower__left__model__info" src="@/assets/icons/info.svg" alt="">
           <ModelSelector 
             @unlockEstimation="unlockEstimation = true"
-            @lockEstimation="unlockEstimation = false">
+            @lockEstimation="unlockEstimation = false"
+            @commonSelected="commonSelected"
+            @fixedSelected="fixedSelected"
+            @randomSelected="randomSelected">
           </ModelSelector>
         </div>
         <div class="simulation__lower__left__method">
           <div class="simulation__lower__left__method__label">METODE</div>
           <img class="simulation__lower__left__method__info" src="@/assets/icons/info.svg" alt="">
-          <EstimationSelector :unlockEstimation="unlockEstimation"></EstimationSelector>
+          <EstimationSelector 
+            :unlockEstimation="unlockEstimation"
+            @amemiyaSelected="amemiyaSelected"
+            @nerloveSelected="nerloveSelected"
+            @swarSelected="swarSelected"
+            @walhusSelected="walhusSelected">
+          </EstimationSelector>
         </div>
       </div>
       <div class="simulation__lower__right">
@@ -30,32 +39,36 @@
           <div class="simulation__lower__right__parameter__row1">
             <ComponentSlider 
               variable="temperature"
-              val="27"
+              :val=this.temperature
               minval="10"
               maxval="40"
+              @valueUpdate="temperatureUpdate"
               class="simulation__lower__right__parameter__row1__col1">
             </ComponentSlider>
             <ComponentSlider 
               variable="humidity"
-              val="80"
+              :val=this.humidity
               minval="50"
               maxval="100"
+              @valueUpdate="humidityUpdate"
               class="simulation__lower__right__parameter__row1__col2">
             </ComponentSlider>
           </div>
           <div class="simulation__lower__right__parameter__row2">
             <ComponentSlider 
               variable="sunshine"
-              val="10"
+              :val=this.sunshine
               minval="0"
               maxval="14"
+              @valueUpdate="sunshineUpdate"
               class="simulation__lower__right__parameter__row2__col1">
             </ComponentSlider>
             <ComponentSlider 
               variable="windspeed"
-              val="2"
+              :val=this.windspeed
               minval="0"
               maxval="8"
+              @valueUpdate="windspeedUpdate"
               class="simulation__lower__right__parameter__row2__col2">
             </ComponentSlider>
           </div>
@@ -76,7 +89,11 @@ export default {
   data () {
     return {
       time: 5,
-      unlockEstimation: false
+      unlockEstimation: false,
+      temperature: 27,
+      humidity: 80,
+      sunshine: 10,
+      windspeed: 2
     }
   },
   components: {
@@ -88,6 +105,43 @@ export default {
   methods: {
     timeUpdate (time) {
       this.time = time
+    },
+    temperatureUpdate (value) {
+      this.temperature = value
+      this.$emit('temperatureUpdate', this.temperature)
+    },
+    humidityUpdate (value) {
+      this.humidity = value
+      this.$emit('humidityUpdate', this.humidity)
+    },
+    sunshineUpdate (value) {
+      this.sunshine = value
+      this.$emit('sunshineUpdate', this.sunshine)
+    },
+    windspeedUpdate (value) {
+      this.windspeed = value
+      this.$emit('windspeedUpdate', this.windspeed)
+    },
+    amemiyaSelected () {
+      this.$emit('amemiyaSelected')
+    },
+    nerloveSelected () {
+      this.$emit('nerloveSelected')
+    },
+    swarSelected () {
+      this.$emit('swarSelected')
+    },
+    walhusSelected () {
+      this.$emit('walhusSelected')
+    },
+    commonSelected () {
+      this.$emit('commonSelected')
+    },
+    fixedSelected () {
+      this.$emit('fixedSelected')
+    },
+    randomSelected () {
+      this.$emit('randomSelected')
     }
   }
 }
