@@ -32,13 +32,13 @@
       "alo": "Alor"
     },
     "other": {
-      "ntb": "Nusa Tenggara Barat",
-      "tim": "Timor Leste",
-      "fls": "Laut Flores",
-      "bas": "Laut Banda",
-      "sas": "Laut Sawu",
-      "tis": "Laut Timor",
-      "ino": "Samudera Hindia"
+      "ntb": "Nusa<br>Tenggara<br>Barat",
+      "tim": "Timor<br>Leste",
+      "fls": "Laut<br>Flores",
+      "bas": "Laut<br>Banda",
+      "sas": "Laut<br>Sawu",
+      "tis": "Laut<br>Timor",
+      "ino": "Samudera<br>Hindia"
     }
   },
   "simulation": {

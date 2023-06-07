@@ -125,7 +125,7 @@ export default {
           }
         },
         group3: {
-          top: 370,
+          top: 410,
           left: 150,
           sbd: {
             adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sbd'), value: 0
@@ -141,7 +141,7 @@ export default {
           }
         },
         group4: {
-          top: 370,
+          top: 410,
           left: 1290,
           dummy: {
             adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.ttu'), value: 0
@@ -160,7 +160,7 @@ export default {
           }
         },
         group5: {
-          top: 386,
+          top: 426,
           left: 670,
           dummy2: {
             adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.sab'), value: 0
@@ -182,7 +182,7 @@ export default {
           }
         },
         group6: {
-          top: 290,
+          top: 330,
           left: 500,
           nga: {
             adm: this.$t('administrative.admArea.district'), admName: this.$t('administrative.admName.nga'), value: 0
@@ -435,7 +435,7 @@ export default {
   height: 100vh;
   &__upper {
     height: 460px;
-    padding-block-start: 100px;
+    padding-block-start: 140px;
     position: relative;
     &__map {
       zoom: 90%;
