@@ -4,14 +4,14 @@
       <div class="data__left__icon">
         <img class="data__left__icon__img" :src="require(`@/assets/icons/${variable}.high.svg`)" alt="">
       </div>
-      <input type="number" class="data__left__value" v-model="value" @input="valueUpdate">
+      <div class="data__left__value">{{ value }}</div>
       <div class="data__left__unit">mm/bln</div>
     </div>
     <div class="data__right">
       <div class="data__right__minicon">
         <img class="data__right__minicon__img" :src="require(`@/assets/icons/${variable}.low.svg`)" alt="">
       </div>
-      <input class="data__right__slider" type="range" name="" :min="this.minval" :max="this.maxval" v-model="value">
+      <input class="data__right__slider" type="range" name="" :min="this.minval" :max="this.maxval" v-model="value" @input="emitValue">
       <div class="data__right__maxicon">
         <img class="data__right__maxicon__img" :src="require(`@/assets/icons/${variable}.high.svg`)" alt="">
       </div>
@@ -37,13 +37,8 @@ export default {
     this.value = this.val
   },
   methods: {
-    valueUpdate () {
-      if (this.value > this.maxval) {
-        this.value = this.maxval
-      }
-      if (this.value < this.minval) {
-        this.value = this.minval
-      }
+    emitValue () {
+      this.$emit('valueUpdate', this.value)
     }
   }
 }
@@ -74,7 +69,7 @@ export default {
     }
     &__value {
       width: 40px;
-      height: 20px;
+      height: 24px;
       font-family: SFRoundedB;
       font-size: 16px;
       text-align: center;
@@ -82,10 +77,9 @@ export default {
       border-style: none;
       border-radius: 8px;
       color: var(--white);
-      &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     &__unit {
       margin-inline-start: 4px;

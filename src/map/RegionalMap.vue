@@ -105,8 +105,6 @@ export default {
     position: absolute;
   }
   &__tim {
-    left: 1141.7px;
-    top: 53px;
     // filter: invert(72%) sepia(94%) saturate(4919%) hue-rotate(178deg) brightness(96%) contrast(82%);
   }
 }

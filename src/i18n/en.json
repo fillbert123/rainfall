@@ -30,6 +30,15 @@
       "bel": "Belu",
       "lem": "Lembata",
       "alo": "Alor"
+    },
+    "other": {
+      "ntb": "East Nusa Tenggara",
+      "tim": "East Timor",
+      "fls": "Flores Sea",
+      "bas": "Banda Sea",
+      "sas": "Sawu Sea",
+      "tis": "Timor Sea",
+      "ino": "Indian Ocean"
     }
   },
   "simulation": {

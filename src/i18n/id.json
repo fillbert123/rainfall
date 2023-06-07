@@ -30,6 +30,15 @@
       "bel": "Belu",
       "lem": "Lembata",
       "alo": "Alor"
+    },
+    "other": {
+      "ntb": "Nusa Tenggara Barat",
+      "tim": "Timor Leste",
+      "fls": "Laut Flores",
+      "bas": "Laut Banda",
+      "sas": "Laut Sawu",
+      "tis": "Laut Timor",
+      "ino": "Samudera Hindia"
     }
   },
   "simulation": {

@@ -10,7 +10,7 @@
         <img class="chip__data__icon__weather" src="@/assets/icons/rain2.svg" alt="">
       </div>
       <div class="chip__data__value">
-        <div class="chip__data__value__rainfall">400</div>
+        <div class="chip__data__value__rainfall">{{ value }}</div>
         <div class="chip__data__value__unit">mm/bln</div>
       </div>
     </div>
@@ -22,7 +22,8 @@ export default {
   name: 'resultChip',
   props: {
     adm: String,
-    admName: String
+    admName: String,
+    value: Number
   },
   computed: {
     isLanguageEnglish () {
@@ -80,6 +81,7 @@ export default {
       flex-direction: column;
       align-items: center;
       &__rainfall {
+        width: 80px;
         font-family: SFRoundedB;
         font-size: 32px;
         line-height: 28px;
