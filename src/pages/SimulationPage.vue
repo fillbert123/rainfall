@@ -67,8 +67,6 @@
           :value="area.value"
           :key="area.admName">
         </ResultChip>
-        {{ selectedModel }}
-        {{ test }}
       </div>
     </div>
     <div class="page__lower">
@@ -473,7 +471,7 @@ export default {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        width: 350px;
+        width: 330px;
         &>*:nth-child(1) {
           visibility: hidden;
         }
