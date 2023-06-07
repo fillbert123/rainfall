@@ -1,13 +1,13 @@
 <template>
   <div class="simulation">
-    <div class="simulation__upper">
+    <!-- <div class="simulation__upper">
       <div class="simulation__upper__label">BULAN</div>
       <TimeSlider 
         @timeUpdate="timeUpdate"
         @timeIncrease="timeUpdate"
         @timeDecrease="timeUpdate">
       </TimeSlider>
-    </div>
+    </div> -->
     <div class="simulation__lower">
       <div class="simulation__lower__left">
         <div class="simulation__lower__left__model">
@@ -79,7 +79,7 @@
 </template>
 
 <script>
-import TimeSlider from './TimeSlider.vue'
+// import TimeSlider from './TimeSlider.vue'
 import ModelSelector from './ModelSelector.vue'
 import EstimationSelector from './EstimationSelector.vue'
 import ComponentSlider from './ComponentSlider.vue'
@@ -97,15 +97,15 @@ export default {
     }
   },
   components: {
-    TimeSlider,
+    // TimeSlider,
     ModelSelector,
     EstimationSelector,
     ComponentSlider
   },
   methods: {
-    timeUpdate (time) {
-      this.time = time
-    },
+    // timeUpdate (time) {
+    //   this.time = time
+    // },
     temperatureUpdate (value) {
       this.temperature = value
       this.$emit('temperatureUpdate', this.temperature)

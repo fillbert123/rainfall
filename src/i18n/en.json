@@ -32,13 +32,13 @@
       "alo": "Alor"
     },
     "other": {
-      "ntb": "East Nusa Tenggara",
-      "tim": "East Timor",
-      "fls": "Flores Sea",
-      "bas": "Banda Sea",
-      "sas": "Sawu Sea",
-      "tis": "Timor Sea",
-      "ino": "Indian Ocean"
+      "ntb": "East<br>Nusa<br>Tenggara",
+      "tim": "East<br>Timor",
+      "fls": "Flores<br>Sea",
+      "bas": "Banda<br>Sea",
+      "sas": "Sawu<br>Sea",
+      "tis": "Timor<br>Sea",
+      "ino": "Indian<br>Ocean"
     }
   },
   "simulation": {
