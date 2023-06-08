@@ -1,5 +1,11 @@
 <template>
   <div class="page">
+    <div v-if="areaModalShowed" class="page__overlay">
+      <AreaModal class="page__overlay__modal"
+        @hideAreaModal="hideAreaModal"
+        :selectedArea="selectedArea"
+        :selectedAdmArea="selectedAdmArea"></AreaModal>
+    </div>
     <div class="page__upper">
       <RegionalMap class="page__upper__map"></RegionalMap>
       <LocationPopup
@@ -7,6 +13,7 @@
         class="page__upper__pin"
         @popupHidden="hidePopup(area.key)"
         @popupShow="showPopup(area.key)"
+        @showAreaModal="showAreaModal(area.key, area.admArea)"
         :staName="area.staName"
         :admArea="area.admArea"
         :admName="area.admName"
@@ -26,7 +33,7 @@
       <div>{{ popupShowed }}</div>
       <div>{{ areas.alo.display }}</div>
       <div>{{ areas.mgr.display }}</div>
-      <div>d</div>
+      <div>{{ selectedArea }}</div>
       <div>e</div>
       <div>f</div>
       <div>g</div>
@@ -39,6 +46,7 @@
 <script>
 import RegionalMap from '@/map/RegionalMap.vue';
 import LocationPopup from '@/components/LocationPopup.vue';
+import AreaModal from '@/modals/AreaModal.vue';
 
 export default {
   name: 'dataPage',
@@ -57,7 +65,7 @@ export default {
         flo: {
           key: 'flo',
           top: 184,
-          left: 830,
+          left: 815,
           staName: this.$t(`variable.additional.station.sga.full`),
           admArea: this.$t(`administrative.admArea.district`),
           admName: this.$t(`administrative.admName.flo`),
@@ -65,7 +73,7 @@ export default {
         },
         rot: {
           key: 'rot',
-          top: 539,
+          top: 529,
           left: 850,
           staName: this.$t(`variable.additional.station.sdc.full`),
           admArea: this.$t(`administrative.admArea.district`),
@@ -83,8 +91,8 @@ export default {
         },
         mgr: {
           key: 'mgr',
-          top: 229,
-          left: 480,
+          top: 219,
+          left: 470,
           staName: this.$t(`variable.additional.station.sfs.full`),
           admArea: this.$t(`administrative.admArea.district`),
           admName: this.$t(`administrative.admName.mgr`),
@@ -110,8 +118,8 @@ export default {
         },
         sbt: {
           key: 'sbt',
-          top: 394,
-          left: 450,
+          top: 389,
+          left: 440,
           staName: this.$t(`variable.additional.station.smk.full`),
           admArea: this.$t(`administrative.admArea.district`),
           admName: this.$t(`administrative.admName.sbt`),
@@ -119,8 +127,8 @@ export default {
         },
         kot: {
           key: 'kot',
-          top: 464,
-          left: 930,
+          top: 449,
+          left: 920,
           staName: this.$t(`variable.additional.station.sel.full`),
           admArea: this.$t(`administrative.admArea.city`),
           admName: this.$t(`administrative.admName.kup`),
@@ -171,12 +179,16 @@ export default {
           left: 100
         },
       },
-      popupShowed: false
+      popupShowed: false,
+      areaModalShowed: false,
+      selectedArea: null,
+      selectedAdmArea: null,
     }
   },
   components: {
     RegionalMap,
-    LocationPopup
+    LocationPopup,
+    AreaModal
   },
   created () {
     this.marginLeft = (1440 - window.innerWidth)/2
@@ -206,6 +218,16 @@ export default {
       for (let i in this.areas){
         this.areas[i].display = 'none'
       }
+    },
+    showAreaModal (location, admArea) {
+      this.hideAllPopup()
+      this.areaModalShowed = true
+      this.selectedArea = location
+      this.selectedAdmArea = admArea
+    },
+    hideAreaModal () {
+      this.areaModalShowed = false
+      this.selectedArea = null
     }
   }
 }
@@ -217,6 +239,20 @@ export default {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  &__overlay {
+    position: fixed;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--darker_tr);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__modal {
+      zoom: 80%;
+    }
+  }
   &__upper {
     height: 460px;
     padding-block-start: 150px;
@@ -227,7 +263,7 @@ export default {
     }
     &__pin {
       position: absolute;
-      z-index: 100;
+      z-index: 1;
     }
     &__other {
       position: absolute;

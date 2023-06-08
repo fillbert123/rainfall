@@ -1,8 +1,8 @@
 <template>
   <div class="data">
-    <div class="data__label">PERIODE</div>
+    <div class="data__label">{{ $t('variable.additional.' + label) | uppercase }}</div>
     <div class="data__info">
-      <img class="data__info__icon" src="@/assets/icons/calendar.svg" alt="">
+      <img class="data__info__icon" :src="require(`@/assets/icons/${label}.svg`)">
       <div class="data__info__value">2021-2022</div>
     </div>
   </div>
@@ -10,7 +10,15 @@
 
 <script>
 export default {
-  name: 'halfSizeInfo'
+  name: 'halfSizeInfo',
+  props: {
+    label: String
+  },
+  filters: {
+    uppercase (text) {
+      return text.toUpperCase()
+    }
+  }
 }
 </script>
 
@@ -18,7 +26,7 @@ export default {
 .data {
   width: 304px;
   height: 52px;
-  background-color: var(--darker_tr);
+  background-color: var(--dark_tr);
   padding: 16px;
   display: flex;
   flex-direction: column;

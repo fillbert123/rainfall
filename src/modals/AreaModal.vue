@@ -1,8 +1,11 @@
 <template>
   <div class="modal">
+    <img class="modal__close" src="@/assets/icons/close.svg" alt="" @click="hideAreaModal">
     <div class="modal__left">
       <div class="modal__left__row1">
-        <ImagePlaceholder></ImagePlaceholder>
+        <ImagePlaceholder
+          :staName="translator[this.selectedArea]"
+          :area="selectedArea"></ImagePlaceholder>
       </div>
       <div class="modal__left__row2">
         <WeatherStationInfo class="modal__left__row2__weather"></WeatherStationInfo>
@@ -11,19 +14,31 @@
     </div>
     <div class="modal__right">
       <div class="modal__right__row1">
-        <RegencyCityName class="modal__right__row1__name"></RegencyCityName>
+        <RegencyCityName 
+          class="modal__right__row1__name"
+          :area="selectedArea"
+          :admArea="selectedAdmArea"></RegencyCityName>
         <ViewDataButton class="modal__right__row1__button"></ViewDataButton>
       </div>
       <div class="modal__right__row2">
-        <HalfSizeInfo class="modal__right__row2__info1"></HalfSizeInfo>
-        <HalfSizeInfo class="modal__right__row2__info2"></HalfSizeInfo>
+        <HalfSizeInfo 
+          class="modal__right__row2__info1"
+          label="period"></HalfSizeInfo>
+        <HalfSizeInfo 
+          class="modal__right__row2__info2"
+          label="complete_case"></HalfSizeInfo>
       </div>
       <div class="modal__right__row3">
-        <FullSizeInfoSlider></FullSizeInfoSlider>
-        <FullSizeInfoSlider></FullSizeInfoSlider>
-        <FullSizeInfoSlider></FullSizeInfoSlider>
-        <FullSizeInfoSlider></FullSizeInfoSlider>
-        <FullSizeInfoSlider></FullSizeInfoSlider>
+        <FullSizeInfoSlider
+          variable="rainfall"></FullSizeInfoSlider>
+        <FullSizeInfoSlider
+          variable="temperature"></FullSizeInfoSlider>
+        <FullSizeInfoSlider
+          variable="humidity"></FullSizeInfoSlider>
+        <FullSizeInfoSlider
+          variable="sunshine"></FullSizeInfoSlider>
+        <FullSizeInfoSlider
+          variable="windspeed"></FullSizeInfoSlider>
       </div>
     </div>
   </div>
@@ -37,9 +52,19 @@ import ImagePlaceholder from '@/components/ImagePlaceholder.vue';
 import WeatherStationInfo from '@/components/WeatherStationInfo.vue';
 import WindDirectionInfo from '@/components/WindDirectionInfo.vue';
 import ViewDataButton from '@/components/ViewDataButton.vue';
+import areaStationTranslator from '@/data/areaStationTranslator.json'
 
 export default{
   name: 'areaModal',
+  props: {
+    selectedArea: String,
+    selectedAdmArea: String
+  },
+  data () {
+    return {
+      translator: areaStationTranslator
+    }
+  },
   components: {
     RegencyCityName,
     HalfSizeInfo,
@@ -48,19 +73,25 @@ export default{
     WeatherStationInfo,
     WindDirectionInfo,
     ViewDataButton
+  },
+  methods: {
+    hideAreaModal () {
+      this.$emit('hideAreaModal')
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .modal {
-  background-color: var(--dark_tr);
+  background-color: var(--light_tr);
   border-radius: 30px;
   padding: 20px;
   width: fit-content;
   height: fit-content;
   display: flex;
   flex-direction: row;
+  position: relative;
   &__left, &__right {
     display: flex;
     flex-direction: column;
@@ -69,6 +100,12 @@ export default{
       flex-direction: row;
       align-items: flex-end;
     }
+  }
+  &__close {
+    position: absolute;
+    zoom: 200%;
+    top: -8px;
+    right: -8px;
   }
   &__left {
     margin-inline-end: 48px;

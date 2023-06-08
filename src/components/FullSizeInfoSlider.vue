@@ -1,21 +1,27 @@
 <template>
   <div class="data">
     <div class="data__left">
-      <div class="data__left__label">RATA-RATA CURAH HUJAN HARIAN</div>
+      <div class="data__left__label">{{ $t('variable.main.' + variable + '.full') | uppercase }}</div>
       <div class="data__left__desc">
         <div class="data__left__desc__info">
-          <img class="data__left__desc__info__icon" src="@/assets/icons/rain1.svg" alt="">
-          <div class="data__left__desc__info__value">{{ value }} mm/bln</div>
+          <div class="data__left__desc__info__icon">
+            <img :src="require(`@/assets/icons/${variable}.high.svg`)">
+          </div>
+          <div class="data__left__desc__info__value">{{ value }} {{ $t('variable.main.' + variable + '.unit') }}</div>
         </div>
         <div class="data__left__desc__slider">
-          <img class="data__left__desc__slider__minicon" src="@/assets/icons/rain0.svg" alt="">
+          <div class="data__left__desc__slider__minicon">
+            <img :src="require(`@/assets/icons/${variable}.low.svg`)">
+          </div>
           <input class="data__left__desc__slider__range" type="range" min="0" max="500" v-model="value" disabled="true">
-          <img class="data__left__desc__slider__maxicon" src="@/assets/icons/rain3.svg" alt="">
+          <div class="data__left__desc__slider__maxicon">
+            <img :src="require(`@/assets/icons/${variable}.high.svg`)">
+          </div>
         </div>
       </div>
     </div>
     <div class="data__right">
-      <div class="data__right__label">TIDAK TERCATAT</div>
+      <div class="data__right__label">{{ $t('variable.additional.not_recorded') | uppercase }}</div>
       <div class="data__right__info">
         <img class="data__right__info__icon" src="@/assets/icons/rainMissing.svg" alt="">
         <div class="data__right__info__value">999</div>
@@ -27,9 +33,17 @@
 <script>
 export default {
   name: 'fullSizeInfoSlider',
+  props: {
+    variable: String
+  },
   data() {
     return {
       value: 250
+    }
+  },
+  filters: {
+    uppercase (text) {
+      return text.toUpperCase()
     }
   }
 }
@@ -39,7 +53,7 @@ export default {
 .data {
   width: 660px;
   height: 52px;
-  background-color: var(--darker_tr);
+  background-color: var(--dark_tr);
   padding: 16px;
   border-radius: 20px;
   display: flex;
@@ -64,8 +78,13 @@ export default {
       &__info {
         display: flex;
         flex-direction: row;
+        align-items: center;
         &__icon {
-          width: 22px;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           margin-inline-end: 16px;
         }
         &__value {
@@ -79,7 +98,11 @@ export default {
         flex-direction: row;
         align-items: center;
         &__minicon, &__maxicon {
-          width: 22px;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         &__range {
           -webkit-appearance: none;
@@ -96,7 +119,7 @@ export default {
             border-style: solid;
             border-width: 2px;
             border-color: var(--white);
-            background-color: var(--darker);
+            background-color: var(--dark);
           }
         }
       }

@@ -1,0 +1,53 @@
+{
+  "alo": {
+    "latitude": "19",
+    "longitude": "172",
+    "elevation": "2",
+    "wind_direction": "192",
+    "complete": "1000",
+    "rainfall": {
+      "value": "10",
+      "missing": "3"
+    },
+    "temperature": {
+      "value": "10",
+      "missing": "3"
+    },
+    "humidity": {
+      "value": "10",
+      "missing": "3"
+    },
+    "sunshine": {
+      "value": "10",
+      "missing": "3"
+    },
+    "windspeed": {
+      "value": "10",
+      "missing": "3"
+    }
+  },
+  "flo": {
+
+  },
+  "rot": {
+
+  },
+  "sab": {
+
+  },
+  "mgr": {
+
+  },
+  "mgb": {
+
+  },
+  "sik": {
+
+  },
+  "sbt": {
+
+  },
+  "kot": {
+
+  }
+}

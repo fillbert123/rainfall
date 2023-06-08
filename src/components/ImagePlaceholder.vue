@@ -1,16 +1,20 @@
 <template>
   <div class="data">
-    <img class="data__image" src="@/images/Manggarai Barat.png" alt="">
+    <img class="data__image" :src="require(`@/images/${area}.png`)">
     <div class="data__info">
-      <div class="data__info__name">Taman Nasional Komodo, Kabupaten Manggarai Barat</div>
-      <div class="data__info__credit">Gambar oleh Ebed de Rosary dari Mongabay</div>
+      <div class="data__info__name">{{ $t('variable.additional.station.' + staName + '.image.name') }}</div>
+      <div class="data__info__credit">{{ $t('variable.additional.source') }}{{ $t('variable.additional.station.' + staName + '.image.source') }}</div>
     </div>
   </div>
 </template>
 
 <script>
 export default{
-  name: 'imagePlaceholder'
+  name: 'imagePlaceholder',
+  props: {
+    staName: String,
+    area: String
+  }
 }
 </script>
 
