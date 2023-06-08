@@ -178,6 +178,20 @@ export default {
     RegionalMap,
     LocationPopup
   },
+  created () {
+    this.marginLeft = (1440 - window.innerWidth)/2
+    for (let i in this.areas) {
+      this.areas[i].left = this.areas[i].left - this.marginLeft - this.countWindowAdditionalMargin
+    }
+    for (let i in this.geographicalLocation) {
+      this.geographicalLocation[i].left = this.geographicalLocation[i].left - this.marginLeft - this.countWindowAdditionalMargin
+    }
+  },
+  computed: {
+    countWindowAdditionalMargin () {
+      return (15 / 240 * (1440 - window.innerWidth))
+    }
+  },
   methods: {
     hidePopup (location) {
       this.popupShowed = false
@@ -202,6 +216,7 @@ export default {
   background-color: var(--dark);
   width: 100%;
   height: 100vh;
+  overflow: hidden;
   &__upper {
     height: 460px;
     padding-block-start: 150px;
