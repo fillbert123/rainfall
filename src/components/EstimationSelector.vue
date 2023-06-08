@@ -1,16 +1,84 @@
 <template>
   <div class="selector">
-    <div class="selector__field" @click="showOption = !showOption">
-      <div class="selector__field__value">Pilih metode estimasi</div>
-      <img class="selector__field__dropup" src="@/assets/icons/chevron.svg" alt="">
-      <!-- <img class="selector__field__dropdown" src="@/assets/icons/chevron.svg" alt=""> -->
+    <div class="selector__field" @click="showOption" :style="{ backgroundColor: backgroundCol }">
+      <div class="selector__field__value">{{ selectedMethod }}</div>
+      <img v-if="!isOptionShowed" class="selector__field__dropup" src="@/assets/icons/chevron.svg" alt="">
+      <img v-if="isOptionShowed" class="selector__field__dropdown" src="@/assets/icons/chevron.svg" alt="">
     </div>
+    <EstimationOption
+      class="selector__option"
+      :style="{ display: optionDisplay }"
+      @amemiyaSelected="amemiyaSelected"
+      @nerloveSelected="nerloveSelected"
+      @swarSelected="swarSelected"
+      @walhusSelected="walhusSelected">
+    </EstimationOption>
   </div>
 </template>
 
 <script>
+import EstimationOption from './EstimationOption.vue';
+
 export default {
   name: 'estimationSelector',
+  props: {
+    unlockEstimation: Boolean
+  },
+  data () {
+    return {
+      selectedMethod: this.$t('simulation.method.locked'),
+      optionDisplay: 'none',
+      backgroundCol: 'var(--dark_tr)'
+    }
+  },
+  components: {
+    EstimationOption
+  },
+  computed: {
+    isOptionShowed () {
+      return this.optionDisplay === 'none' ? false : true
+    }
+  },
+  methods: {
+    showOption () {
+      if (this.unlockEstimation === true){
+        this.optionDisplay = 'block'
+      }
+    },
+    amemiyaSelected () {
+      this.selectedMethod = this.$t('simulation.method.amemiya'),
+      this.optionDisplay = 'none'
+      this.$emit('amemiyaSelected')
+    },
+    nerloveSelected () {
+      this.selectedMethod = this.$t('simulation.method.nerlove'),
+      this.optionDisplay = 'none'
+      this.$emit('nerloveSelected')
+    },
+    swarSelected () {
+      this.selectedMethod = this.$t('simulation.method.swar'),
+      this.optionDisplay = 'none'
+      this.$emit('swarSelected')
+    },
+    walhusSelected () {
+      this.selectedMethod = this.$t('simulation.method.walhus'),
+      this.optionDisplay = 'none'
+      this.$emit('walhusSelected')
+    }
+  },
+  watch: {
+    unlockEstimation (newStatus) {
+      if (newStatus === false) {
+        this.selectedMethod = this.$t('simulation.method.locked'),
+        this.backgroundCol = 'var(--dark_tr)'
+      }
+      else {
+        this.selectedMethod = this.$t('simulation.method.choose'),
+        this.backgroundCol = 'var(--light_tr)'
+        this.selectedMethod = this.$t('simulation.method.walhus')
+      }
+    }
+  }
 }
 </script>
 
@@ -21,6 +89,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   &__field {
     background-color: var(--light_tr);
     width: 276px;
@@ -42,6 +111,11 @@ export default {
       width: 16px;
       transform: rotate(180deg);
     }
+  }
+  &__option {
+    position: absolute;
+    bottom: 52px;
+    backdrop-filter: blur(8px);
   }
 }
 </style>

@@ -1,14 +1,20 @@
 <template>
   <div class="data">
     <div class="data__left">
-      <img class="data__left__icon" src="@/assets/icons/rain1.svg" alt="">
-      <input type="number" class="data__left__value" v-model="value" @input="valueUpdate">
+      <div class="data__left__icon">
+        <img class="data__left__icon__img" :src="require(`@/assets/icons/${variable}.high.svg`)" alt="">
+      </div>
+      <div class="data__left__value">{{ value }}</div>
       <div class="data__left__unit">mm/bln</div>
     </div>
     <div class="data__right">
-      <img class="data__right__minicon" src="@/assets/icons/rain0.svg" alt="">
-      <input class="data__right__slider" type="range" name="" :min="this.minval" :max="this.maxval" v-model="value">
-      <img class="data__right__maxicon" src="@/assets/icons/rain3.svg" alt="">
+      <div class="data__right__minicon">
+        <img class="data__right__minicon__img" :src="require(`@/assets/icons/${variable}.low.svg`)" alt="">
+      </div>
+      <input class="data__right__slider" type="range" name="" :min="this.minval" :max="this.maxval" v-model="value" @input="emitValue">
+      <div class="data__right__maxicon">
+        <img class="data__right__maxicon__img" :src="require(`@/assets/icons/${variable}.high.svg`)" alt="">
+      </div>
     </div>
   </div>
 </template>
@@ -16,21 +22,23 @@
 <script>
 export default {
   name: 'componentSlider',
+  props: {
+    variable: String,
+    val: Number,
+    minval: Number,
+    maxval: Number
+  },
   data() {
     return {
-      value: 250,
-      minval: 0,
-      maxval: 500
+      value: 250
     }
   },
+  created () {
+    this.value = this.val
+  },
   methods: {
-    valueUpdate () {
-      if (this.value > this.maxval) {
-        this.value = this.maxval
-      }
-      if (this.value < this.minval) {
-        this.value = this.minval
-      }
+    emitValue () {
+      this.$emit('valueUpdate', this.value)
     }
   }
 }
@@ -53,21 +61,25 @@ export default {
     align-items: center;
     &__icon {
       margin-inline-end: 8px;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     &__value {
       width: 40px;
-      height: 20px;
+      height: 24px;
       font-family: SFRoundedB;
       font-size: 16px;
       text-align: center;
-      background-color: var(--light_tr);
+      background-color: var(--dark_tr);
       border-style: none;
       border-radius: 8px;
       color: var(--white);
-      &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     &__unit {
       margin-inline-start: 4px;
@@ -96,6 +108,13 @@ export default {
         border-color: var(--white);
         background-color: var(--light);
       }
+    }
+    &__minicon, &__maxicon {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
