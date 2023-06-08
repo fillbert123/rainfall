@@ -47,7 +47,7 @@ export default {
       areas: {
         alo: {
           key: 'alo',
-          top: 194,
+          top: 159,
           left: 1050,
           staName: this.$t(`variable.additional.station.sma.full`),
           admArea: this.$t(`administrative.admArea.district`),
@@ -56,7 +56,7 @@ export default {
         },
         flo: {
           key: 'flo',
-          top: 214,
+          top: 184,
           left: 830,
           staName: this.$t(`variable.additional.station.sga.full`),
           admArea: this.$t(`administrative.admArea.district`),
@@ -65,7 +65,7 @@ export default {
         },
         rot: {
           key: 'rot',
-          top: 569,
+          top: 539,
           left: 850,
           staName: this.$t(`variable.additional.station.sdc.full`),
           admArea: this.$t(`administrative.admArea.district`),
@@ -74,7 +74,7 @@ export default {
         },
         sab: {
           key: 'sab',
-          top: 579,
+          top: 549,
           left: 665,
           staName: this.$t(`variable.additional.station.sta.full`),
           admArea: this.$t(`administrative.admArea.district`),
@@ -83,7 +83,7 @@ export default {
         },
         mgr: {
           key: 'mgr',
-          top: 259,
+          top: 229,
           left: 480,
           staName: this.$t(`variable.additional.station.sfs.full`),
           admArea: this.$t(`administrative.admArea.district`),
@@ -92,7 +92,7 @@ export default {
         },
         mgb: {
           key: 'mgb',
-          top: 244,
+          top: 214,
           left: 390,
           staName: this.$t(`variable.additional.station.sko.full`),
           admArea: this.$t(`administrative.admArea.district`),
@@ -101,7 +101,7 @@ export default {
         },
         sik: {
           key: 'sik',
-          top: 269,
+          top: 239,
           left: 730,
           staName: this.$t(`variable.additional.station.sfx.full`),
           admArea: this.$t(`administrative.admArea.district`),
@@ -110,7 +110,7 @@ export default {
         },
         sbt: {
           key: 'sbt',
-          top: 424,
+          top: 394,
           left: 450,
           staName: this.$t(`variable.additional.station.smk.full`),
           admArea: this.$t(`administrative.admArea.district`),
@@ -119,7 +119,7 @@ export default {
         },
         kot: {
           key: 'kot',
-          top: 494,
+          top: 464,
           left: 930,
           staName: this.$t(`variable.additional.station.sel.full`),
           admArea: this.$t(`administrative.admArea.city`),
@@ -131,43 +131,43 @@ export default {
         ntb: {
           key: 'ntb',
           value: this.$t('administrative.other.ntb'),
-          top: 180,
+          top: 150,
           left: 30
         },
         tim: {
           key: 'tim',
           value: this.$t('administrative.other.tim'),
-          top: 215,
+          top: 185,
           left: 1200
         },
         fls: {
           key: 'fls',
           value: this.$t('administrative.other.fls'),
-          top: 80,
+          top: 50,
           left: 250
         },
         bas: {
           key: 'bas',
           value: this.$t('administrative.other.bas'),
-          top: 80,
+          top: 50,
           left: 1150
         },
         sas: {
           key: 'sas',
           value: this.$t('administrative.other.sas'),
-          top: 350,
+          top: 320,
           left: 670
         },
         tis: {
           key: 'tis',
           value: this.$t('administrative.other.tis'),
-          top: 440,
+          top: 410,
           left: 1150
         },
         ino: {
           key: 'ino',
           value: this.$t('administrative.other.ino'),
-          top: 490,
+          top: 460,
           left: 100
         },
       },
@@ -204,7 +204,7 @@ export default {
   height: 100vh;
   &__upper {
     height: 460px;
-    padding-block-start: 180px;
+    padding-block-start: 150px;
     position: relative;
     &__map {
       zoom: 90%;
