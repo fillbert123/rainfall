@@ -41,6 +41,48 @@
       "ino": "Samudera<br>Hindia"
     }
   },
+  "variable": {
+    "additional": {
+      "station": {
+        "sta": {
+          "name": "Tardamu",
+          "full": "Tardamu"
+        },
+        "sma": {
+          "name": "Mali",
+          "full": "Mali"
+        },
+        "sga": {
+          "name": "Gewayantana",
+          "full": "Gewayantana"
+        },
+        "sfx": {
+          "name": "FX Seda",
+          "full": "Fransiskus Xaverius Seda"
+        },
+        "sfs": {
+          "name": "FS Lega",
+          "full": "Frans Sales Lega"
+        },
+        "smk": {
+          "name": "UM Kunda",
+          "full": "Umbu Mehang Kunda"
+        },
+        "sdc": {
+          "name": "DC Saudale",
+          "full": "David Constantijn Saudale"
+        },
+        "sko": {
+          "name": "Komodo",
+          "full": "Komodo"
+        },
+        "sel": {
+          "name": "Eltari",
+          "full": "Eltari"
+        }
+      }
+    }
+  },
   "simulation": {
     "model": {
       "choose": "Pilih model",

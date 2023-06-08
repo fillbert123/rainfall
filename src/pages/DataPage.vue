@@ -2,13 +2,18 @@
   <div class="page">
     <div class="page__upper">
       <RegionalMap class="page__upper__map"></RegionalMap>
-      <div
+      <LocationPopup
         v-for="area in areas"
         class="page__upper__pin"
+        @popupHidden="hidePopup(area.key)"
+        @popupShow="showPopup(area.key)"
+        :staName="area.staName"
+        :admArea="area.admArea"
+        :admName="area.admName"
+        :display="area.display"
         :style="{ top: area.top + 'px', left: area.left + 'px' }"
         :key="area.key">
-        <img src="@/assets/icons/mappin.svg" alt="">
-      </div>
+      </LocationPopup>
       <div
         v-for="other in geographicalLocation"
         class="page__upper__other"
@@ -18,9 +23,9 @@
       </div>
     </div>
     <div class="page__lower">
-      <div>a</div>
-      <div>b</div>
-      <div>c</div>
+      <div>{{ popupShowed }}</div>
+      <div>{{ areas.alo.display }}</div>
+      <div>{{ areas.mgr.display }}</div>
       <div>d</div>
       <div>e</div>
       <div>f</div>
@@ -33,6 +38,8 @@
 
 <script>
 import RegionalMap from '@/map/RegionalMap.vue';
+import LocationPopup from '@/components/LocationPopup.vue';
+
 export default {
   name: 'dataPage',
   data () {
@@ -40,48 +47,84 @@ export default {
       areas: {
         alo: {
           key: 'alo',
-          top: 190,
-          left: 1050
+          top: 194,
+          left: 1050,
+          staName: this.$t(`variable.additional.station.sma.full`),
+          admArea: this.$t(`administrative.admArea.district`),
+          admName: this.$t(`administrative.admName.alo`),
+          display: 'none'
         },
         flo: {
           key: 'flo',
-          top: 210,
+          top: 214,
           left: 830,
-        },
-        sab: {
-          key: 'sab',
-          top: 575,
-          left: 665,
-        },
-        mgr: {
-          key: 'mgr',
-          top: 255,
-          left: 480,
-        },
-        mgb: {
-          key: 'mgb',
-          top: 240,
-          left: 390,
+          staName: this.$t(`variable.additional.station.sga.full`),
+          admArea: this.$t(`administrative.admArea.district`),
+          admName: this.$t(`administrative.admName.flo`),
+          display: 'none'
         },
         rot: {
           key: 'rot',
-          top: 565,
+          top: 569,
           left: 850,
+          staName: this.$t(`variable.additional.station.sdc.full`),
+          admArea: this.$t(`administrative.admArea.district`),
+          admName: this.$t(`administrative.admName.rot`),
+          display: 'none'
+        },
+        sab: {
+          key: 'sab',
+          top: 579,
+          left: 665,
+          staName: this.$t(`variable.additional.station.sta.full`),
+          admArea: this.$t(`administrative.admArea.district`),
+          admName: this.$t(`administrative.admName.sab`),
+          display: 'none'
+        },
+        mgr: {
+          key: 'mgr',
+          top: 259,
+          left: 480,
+          staName: this.$t(`variable.additional.station.sfs.full`),
+          admArea: this.$t(`administrative.admArea.district`),
+          admName: this.$t(`administrative.admName.mgr`),
+          display: 'none'
+        },
+        mgb: {
+          key: 'mgb',
+          top: 244,
+          left: 390,
+          staName: this.$t(`variable.additional.station.sko.full`),
+          admArea: this.$t(`administrative.admArea.district`),
+          admName: this.$t(`administrative.admName.mgb`),
+          display: 'none'
         },
         sik: {
           key: 'sik',
-          top: 265,
+          top: 269,
           left: 730,
+          staName: this.$t(`variable.additional.station.sfx.full`),
+          admArea: this.$t(`administrative.admArea.district`),
+          admName: this.$t(`administrative.admName.sik`),
+          display: 'none'
         },
         sbt: {
           key: 'sbt',
-          top: 420,
+          top: 424,
           left: 450,
+          staName: this.$t(`variable.additional.station.smk.full`),
+          admArea: this.$t(`administrative.admArea.district`),
+          admName: this.$t(`administrative.admName.sbt`),
+          display: 'none'
         },
         kot: {
           key: 'kot',
-          top: 490,
+          top: 494,
           left: 930,
+          staName: this.$t(`variable.additional.station.sel.full`),
+          admArea: this.$t(`administrative.admArea.city`),
+          admName: this.$t(`administrative.admName.kup`),
+          display: 'none'
         }
       },
       geographicalLocation: {
@@ -127,11 +170,29 @@ export default {
           top: 490,
           left: 100
         },
-      }
+      },
+      popupShowed: false
     }
   },
   components: {
-    RegionalMap
+    RegionalMap,
+    LocationPopup
+  },
+  methods: {
+    hidePopup (location) {
+      this.popupShowed = false
+      this.areas[location].display = 'none'
+    },
+    showPopup (location) {
+      this.hideAllPopup()
+      this.popupShowed = true
+      this.areas[location].display = 'block'
+    },
+    hideAllPopup () {
+      for (let i in this.areas){
+        this.areas[i].display = 'none'
+      }
+    }
   }
 }
 </script>
@@ -151,6 +212,7 @@ export default {
     }
     &__pin {
       position: absolute;
+      z-index: 100;
     }
     &__other {
       position: absolute;

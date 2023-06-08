@@ -207,7 +207,6 @@ export default {
       humidity: 80,
       sunshine: 10,
       windspeed: 2,
-      test: null
     }
   },
   components: {
@@ -295,8 +294,6 @@ export default {
           slopeSs = this.model.common.ss
           slopeFf_avg = this.model.common.ff_avg
           value = intercept + (slopeTavg * this.temperature) + (slopeRh_avg * this.humidity) + (slopeSs * this.sunshine) + (slopeFf_avg * this.windspeed)
-          // this.test = this.chipCluster.group6[Object.keys(this.chipCluster.group6)[3]].value
-          // this.test = Object.keys(this.chipCluster.group6)[3]
           this.setCommonValue(value)   
           break;
         case 'fixed':
