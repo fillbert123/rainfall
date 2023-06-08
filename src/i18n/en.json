@@ -1,5 +1,116 @@
 {
   "data": {
     "view_button": "View data"
+  },
+  "administrative": {
+    "province": "East Nusa Tenggara",
+    "admArea": {
+      "district": "District",
+      "city": "City"
+    },
+    "admName": {
+      "mgb": "West Manggarai",
+      "mgr": "Manggarai",
+      "mgt": "East Manggarai",
+      "nga": "Ngada",
+      "nag": "Nagakeo",
+      "end": "Ende",
+      "sik": "Sikka",
+      "flo": "East Flores",
+      "sbd": "Southwest Sumba",
+      "sbb": "West Sumba",
+      "sbg": "Central Sumba",
+      "sbt": "East Sumba",
+      "sab": "Sabu Raijua",
+      "rot": "Rote Ndao",
+      "kup": "Kupang",
+      "ttu": "North Central Timor",
+      "tts": "South Central Timor",
+      "mal": "Malaka",
+      "bel": "Belu",
+      "lem": "Lembata",
+      "alo": "Alor"
+    },
+    "other": {
+      "ntb": "East<br>Nusa<br>Tenggara",
+      "tim": "East<br>Timor",
+      "fls": "Flores<br>Sea",
+      "bas": "Banda<br>Sea",
+      "sas": "Sawu<br>Sea",
+      "tis": "Timor<br>Sea",
+      "ino": "Indian<br>Ocean"
+    }
+  },
+  "variable": {
+    "additional": {
+      "station": {
+        "sta": {
+          "name": "Tardamu",
+          "full": "Tardamu"
+        },
+        "sma": {
+          "name": "Mali",
+          "full": "Mali"
+        },
+        "sga": {
+          "name": "Gewayantana",
+          "full": "Gewayantana"
+        },
+        "sfx": {
+          "name": "FX Seda",
+          "full": "Fransiskus Xaverius Seda"
+        },
+        "sfs": {
+          "name": "FS Lega",
+          "full": "Frans Sales Lega"
+        },
+        "smk": {
+          "name": "UM Kunda",
+          "full": "Umbu Mehang Kunda"
+        },
+        "sdc": {
+          "name": "DC Saudale",
+          "full": "David Constantijn Saudale"
+        },
+        "sko": {
+          "name": "Komodo",
+          "full": "Komodo"
+        },
+        "sel": {
+          "name": "Eltari",
+          "full": "Eltari"
+        }
+      }
+    }
+  },
+  "simulation": {
+    "model": {
+      "choose": "Choose a model",
+      "common": "Common effect model",
+      "fixed": "Fixed effect model",
+      "random": "Random effect model"
+    },
+    "method": {
+      "choose": "Choose an estimation method",
+      "amemiya": "Amemiya method",
+      "nerlove": "Nerlove method",
+      "swar": "Swamy-Arora method",
+      "walhus": "Wallace-Hussain method",
+      "locked": "Inalterable"
+    },
+    "month": {
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December"
+    }
   }
 }

@@ -1,36 +1,76 @@
 <template>
   <div class="simulation">
-    <div class="simulation__upper">
+    <!-- <div class="simulation__upper">
       <div class="simulation__upper__label">BULAN</div>
       <TimeSlider 
         @timeUpdate="timeUpdate"
-        @timeIncrease="timeIncrease"
-        @timeDecrease="timeDecrease">
+        @timeIncrease="timeUpdate"
+        @timeDecrease="timeUpdate">
       </TimeSlider>
-    </div>
+    </div> -->
     <div class="simulation__lower">
       <div class="simulation__lower__left">
         <div class="simulation__lower__left__model">
           <div class="simulation__lower__left__model__label">MODEL</div>
           <img class="simulation__lower__left__model__info" src="@/assets/icons/info.svg" alt="">
-          <ModelSelector></ModelSelector>
+          <ModelSelector 
+            @unlockEstimation="unlockEstimation = true"
+            @lockEstimation="unlockEstimation = false"
+            @commonSelected="commonSelected"
+            @fixedSelected="fixedSelected"
+            @randomSelected="randomSelected">
+          </ModelSelector>
         </div>
         <div class="simulation__lower__left__method">
           <div class="simulation__lower__left__method__label">METODE</div>
           <img class="simulation__lower__left__method__info" src="@/assets/icons/info.svg" alt="">
-          <EstimationSelector></EstimationSelector>
+          <EstimationSelector 
+            :unlockEstimation="unlockEstimation"
+            @amemiyaSelected="amemiyaSelected"
+            @nerloveSelected="nerloveSelected"
+            @swarSelected="swarSelected"
+            @walhusSelected="walhusSelected">
+          </EstimationSelector>
         </div>
       </div>
       <div class="simulation__lower__right">
         <div class="simulation__lower__right__label">PARAMETER</div>
         <div class="simulation__lower__right__parameter">
           <div class="simulation__lower__right__parameter__row1">
-            <ComponentSlider class="simulation__lower__right__parameter__row1__col1"></ComponentSlider>
-            <ComponentSlider class="simulation__lower__right__parameter__row1__col2"></ComponentSlider>
+            <ComponentSlider 
+              variable="temperature"
+              :val=this.temperature
+              minval="10"
+              maxval="40"
+              @valueUpdate="temperatureUpdate"
+              class="simulation__lower__right__parameter__row1__col1">
+            </ComponentSlider>
+            <ComponentSlider 
+              variable="humidity"
+              :val=this.humidity
+              minval="50"
+              maxval="100"
+              @valueUpdate="humidityUpdate"
+              class="simulation__lower__right__parameter__row1__col2">
+            </ComponentSlider>
           </div>
           <div class="simulation__lower__right__parameter__row2">
-            <ComponentSlider class="simulation__lower__right__parameter__row2__col1"></ComponentSlider>
-            <ComponentSlider class="simulation__lower__right__parameter__row2__col2"></ComponentSlider>
+            <ComponentSlider 
+              variable="sunshine"
+              :val=this.sunshine
+              minval="0"
+              maxval="14"
+              @valueUpdate="sunshineUpdate"
+              class="simulation__lower__right__parameter__row2__col1">
+            </ComponentSlider>
+            <ComponentSlider 
+              variable="windspeed"
+              :val=this.windspeed
+              minval="0"
+              maxval="8"
+              @valueUpdate="windspeedUpdate"
+              class="simulation__lower__right__parameter__row2__col2">
+            </ComponentSlider>
           </div>
         </div>
       </div>
@@ -39,7 +79,7 @@
 </template>
 
 <script>
-import TimeSlider from './TimeSlider.vue'
+// import TimeSlider from './TimeSlider.vue'
 import ModelSelector from './ModelSelector.vue'
 import EstimationSelector from './EstimationSelector.vue'
 import ComponentSlider from './ComponentSlider.vue'
@@ -48,24 +88,60 @@ export default {
   name: 'simulationControl',
   data () {
     return {
-      time: 5
+      time: 5,
+      unlockEstimation: false,
+      temperature: 27,
+      humidity: 80,
+      sunshine: 10,
+      windspeed: 2
     }
   },
   components: {
-    TimeSlider,
+    // TimeSlider,
     ModelSelector,
     EstimationSelector,
     ComponentSlider
   },
   methods: {
-    timeUpdate (time) {
-      this.time = time
+    // timeUpdate (time) {
+    //   this.time = time
+    // },
+    temperatureUpdate (value) {
+      this.temperature = value
+      this.$emit('temperatureUpdate', this.temperature)
     },
-    timeIncrease (time) {
-      this.time = time
+    humidityUpdate (value) {
+      this.humidity = value
+      this.$emit('humidityUpdate', this.humidity)
     },
-    timeDecrease (time) {
-      this.time = time
+    sunshineUpdate (value) {
+      this.sunshine = value
+      this.$emit('sunshineUpdate', this.sunshine)
+    },
+    windspeedUpdate (value) {
+      this.windspeed = value
+      this.$emit('windspeedUpdate', this.windspeed)
+    },
+    amemiyaSelected () {
+      this.$emit('amemiyaSelected')
+    },
+    nerloveSelected () {
+      this.$emit('nerloveSelected')
+    },
+    swarSelected () {
+      this.$emit('swarSelected')
+    },
+    walhusSelected () {
+      this.$emit('walhusSelected')
+    },
+    commonSelected () {
+      this.$emit('commonSelected')
+    },
+    fixedSelected () {
+      this.$emit('fixedSelected')
+    },
+    randomSelected () {
+      this.$emit('randomSelected')
     }
   }
 }
