@@ -42,45 +42,131 @@
     }
   },
   "variable": {
+    "main": {
+      "rainfall": {
+        "name": "Curah hujan",
+        "full": "Jumlah curah hujan",
+        "unit": "mm"
+      },
+      "temperature": {
+        "name": "Suhu udara",
+        "full": "Suhu udara rata-rata",
+        "unit": "°C"
+      },
+      "humidity": {
+        "name": "Kelembapan",
+        "full": "Kelembapan rata-rata",
+        "unit": "%"
+      },
+      "sunshine": {
+        "name": "Penyinaran matahari",
+        "full": "Durasi penyinaran matahari",
+        "unit": "jam"
+      },
+      "windspeed": {
+        "name": "Kecepatan angin",
+        "full": "Kecepatan angin rata-rata",
+        "unit": "m/s"
+      },
+      "winddirection": {
+        "name": "Arah angin",
+        "full": "Arah angin rata-rata",
+        "unit": "°",
+        "direction": {
+          "e": "Timur",
+          "se": "Tenggara",
+          "s": "Selatan",
+          "sw": "Barat Daya",
+          "w": "Barat",
+          "nw": "Barat Laut",
+          "n": "Utara",
+          "ne": "Timur Laut"
+        }
+      }
+    },
     "additional": {
       "station": {
         "sta": {
           "name": "Tardamu",
-          "full": "Tardamu"
+          "full": "Tardamu",
+          "image": {
+            "name": "Kelabba Maja",
+            "source": "Hibur.id"
+          }
         },
         "sma": {
           "name": "Mali",
-          "full": "Mali"
+          "full": "Mali",
+          "image": {
+            "name": "Taman Laut Selat Pantar",
+            "source": "TIC Mitra Praja Utama"
+          }
         },
         "sga": {
           "name": "Gewayantana",
-          "full": "Gewayantana"
+          "full": "Gewayantana",
+          "image": {
+            "name": "Taman Doa Mater Dolorosa",
+            "source": "Mister Aladin"
+          }
         },
         "sfx": {
           "name": "FX Seda",
-          "full": "Fransiskus Xaverius Seda"
+          "full": "Fransiskus Xaverius Seda",
+          "image": {
+            "name": "Patung Bunda Maria Segala Bangsa",
+            "source": "Indonesia Kaya"
+          }
         },
         "sfs": {
           "name": "FS Lega",
-          "full": "Frans Sales Lega"
+          "full": "Frans Sales Lega",
+          "image": {
+            "name": "Desa Wae Rebo",
+            "source": "Good News From Indonesia"
+          }
         },
         "smk": {
           "name": "UM Kunda",
-          "full": "Umbu Mehang Kunda"
+          "full": "Umbu Mehang Kunda",
+          "image": {
+            "name": "Pantai Walakiri",
+            "source": "Atourin"
+          }
         },
         "sdc": {
           "name": "DC Saudale",
-          "full": "David Constantijn Saudale"
+          "full": "David Constantijn Saudale",
+          "image": {
+            "name": "Batu Termanu",
+            "source": "Sonny Photo"
+          }
         },
         "sko": {
           "name": "Komodo",
-          "full": "Komodo"
+          "full": "Komodo",
+          "image": {
+            "name": "Taman Nasional Komodo",
+            "source": "Mongabay"
+          }
         },
         "sel": {
           "name": "Eltari",
-          "full": "Eltari"
+          "full": "Eltari",
+          "image": {
+            "name": "Gua Kristal Kupang",
+            "source": "Mongotrip"
+          }
         }
-      }
+      },
+      "weather_station": "Stasiun meteorologi",
+      "latitude": "Garis lintang",
+      "longitude": "Garis bujur",
+      "elevation": "Elevasi",
+      "period": "Periode",
+      "complete_case": "Jumlah observasi sempurna",
+      "not_recorded": "Tidak tercatat",
+      "source": "Sumber: "
     }
   },
   "simulation": {

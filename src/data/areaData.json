@@ -1,0 +1,267 @@
+{
+  "alo": {
+    "latitude": "-8.13471",
+    "longitude": "124.59000",
+    "elevation": "10",
+    "wind_direction": "40",
+    "complete": "492",
+    "rainfall": {
+      "value": "4.223",
+      "missing": "104"
+    },
+    "temperature": {
+      "value": "27.840",
+      "missing": "153"
+    },
+    "humidity": {
+      "value": "81.622",
+      "missing": "153"
+    },
+    "sunshine": {
+      "value": "7.422",
+      "missing": "5"
+    },
+    "windspeed": {
+      "value": "1.508",
+      "missing": "3"
+    }
+  },
+  "flo": {
+    "latitude": "-8.27520",
+    "longitude": "122.99860",
+    "elevation": "9",
+    "wind_direction": "1",
+    "complete": "512",
+    "rainfall": {
+      "value": "6.153",
+      "missing": "112"
+    },
+    "temperature": {
+      "value": "28.150",
+      "missing": "140"
+    },
+    "humidity": {
+      "value": "76.686",
+      "missing": "140"
+    },
+    "sunshine": {
+      "value": "5.885",
+      "missing": "29"
+    },
+    "windspeed": {
+      "value": "1.520",
+      "missing": "25"
+    }
+  },
+  "rot": {
+    "latitude": "-10.76662",
+    "longitude": "123.07400",
+    "elevation": "141",
+    "wind_direction": "327",
+    "complete": "226",
+    "rainfall": {
+      "value": "17.860",
+      "missing": "496"
+    },
+    "temperature": {
+      "value": "26.820",
+      "missing": "64"
+    },
+    "humidity": {
+      "value": "83.789",
+      "missing": "64"
+    },
+    "sunshine": {
+      "value": "7.682",
+      "missing": "61"
+    },
+    "windspeed": {
+      "value": "2.676",
+      "missing": "54"
+    }
+  },
+  "sab": {
+    "latitude": "-10.50000",
+    "longitude": "121.83000",
+    "elevation": "15",
+    "wind_direction": "348",
+    "complete": "568",
+    "rainfall": {
+      "value": "5.703",
+      "missing": "149"
+    },
+    "temperature": {
+      "value": "28.350",
+      "missing": "18"
+    },
+    "humidity": {
+      "value": "78.605",
+      "missing": "18"
+    },
+    "sunshine": {
+      "value": "7.799",
+      "missing": "3"
+    },
+    "windspeed": {
+      "value": "2.584",
+      "missing": "3"
+    }
+  },
+  "mgr": {
+    "latitude": "-8.63000",
+    "longitude": "120.45000",
+    "elevation": "1070",
+    "wind_direction": "341",
+    "complete": "475",
+    "rainfall": {
+      "value": "17.859",
+      "missing": "251"
+    },
+    "temperature": {
+      "value": "20.010",
+      "missing": "4"
+    },
+    "humidity": {
+      "value": "86.472",
+      "missing": "4"
+    },
+    "sunshine": {
+      "value": "5.656",
+      "missing": "2"
+    },
+    "windspeed": {
+      "value": "2.067",
+      "missing": "0"
+    }
+  },
+  "mgb": {
+    "latitude": "-8.48672",
+    "longitude": "119.88680",
+    "elevation": "67",
+    "wind_direction": "313",
+    "complete": "585",
+    "rainfall": {
+      "value": "5.011",
+      "missing": "118"
+    },
+    "temperature": {
+      "value": "27.360",
+      "missing": "31"
+    },
+    "humidity": {
+      "value": "80.125",
+      "missing": "31"
+    },
+    "sunshine": {
+      "value": "7.486",
+      "missing": "1"
+    },
+    "windspeed": {
+      "value": "2.161",
+      "missing": "0"
+    }
+  },
+  "sik": {
+    "latitude": "-8.63577",
+    "longitude": "122.23750",
+    "elevation": "28",
+    "wind_direction": "58",
+    "complete": "444",
+    "rainfall": {
+      "value": "5.464",
+      "missing": "235"
+    },
+    "temperature": {
+      "value": "27.950",
+      "missing": "78"
+    },
+    "humidity": {
+      "value": "78.056",
+      "missing": "78"
+    },
+    "sunshine": {
+      "value": "7.524",
+      "missing": "0"
+    },
+    "windspeed": {
+      "value": "2.546",
+      "missing": "0"
+    }
+  },
+  "sbt": {
+    "latitude": "-9.66944",
+    "longitude": "120.29970",
+    "elevation": "10",
+    "wind_direction": "49",
+    "complete": "637",
+    "rainfall": {
+      "value": "3.174",
+      "missing": "88"
+    },
+    "temperature": {
+      "value": "27.320",
+      "missing": "9"
+    },
+    "humidity": {
+      "value": "78.294",
+      "missing": "9"
+    },
+    "sunshine": {
+      "value": "7.362",
+      "missing": "7"
+    },
+    "windspeed": {
+      "value": "2.419",
+      "missing": "3"
+    }
+  },
+  "kot": {
+    "latitude": "-10.16780",
+    "longitude": "123.67040",
+    "elevation": "102",
+    "wind_direction": "284",
+    "complete": "581",
+    "rainfall": {
+      "value": "8.189",
+      "missing": "132"
+    },
+    "temperature": {
+      "value": "27.580",
+      "missing": "12"
+    },
+    "humidity": {
+      "value": "79.006",
+      "missing": "12"
+    },
+    "sunshine": {
+      "value": "6.833",
+      "missing": "7"
+    },
+    "windspeed": {
+      "value": "3.101",
+      "missing": "0"
+    }
+  },
+  "universal": {
+    "rainfall": {
+      "high": "20",
+      "low": "0"
+    },
+    "temperature": {
+      "high": "30",
+      "low": "20"
+    },
+    "humidity": {
+      "high": "90",
+      "low": "75"
+    },
+    "sunshine": {
+      "high": "8",
+      "low": "5"
+    },
+    "windspeed": {
+      "high": "4",
+      "low": "1"
+    }
+  }
+}
