@@ -2,21 +2,30 @@
   <div class="data">
     <div class="data__label">{{ $t('variable.main.winddirection.full') | uppercase }}</div>
     <div class="data__compass">
-      <img class="data__compass__point" src="@/assets/graphics/compassPoint.svg" alt="">
+      <img 
+        :style="{ transform: 'rotate(' + this.areaData[area].wind_direction + 'deg)' }"
+        class="data__compass__point" 
+        src="@/assets/graphics/compassPoint.svg" 
+        alt="">
       <div class="data__compass__center">
-        {{ angle }}{{ $t('variable.main.winddirection.unit') }}
+        {{ this.areaData[area].wind_direction }}{{ $t('variable.main.winddirection.unit') }}
       </div>
     </div>
-    <div class="data__value"><div class="data__value__degree">{{ angle }}{{ $t('variable.main.winddirection.unit') }}</div>{{ this.showDirection(this.angle) }}</div>
+    <div class="data__value"><div class="data__value__degree">{{ this.areaData[area].wind_direction }}{{ $t('variable.main.winddirection.unit') }}</div>{{ this.showDirection(this.areaData[area].wind_direction) }}</div>
   </div>
 </template>
 
 <script>
+import areaData from '@/data/areaData.json'
+
 export default {
   name: 'windDirectionInfo',
+  props: {
+    area: String
+  },
   data () {
     return {
-      angle: 90
+      areaData,
     }
   },
   methods: {
@@ -77,13 +86,12 @@ export default {
     position: relative;
     &__point {
       position: absolute;
-      left:0;
-      right:0;
-      margin-inline:auto;
-      top:0;
-      bottom:0;
-      margin-block:auto;
-      transform: rotate(345deg);
+      left: 0;
+      right: 0;
+      margin-inline: auto;
+      top: 0;
+      bottom: 0;
+      margin-block: auto;
     }
     &__center {
       width: 100px;

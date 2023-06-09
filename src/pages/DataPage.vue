@@ -30,15 +30,14 @@
       </div>
     </div>
     <div class="page__lower">
-      <div>{{ popupShowed }}</div>
-      <div>{{ areas.alo.display }}</div>
-      <div>{{ areas.mgr.display }}</div>
-      <div>{{ selectedArea }}</div>
-      <div>e</div>
-      <div>f</div>
-      <div>g</div>
-      <div>h</div>
-      <div>i</div>
+      <div 
+        v-for="area in areas"
+        :key="area.key"
+        @click="showAreaModal(area.key, area.admArea)"
+        class="page__lower__area">
+        <div class="page__lower__area__icon"></div>
+        <div class="page__lower__area__label">{{ $t('administrative.admName.' + area.key) }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -273,6 +272,36 @@ export default {
       text-align: center;
       letter-spacing: 0.35em;
       font-variant: all-small-caps;
+    }
+  }
+  &__lower {
+    margin-block-start: 240x;
+    padding-inline: 48px;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    &__area {
+      margin: 8px;
+      width: 200px;
+      border-radius: 12px;
+      padding: 8px;
+      background-color: var(--light_tr);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      &__icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        background-color: var(--darker_tr);
+        margin-inline-end: 8px;
+      }
+      &__label {
+        color: var(--white);
+        font-family: SFRoundedSB;
+        font-size: 16px;
+      }
     }
   }
 }

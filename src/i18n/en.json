@@ -61,7 +61,7 @@
       },
       "sunshine": {
         "name": "Sunshine",
-        "full": "Average duration",
+        "full": "Average sunshine duration",
         "unit": "hour"
       },
       "windspeed": {

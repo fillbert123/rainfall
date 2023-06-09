@@ -13,7 +13,7 @@
           <div class="data__left__desc__slider__minicon">
             <img :src="require(`@/assets/icons/${variable}.low.svg`)">
           </div>
-          <input class="data__left__desc__slider__range" type="range" min="0" max="500" v-model="value" disabled="true">
+          <input class="data__left__desc__slider__range" type="range" :min="minval" :max="maxval" :value="value" disabled="true">
           <div class="data__left__desc__slider__maxicon">
             <img :src="require(`@/assets/icons/${variable}.high.svg`)">
           </div>
@@ -23,8 +23,8 @@
     <div class="data__right">
       <div class="data__right__label">{{ $t('variable.additional.not_recorded') | uppercase }}</div>
       <div class="data__right__info">
-        <img class="data__right__info__icon" src="@/assets/icons/rainMissing.svg" alt="">
-        <div class="data__right__info__value">999</div>
+        <img class="data__right__info__icon" src="@/assets/icons/missing.svg" alt="">
+        <div class="data__right__info__value">{{ missing }}</div>
       </div>
     </div>
   </div>
@@ -34,11 +34,15 @@
 export default {
   name: 'fullSizeInfoSlider',
   props: {
-    variable: String
+    variable: String,
+    result: Number,
+    missing: Number,
+    minval: Number,
+    maxval: Number
   },
   data() {
     return {
-      value: 250
+      value: this.result
     }
   },
   filters: {
