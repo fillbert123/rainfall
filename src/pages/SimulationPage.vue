@@ -468,7 +468,7 @@ export default {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        width: 330px;
+        width: 340px;
         &>*:nth-child(1) {
           visibility: hidden;
         }
