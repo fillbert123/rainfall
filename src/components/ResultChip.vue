@@ -1,16 +1,17 @@
 <template>
   <div class="chip">
     <div class="chip__info">
-      <div class="chip__info__adm">KABUPATEN</div>
-      <div class="chip__info__name">TIMOR TENGAH SELATAN</div>
+      <div v-if="!this.isLanguageEnglish" class="chip__info__adm">{{ adm | uppercase }}</div>
+      <div class="chip__info__name">{{ admName | uppercase }}</div>
+      <div v-if="this.isLanguageEnglish" class="chip__info__adm">{{ adm | uppercase }}</div>
     </div>
     <div class="chip__data">
       <div class="chip__data__icon">
         <img class="chip__data__icon__weather" src="@/assets/icons/rain2.svg" alt="">
       </div>
       <div class="chip__data__value">
-        <div class="chip__data__value__rainfall">400</div>
-        <div class="chip__data__value__unit">mm/bulan</div>
+        <div class="chip__data__value__rainfall">{{ value }}</div>
+        <div class="chip__data__value__unit">mm/bln</div>
       </div>
     </div>
   </div>
@@ -18,7 +19,22 @@
 
 <script>
 export default {
-  name: 'resultChip'
+  name: 'resultChip',
+  props: {
+    adm: String,
+    admName: String,
+    value: Number
+  },
+  computed: {
+    isLanguageEnglish () {
+      return this.$i18n.locale === 'en'
+    }
+  },
+  filters: {
+    uppercase (text) {
+      return text.toUpperCase()
+    }
+  }
 }
 </script>
 
@@ -29,6 +45,7 @@ export default {
   color: var(--white);
   padding: 8px;
   border-radius: 10px;
+  backdrop-filter: blur(8px);
   &__info {
     display: flex;
     flex-direction: column;
@@ -48,6 +65,7 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-block-start: 4px;
     &__icon {
       width: 40px;
       height: 40px;
@@ -63,6 +81,7 @@ export default {
       flex-direction: column;
       align-items: center;
       &__rainfall {
+        width: 80px;
         font-family: SFRoundedB;
         font-size: 32px;
         line-height: 28px;

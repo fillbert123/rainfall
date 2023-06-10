@@ -1,50 +1,82 @@
 <template>
   <div class="selector">
-    <div class="selector__field" @click="showOption = !showOption">
-      <div class="selector__field__value">{{ estimationMethod }}</div>
-      <img v-if="!showOption" class="selector__field__dropup" src="@/assets/icons/chevron.svg" alt="">
-      <img v-if="showOption" class="selector__field__dropdown" src="@/assets/icons/chevron.svg" alt="">
+    <div class="selector__field" @click="showOption" :style="{ backgroundColor: backgroundCol }">
+      <div class="selector__field__value">{{ selectedMethod }}</div>
+      <img v-if="!isOptionShowed" class="selector__field__dropup" src="@/assets/icons/chevron.svg" alt="">
+      <img v-if="isOptionShowed" class="selector__field__dropdown" src="@/assets/icons/chevron.svg" alt="">
     </div>
-    <EstimationOption 
-      v-if="showOption"
-      @amemiya="amemiyaSelected"
-      @nerlove="nerloveSelected"
-      @swar="swarSelected"
-      @walhus="walhusSelected">
+    <EstimationOption
+      class="selector__option"
+      :style="{ display: optionDisplay }"
+      @amemiyaSelected="amemiyaSelected"
+      @nerloveSelected="nerloveSelected"
+      @swarSelected="swarSelected"
+      @walhusSelected="walhusSelected">
     </EstimationOption>
   </div>
 </template>
 
 <script>
-import EstimationOption from './EstimationOption.vue'
+import EstimationOption from './EstimationOption.vue';
 
 export default {
   name: 'estimationSelector',
+  props: {
+    unlockEstimation: Boolean
+  },
+  data () {
+    return {
+      selectedMethod: this.$t('simulation.method.locked'),
+      optionDisplay: 'none',
+      backgroundCol: 'var(--dark_tr)'
+    }
+  },
   components: {
     EstimationOption
   },
-  data() {
-    return {
-      showOption: false,
-      estimationMethod: 'Pilih metode estimasi'
+  computed: {
+    isOptionShowed () {
+      return this.optionDisplay === 'none' ? false : true
     }
   },
   methods: {
-    amemiyaSelected() {
-      this.estimationMethod = 'Metode estimasi Amemiya'
-      this.showOption = false
+    showOption () {
+      if (this.unlockEstimation === true){
+        this.optionDisplay = 'block'
+      }
     },
-    nerloveSelected() {
-      this.estimationMethod = 'Metode estimasi Nerlove'
-      this.showOption = false
+    amemiyaSelected () {
+      this.selectedMethod = this.$t('simulation.method.amemiya'),
+      this.optionDisplay = 'none'
+      this.$emit('amemiyaSelected')
     },
-    swarSelected() {
-      this.estimationMethod = 'Metode estimasi Swamy-Arora'
-      this.showOption = false
+    nerloveSelected () {
+      this.selectedMethod = this.$t('simulation.method.nerlove'),
+      this.optionDisplay = 'none'
+      this.$emit('nerloveSelected')
     },
-    walhusSelected() {
-      this.estimationMethod = 'Metode estimasi Wallace-Hussain'
-      this.showOption = false
+    swarSelected () {
+      this.selectedMethod = this.$t('simulation.method.swar'),
+      this.optionDisplay = 'none'
+      this.$emit('swarSelected')
+    },
+    walhusSelected () {
+      this.selectedMethod = this.$t('simulation.method.walhus'),
+      this.optionDisplay = 'none'
+      this.$emit('walhusSelected')
+    }
+  },
+  watch: {
+    unlockEstimation (newStatus) {
+      if (newStatus === false) {
+        this.selectedMethod = this.$t('simulation.method.locked'),
+        this.backgroundCol = 'var(--dark_tr)'
+      }
+      else {
+        this.selectedMethod = this.$t('simulation.method.choose'),
+        this.backgroundCol = 'var(--light_tr)'
+        this.selectedMethod = this.$t('simulation.method.walhus')
+      }
     }
   }
 }
@@ -52,17 +84,13 @@ export default {
 
 <style lang="scss" scoped>
 .selector {
-  height: 256px;
-  position: relative;
   width: fit-content;
   color: var(--white);
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   &__field {
-    position: absolute;
-    left: 0;
-    bottom: 0;
     background-color: var(--light_tr);
     width: 276px;
     height: 24px;
@@ -83,6 +111,11 @@ export default {
       width: 16px;
       transform: rotate(180deg);
     }
+  }
+  &__option {
+    position: absolute;
+    bottom: 52px;
+    backdrop-filter: blur(8px);
   }
 }
 </style>

@@ -1,22 +1,33 @@
 <template>
   <div class="option">
-    <div class="option__opt" @click="$emit('com')">Model efek umum</div>
-    <div class="option__opt" @click="$emit('fix')">Model efek tetap</div>
-    <div class="option__opt" @click="$emit('ran')">Model efek acak</div>
+    <div class="option__opt" @click="emitCommon">{{ $t('simulation.model.common') }}</div>
+    <div class="option__opt" @click="emitFixed">{{ $t('simulation.model.fixed') }}</div>
+    <div class="option__opt" @click="emitRandom">{{ $t('simulation.model.random') }}</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'modelOption'
+  name: 'modelOption',
+  methods: {
+    emitCommon () {
+      this.$emit('commonSelected')
+    },
+    emitFixed () {
+      this.$emit('fixedSelected')
+    },
+    emitRandom () {
+      this.$emit('randomSelected')
+    }
+  },
+  directive: {
+
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .option {
-  position: absolute;
-  left: 0;
-  top: 0;
   width: fit-content;
   background-color: var(--light_tr);
   border-radius: 20px;
@@ -31,6 +42,10 @@ export default {
     display: flex;
     justify-content: flex-start;
     padding-inline-start: 12px;
+    &:hover {
+      background-color: var(--dark_tr);
+      border-radius: 20px;
+    }
   }
 }
 </style>
