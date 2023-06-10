@@ -1,39 +1,55 @@
 <template>
   <div class="data">
     <div class="data__info">
-      <div class="data__info__label">STASIUN METEOROLOGI</div>
+      <div class="data__info__label">{{ $t('variable.additional.weather_station') | uppercase }}</div>
       <div class="data__info__desc">
         <img class="data__info__desc__icon" src="@/assets/icons/binoculars.svg" alt="">
-        <div class="data__info__desc__value">Komodo</div>
+        <div class="data__info__desc__value">{{ $t('variable.additional.station.' + staName + '.name') }}</div>
       </div>
     </div>
     <div class="data__info">
-      <div class="data__info__label">GARIS LINTANG</div>
+      <div class="data__info__label">{{ $t('variable.additional.latitude') | uppercase }}</div>
       <div class="data__info__desc">
         <img class="data__info__desc__icon" src="@/assets/icons/globe.svg" alt="">
-        <div class="data__info__desc__value">-10.76662°</div>
+        <div class="data__info__desc__value">{{ this.areaData[area].latitude }}°</div>
       </div>
     </div>
     <div class="data__info">
-      <div class="data__info__label">GARIS BUJUR</div>
+      <div class="data__info__label">{{ $t('variable.additional.longitude') | uppercase }}</div>
       <div class="data__info__desc">
         <img class="data__info__desc__icon" src="@/assets/icons/globe.svg" alt="">
-        <div class="data__info__desc__value">123.07395°</div>
+        <div class="data__info__desc__value">{{ this.areaData[area].longitude }}°</div>
       </div>
     </div>
     <div class="data__info">
-      <div class="data__info__label">ELEVASI</div>
+      <div class="data__info__label">{{ $t('variable.additional.elevation') | uppercase }}</div>
       <div class="data__info__desc">
         <img class="data__info__desc__icon" src="@/assets/icons/elevation.svg" alt="">
-        <div class="data__info__desc__value">222m</div>
+        <div class="data__info__desc__value">{{ this.areaData[area].elevation }}m</div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import areaData from '@/data/areaData.json'
+
 export default {
-  name: 'weatherStationInfo'
+  name: 'weatherStationInfo',
+  props: {
+    staName: String,
+    area: String
+  },
+  data () {
+    return {
+      areaData
+    }
+  },
+  filters: {
+    uppercase (text) {
+      return text.toUpperCase()
+    }
+  }
 }
 </script>
 
@@ -41,7 +57,7 @@ export default {
 .data {
   width: 208px;
   height: 297px;
-  background-color: var(--darker_tr);
+  background-color: var(--dark_tr);
   padding: 16px;
   border-radius: 20px;
   &__info:not(:last-child) {

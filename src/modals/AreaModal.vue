@@ -1,29 +1,71 @@
 <template>
   <div class="modal">
+    <img class="modal__close" src="@/assets/icons/close.svg" alt="" @click="hideAreaModal">
     <div class="modal__left">
       <div class="modal__left__row1">
-        <ImagePlaceholder></ImagePlaceholder>
+        <ImagePlaceholder
+          :staName="translator[this.selectedArea]"
+          :area="selectedArea"></ImagePlaceholder>
       </div>
       <div class="modal__left__row2">
-        <WeatherStationInfo class="modal__left__row2__weather"></WeatherStationInfo>
-        <WindDirectionInfo class="modal__left__row2__wind"></WindDirectionInfo>
+        <WeatherStationInfo 
+          class="modal__left__row2__weather"
+          :staName="translator[this.selectedArea]"
+          :area="selectedArea"></WeatherStationInfo>
+        <WindDirectionInfo 
+          class="modal__left__row2__wind"
+          :area="selectedArea"></WindDirectionInfo>
       </div>
     </div>
     <div class="modal__right">
       <div class="modal__right__row1">
-        <RegencyCityName class="modal__right__row1__name"></RegencyCityName>
+        <RegencyCityName 
+          class="modal__right__row1__name"
+          :area="selectedArea"
+          :admArea="selectedAdmArea"></RegencyCityName>
         <ViewDataButton class="modal__right__row1__button"></ViewDataButton>
       </div>
       <div class="modal__right__row2">
-        <HalfSizeInfo class="modal__right__row2__info1"></HalfSizeInfo>
-        <HalfSizeInfo class="modal__right__row2__info2"></HalfSizeInfo>
+        <HalfSizeInfo 
+          class="modal__right__row2__info1"
+          label="period"
+          value="2021-2022"></HalfSizeInfo>
+        <HalfSizeInfo 
+          class="modal__right__row2__info2"
+          label="complete_case"
+          :value="areaData[selectedArea].complete"></HalfSizeInfo>
       </div>
       <div class="modal__right__row3">
-        <FullSizeInfoSlider></FullSizeInfoSlider>
-        <FullSizeInfoSlider></FullSizeInfoSlider>
-        <FullSizeInfoSlider></FullSizeInfoSlider>
-        <FullSizeInfoSlider></FullSizeInfoSlider>
-        <FullSizeInfoSlider></FullSizeInfoSlider>
+        <FullSizeInfoSlider
+          variable="rainfall"
+          :result="areaData[selectedArea].rainfall.value"
+          :missing="areaData[selectedArea].rainfall.missing"
+          :maxval="areaData.universal.rainfall.high"
+          :minval="areaData.universal.rainfall.low"></FullSizeInfoSlider>
+        <FullSizeInfoSlider
+          variable="temperature"
+          :result="areaData[selectedArea].temperature.value"
+          :missing="areaData[selectedArea].temperature.missing"
+          :maxval="areaData.universal.temperature.high"
+          :minval="areaData.universal.temperature.low"></FullSizeInfoSlider>
+        <FullSizeInfoSlider
+          variable="humidity"
+          :result="areaData[selectedArea].humidity.value"
+          :missing="areaData[selectedArea].humidity.missing"
+          :maxval="areaData.universal.humidity.high"
+          :minval="areaData.universal.humidity.low"></FullSizeInfoSlider>
+        <FullSizeInfoSlider
+          variable="sunshine"
+          :result="areaData[selectedArea].sunshine.value"
+          :missing="areaData[selectedArea].sunshine.missing"
+          :maxval="areaData.universal.sunshine.high"
+          :minval="areaData.universal.sunshine.low"></FullSizeInfoSlider>
+        <FullSizeInfoSlider
+          variable="windspeed"
+          :result="areaData[selectedArea].windspeed.value"
+          :missing="areaData[selectedArea].windspeed.missing"
+          :maxval="areaData.universal.windspeed.high"
+          :minval="areaData.universal.windspeed.low"></FullSizeInfoSlider>
       </div>
     </div>
   </div>
@@ -37,9 +79,21 @@ import ImagePlaceholder from '@/components/ImagePlaceholder.vue';
 import WeatherStationInfo from '@/components/WeatherStationInfo.vue';
 import WindDirectionInfo from '@/components/WindDirectionInfo.vue';
 import ViewDataButton from '@/components/ViewDataButton.vue';
+import areaStationTranslator from '@/data/areaStationTranslator.json';
+import areaData from '@/data/areaData.json';
 
 export default{
   name: 'areaModal',
+  props: {
+    selectedArea: String,
+    selectedAdmArea: String
+  },
+  data () {
+    return {
+      translator: areaStationTranslator,
+      areaData
+    }
+  },
   components: {
     RegencyCityName,
     HalfSizeInfo,
@@ -48,19 +102,25 @@ export default{
     WeatherStationInfo,
     WindDirectionInfo,
     ViewDataButton
+  },
+  methods: {
+    hideAreaModal () {
+      this.$emit('hideAreaModal')
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .modal {
-  background-color: var(--dark_tr);
+  background-color: var(--light_tr);
   border-radius: 30px;
   padding: 20px;
   width: fit-content;
   height: fit-content;
   display: flex;
   flex-direction: row;
+  position: relative;
   &__left, &__right {
     display: flex;
     flex-direction: column;
@@ -69,6 +129,12 @@ export default{
       flex-direction: row;
       align-items: flex-end;
     }
+  }
+  &__close {
+    position: absolute;
+    zoom: 200%;
+    top: -8px;
+    right: -8px;
   }
   &__left {
     margin-inline-end: 48px;
