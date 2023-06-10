@@ -11,7 +11,7 @@
         <div v-if="!isLanguageEnglish" class="data__right__info__name">{{ admArea | uppercase }} {{ admName | uppercase }}</div>
         <div v-if="isLanguageEnglish" class="data__right__info__name">{{ admName | uppercase }} {{ admArea | uppercase }}</div>
       </div>
-      <div class="data__right__button">
+      <div class="data__right__button" @click="showAreaModal">
         <div class="data__right__button__label">Lihat detail</div>
         <img class="data__right__button__icon" src="@/assets/icons/forward.svg" alt="">
       </div>
@@ -44,6 +44,9 @@ export default {
       else {
         this.$emit('popupShow')
       }
+    },
+    showAreaModal () {
+      this.$emit('showAreaModal')
     }
   },
   filters: {
