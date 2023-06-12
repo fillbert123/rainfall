@@ -6,14 +6,14 @@
       <img class="page__icon__image" src="@/assets/icons/rain2.svg" alt="">
       <img class="page__icon__image" src="@/assets/icons/rain3.svg" alt="">
     </div>
-    <div class="page__title">Selamat datang</div>
+    <div class="page__title">{{ this.$t('main.welcome') }}</div>
     <div class="page__control">
       <div class="page__control__learn">
-        <div class="page__control__learn__label">Pelajari</div>
+        <div class="page__control__learn__label">{{ this.$t('main.learn') }}</div>
         <img class="page__control__learn__chevron" src="@/assets/icons/chevron.svg" alt="">
       </div>
       <div class="page__control__simulation">
-        <div class="page__control__simulation__label">Simulasi</div>
+        <div class="page__control__simulation__label">{{ this.$t('main.simulation') }}</div>
         <img class="page__control__simulation__chevron" src="@/assets/icons/chevron.svg" alt="">
       </div>
     </div>
@@ -49,7 +49,7 @@ export default {
   &__title {
     font-family: SFRoundedB;
     font-size: 60px;
-    margin-block-end: 20px;
+    margin-block-end: 12px;
   }
   &__control {
     display: flex;
