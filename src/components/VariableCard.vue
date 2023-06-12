@@ -5,7 +5,7 @@
         <img class="data__upper__icon__image" :src="require(`@/assets/icons/${variable}.high.svg`)" alt="">
       </div>
       <div class="data__upper__button">
-        <div class="data__upper__button__label">Lihat publikasi</div>
+        <div class="data__upper__button__label">{{ this.$t('variable.button.see') }}</div>
         <img class="data__upper__button__icon" src="@/assets/icons/publication.svg" alt="">
       </div>
     </div>

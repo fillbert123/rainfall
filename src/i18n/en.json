@@ -1,7 +1,4 @@
 {
-  "data": {
-    "view_button": "View data"
-  },
   "administrative": {
     "province": "East Nusa Tenggara",
     "admArea": {
@@ -48,6 +45,10 @@
     "simulation": "Simulation"
   },
   "variable": {
+    "button": {
+      "see": "See publications",
+      "read": "Read publication"
+    },
     "main": {
       "rainfall": {
         "name": "Rainfall",
@@ -179,6 +180,11 @@
       "not_recorded": "Not recorded",
       "source": "Source: "
     }
+  },
+  "data": {
+    "view_button": "View data",
+    "see_detail": "View detail",
+    "see_data": "View data"
   },
   "analysis": {
     "notes": {

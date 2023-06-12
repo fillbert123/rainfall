@@ -1,7 +1,4 @@
 {
-  "data": {
-    "view_button": "Lihat data"
-  },
   "administrative": {
     "province": "Nusa Tenggara Timur",
     "admArea": {
@@ -47,6 +44,10 @@
     "simulation": "Simulasi"
   },
   "variable": {
+    "button": {
+      "see": "Lihat publikasi",
+      "read": "Baca publikasi"
+    },
     "main": {
       "rainfall": {
         "name": "Curah hujan",
@@ -178,6 +179,11 @@
       "not_recorded": "Tidak tercatat",
       "source": "Sumber: "
     }
+  },
+  "data": {
+    "view_button": "Lihat data",
+    "see_detail": "Lihat detail",
+    "see_data": "Lihat data"
   },
   "analysis": {
     "notes": {
