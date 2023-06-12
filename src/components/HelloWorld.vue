@@ -1,14 +1,14 @@
 <template>
   <div class="hello">
     <DataPage></DataPage>
-    <AnalysisPageVue></AnalysisPageVue>
+    <AnalysisPage></AnalysisPage>
     <SimulationPage></SimulationPage>
   </div>
 </template>
 
 <script>
 import DataPage from '@/pages/DataPage.vue';
-import AnalysisPageVue from '@/pages/AnalysisPage.vue';
+import AnalysisPage from '@/pages/AnalysisPage.vue';
 import SimulationPage from '@/pages/SimulationPage.vue';
 
 export default {
@@ -18,7 +18,7 @@ export default {
   },
   components: {
     DataPage,
-    AnalysisPageVue,
+    AnalysisPage,
     SimulationPage
   }
 }
