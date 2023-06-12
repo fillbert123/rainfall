@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <MainPage></MainPage>
     <VariablePage></VariablePage>
     <DataPage></DataPage>
     <AnalysisPage></AnalysisPage>
@@ -8,6 +9,7 @@
 </template>
 
 <script>
+import MainPage from '@/pages/MainPage.vue';
 import VariablePage from '@/pages/VariablePage.vue';
 import DataPage from '@/pages/DataPage.vue';
 import AnalysisPage from '@/pages/AnalysisPage.vue';
@@ -19,6 +21,7 @@ export default {
     msg: String
   },
   components: {
+    MainPage,
     VariablePage,
     DataPage,
     AnalysisPage,
