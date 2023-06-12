@@ -169,6 +169,66 @@
       "source": "Sumber: "
     }
   },
+  "analysis": {
+    "notes": {
+      "title": "Silakan pilih topik berikut",
+      "content": "Topik terpilih akan tersajikan di sebelah kanan pilihan topik ini."
+    },
+    "pmm": {
+      "type": "Imputasi",
+      "title": "Predictive Mean Matching",
+      "content": "Imputasi predictive mean matching mengimputasi nilai missing value berdasarkan nilai observasi yang terdekat dari model."
+    },
+    "det": {
+      "type": "Imputasi",
+      "title": "Regresi Deterministik",
+      "content": "Imputasi regresi deterministik mengimputasi nilai missing value berdasarkan prediksi dari model regresi yang terbentuk. Hal ini mengakibatkan nilai terlalu akurat dan berdampak pada estimasi berlebih pada korelasi antar variabel dependen dan variabel independen."
+    },
+    "sto": {
+      "type": "Imputasi",
+      "title": "Regresi Stokastik",
+      "content": "Imputasi regresi stokasik menyelesaikan permasalahan pada imputasi regresi deterministik, dimana imputasi ini menambahkan nilai error pada nilai terprediksi yang dapat menghasilkan nilai korelasi antar variabel dependen dan independen lebih sesuai."
+    },
+    "pan": {
+      "type": "Regresi",
+      "title": "Regresi Panel",
+      "content": "Regresi panel merupakan metode permodelan pada data panel yang merupakan gabungan antara data cross-section dan data time series."
+    },
+    "com": {
+      "type": "Model",
+      "title": "Model Efek Umum",
+      "content": "Model efek umum mengasumsikan nilai intercept untuk setiap variabel dan nilai koefisien slope untuk setiap unit cross-section dan time series adalah sama."
+    },
+    "fix": {
+      "type": "Model",
+      "title": "Model Efek Tetap",
+      "content": "Model efek tetap mengasumsikan nilai setiap individu dalam model memiliki nilai intercept yang berbeda-beda."
+    },
+    "ame": {
+      "type": "Model",
+      "title": "Model Efek Acak",
+      "desc": "Amemiya",
+      "content": "Model efek acak dengan estimasi Amemiya menggunakan nilai residual model within untuk kedua persamaan kuadratik dalam membuat persamaan varians dari efek individual."
+    },
+    "ner": {
+      "type": "Model",
+      "title": "Model Efek Acak",
+      "desc": "Nerlove",
+      "content": "Model efek acak dengan estimasi Nerlove menggunakan nilai residual model within untuk persamaan kuadratik pertama dan menggunakan nilai residual persamaan kuadratik dengan jumlah observasi dalam membuat persamaan varians dari efek individual."
+    },
+    "swa": {
+      "type": "Model",
+      "title": "Model Efek Acak",
+      "desc": "Swamy-Arora",
+      "content": "Model efek acak dengan estimasi Swamy-Arora menggunakan nilai residual efek model between untuk persamaan kuadratik pertama dan menggunakan nilai residual efek model within untuk persamaan kuadratik kedua dalam membuat persamaa varians dari efek individual."
+    },
+    "wal": {
+      "type": "Model",
+      "title": "Model Efek Acak",
+      "desc": "Wallace-Hussain",
+      "content": "Model efek acak dengan estimasi Wallace-Hussain menggunakan nilai residual efek umum untuk kedua persamaan kuadratik dalam membuat persamaan varians dari efek individual."
+    }
+  },
   "simulation": {
     "model": {
       "choose": "Pilih model",
