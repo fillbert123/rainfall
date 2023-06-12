@@ -47,26 +47,31 @@
       "rainfall": {
         "name": "Rainfall",
         "full": "Rainfall amount",
+        "desc": "Rainfall is the amount of rainwater that is accommodated in the data area of ​​1 square meter assuming no evaporation occur, does not flow, and does not permeate. Rainwater that is accommodated will be measured in height with millimeter units (mm). Measurement of rainfall can be done using a device called the ombrometer.",
         "unit": "mm"
       },
       "temperature": {
         "name": "Temperature",
         "full": "Average temperature",
+        "desc": "Air temperature is the result of measuring the average of kinetic energy in the molecule in the air. In measuring air temperatures, devices such as called a temistor, thermocouple, or thermometer could be utilized. The results of the measurement of air temperature can be in units of Celsius (°C), Fahrenheit (°F), or in international units, Kelvin (K)",
         "unit": "°C"
       },
       "humidity": {
         "name": "Humidity",
         "full": "Average humidity",
+        "desc": "Air humidity is the amount of water vapor in a room or total air in the atmospheric layer. Air humidity is an important factor in determining the climate of an area, because it directly affects the rate of evaporation, condensation rate, and heat transfer rate. Measurement of air humidity can be done using a device called a hygrometer, a hyigrograph, or psychrometer with a percentage (%) as their unit.",
         "unit": "%"
       },
       "sunshine": {
         "name": "Sunshine",
         "full": "Average sunshine duration",
+        "desc": "The duration of solar radiation is the period where the sun shine to the surface of the earth which is calculated from sunrise to sunset. Measurement of solar radiation duration is done with a device called Campbell Stokes or Stokes Sphere. In general, the solar radiation duration variable is written in units of hours.",
         "unit": "hour"
       },
       "windspeed": {
         "name": "Wind speed",
         "full": "Average wind speed",
+        "desc": "Wind speed is a measurement taken from the movement of air from high pressure to low pressure. This air movement is influenced by the barometric gradient of the location, the height, and the environment. In general, the measurement of wind speed is done with a device called anemometer with a meter per second (m/s) as its unit.",
         "unit": "m/s"
       },
       "winddirection": {
