@@ -1,8 +1,12 @@
 <template>
   <div class="page">
-    <VariableCard class="page__card"></VariableCard>
-    <VariableCard class="page__card"></VariableCard>
-    <VariableCard class="page__card"></VariableCard>
+    <div class="page__variable">
+      <VariableCard 
+        v-for="variable in variables" 
+        :variable="variable"
+        :key="variable"
+        class="page__variable__card"></VariableCard>
+    </div>
   </div>
 </template>
 
@@ -11,6 +15,17 @@ import VariableCard from '@/components/VariableCard.vue';
 
 export default {
   name: 'variablePage',
+  data () {
+    return {
+      variables: {
+        rainfall: 'rainfall',
+        temperature: 'temperature',
+        humidity: 'humidity',
+        sunshine: 'sunshine',
+        windspeed: 'windspeed'
+      }
+    }
+  },
   components: {
     VariableCard
   }
@@ -25,9 +40,15 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  &__card {
-    zoom: 80%;
-    margin: 18px;
+  &__variable {
+    width: 1046.4px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    &__card {
+      zoom: 80%;
+      margin: 18px;
+    }
   }
 }
 </style>

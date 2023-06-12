@@ -46,26 +46,31 @@
       "rainfall": {
         "name": "Curah hujan",
         "full": "Jumlah curah hujan",
+        "desc": "Curah hujan merupakan jumlah air hujan yang tertampung pada bidang data seluas 1 meter persegi dengan asumsi tidak menguap, tidak mengalir, dan tidak meresap. Air hujan yang tertampung akan diukur ketinggiannya dengan satuan milimeter (mm). Pengukuran curah hujan dapat dilakukan dengan menggunakan alat yang bernama ombrometer.",
         "unit": "mm"
       },
       "temperature": {
         "name": "Suhu udara",
         "full": "Suhu udara rata-rata",
+        "desc": "Suhu udara atau temperatur udara adalah hasil pengukuran energi kinetik rata-rata pada molekul di udara. Dalam mengukur suhu udara, dapat dilakukan dengan alat yang bernama temistor, termokopel, atau termometer. Hasil pengukuran suhu udara dapat dalam satuan derajat Celcius (°C), Fahrenheit (°F), atau dengan satuan internasional, yaitu Kelvin (K)",
         "unit": "°C"
       },
       "humidity": {
         "name": "Kelembapan",
         "full": "Kelembapan rata-rata",
+        "desc": "Kelembapan udara adalah jumlah kanduang uap air yang berada pada sebuah ruangan atau udara dalam lapisan atmosfer. Kelembapan udara merupakan faktor penting dalam penentuan iklim dalam suatu daerah, karena mempengaruhi laju penguapan, laju kondensasi, dan laju perpindahan panas. Pengukuran kelembapan udara dapat dilakukan dengan alat yang bernama higrometer, higrograf, atau psikrometer dengan satuan persen (%)",
         "unit": "%"
       },
       "sunshine": {
         "name": "Penyinaran matahari",
         "full": "Durasi penyinaran matahari",
+        "desc": "Durasi penyinaran matahari adalah periode matahari bersinar cerah pada permukaan bumi yang dihitung mulai dari matahari terbit hingga terbenam. Pengukuran durasi penyinaran matahari dilakukan dengan alat yang bernama Campbell stokes atau stokes sphere. Pada umumnya, variabel durasi penyinaran matahari ditulis dalam satuan jam.",
         "unit": "jam"
       },
       "windspeed": {
         "name": "Kecepatan angin",
         "full": "Kecepatan angin rata-rata",
+        "desc": "Kecepatan angin adalah sebuah pengukuran yang dilakukan karena adanya pergerakan udara dari tekanan tinggi ke tekanan rendah. Pergerakan udara ini dipengaruhi oleh gradien barometris letak tempat, tinggi tempat, dan keadaan. Pada umumnya, pengukuran kecepatan angin dilakukan dengan alat yang bernama anemometer dengan satuan meter per sekon (m/s).",
         "unit": "m/s"
       },
       "winddirection": {
