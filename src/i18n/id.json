@@ -42,45 +42,196 @@
     }
   },
   "variable": {
+    "main": {
+      "rainfall": {
+        "name": "Curah hujan",
+        "full": "Jumlah curah hujan",
+        "desc": "Curah hujan merupakan jumlah air hujan yang tertampung pada bidang data seluas 1 meter persegi dengan asumsi tidak menguap, tidak mengalir, dan tidak meresap. Air hujan yang tertampung akan diukur ketinggiannya dengan satuan milimeter (mm). Pengukuran curah hujan dapat dilakukan dengan menggunakan alat yang bernama ombrometer.",
+        "unit": "mm"
+      },
+      "temperature": {
+        "name": "Suhu udara",
+        "full": "Suhu udara rata-rata",
+        "desc": "Suhu udara atau temperatur udara adalah hasil pengukuran energi kinetik rata-rata pada molekul di udara. Dalam mengukur suhu udara, dapat dilakukan dengan alat yang bernama temistor, termokopel, atau termometer. Hasil pengukuran suhu udara dapat dalam satuan derajat Celcius (°C), Fahrenheit (°F), atau dengan satuan internasional, yaitu Kelvin (K)",
+        "unit": "°C"
+      },
+      "humidity": {
+        "name": "Kelembapan",
+        "full": "Kelembapan rata-rata",
+        "desc": "Kelembapan udara adalah jumlah kanduang uap air yang berada pada sebuah ruangan atau udara dalam lapisan atmosfer. Kelembapan udara merupakan faktor penting dalam penentuan iklim dalam suatu daerah, karena mempengaruhi laju penguapan, laju kondensasi, dan laju perpindahan panas. Pengukuran kelembapan udara dapat dilakukan dengan alat yang bernama higrometer, higrograf, atau psikrometer dengan satuan persen (%)",
+        "unit": "%"
+      },
+      "sunshine": {
+        "name": "Penyinaran matahari",
+        "full": "Durasi penyinaran matahari",
+        "desc": "Durasi penyinaran matahari adalah periode matahari bersinar cerah pada permukaan bumi yang dihitung mulai dari matahari terbit hingga terbenam. Pengukuran durasi penyinaran matahari dilakukan dengan alat yang bernama Campbell stokes atau stokes sphere. Pada umumnya, variabel durasi penyinaran matahari ditulis dalam satuan jam.",
+        "unit": "jam"
+      },
+      "windspeed": {
+        "name": "Kecepatan angin",
+        "full": "Kecepatan angin rata-rata",
+        "desc": "Kecepatan angin adalah sebuah pengukuran yang dilakukan karena adanya pergerakan udara dari tekanan tinggi ke tekanan rendah. Pergerakan udara ini dipengaruhi oleh gradien barometris letak tempat, tinggi tempat, dan keadaan. Pada umumnya, pengukuran kecepatan angin dilakukan dengan alat yang bernama anemometer dengan satuan meter per sekon (m/s).",
+        "unit": "m/s"
+      },
+      "winddirection": {
+        "name": "Arah angin",
+        "full": "Arah angin rata-rata",
+        "unit": "°",
+        "direction": {
+          "e": "Timur",
+          "se": "Tenggara",
+          "s": "Selatan",
+          "sw": "Barat Daya",
+          "w": "Barat",
+          "nw": "Barat Laut",
+          "n": "Utara",
+          "ne": "Timur Laut"
+        }
+      }
+    },
     "additional": {
       "station": {
         "sta": {
           "name": "Tardamu",
-          "full": "Tardamu"
+          "full": "Tardamu",
+          "image": {
+            "name": "Kelabba Maja",
+            "source": "Hibur.id"
+          }
         },
         "sma": {
           "name": "Mali",
-          "full": "Mali"
+          "full": "Mali",
+          "image": {
+            "name": "Taman Laut Selat Pantar",
+            "source": "TIC Mitra Praja Utama"
+          }
         },
         "sga": {
           "name": "Gewayantana",
-          "full": "Gewayantana"
+          "full": "Gewayantana",
+          "image": {
+            "name": "Taman Doa Mater Dolorosa",
+            "source": "Mister Aladin"
+          }
         },
         "sfx": {
           "name": "FX Seda",
-          "full": "Fransiskus Xaverius Seda"
+          "full": "Fransiskus Xaverius Seda",
+          "image": {
+            "name": "Patung Bunda Maria Segala Bangsa",
+            "source": "Indonesia Kaya"
+          }
         },
         "sfs": {
           "name": "FS Lega",
-          "full": "Frans Sales Lega"
+          "full": "Frans Sales Lega",
+          "image": {
+            "name": "Desa Wae Rebo",
+            "source": "Good News From Indonesia"
+          }
         },
         "smk": {
           "name": "UM Kunda",
-          "full": "Umbu Mehang Kunda"
+          "full": "Umbu Mehang Kunda",
+          "image": {
+            "name": "Pantai Walakiri",
+            "source": "Atourin"
+          }
         },
         "sdc": {
           "name": "DC Saudale",
-          "full": "David Constantijn Saudale"
+          "full": "David Constantijn Saudale",
+          "image": {
+            "name": "Batu Termanu",
+            "source": "Sonny Photo"
+          }
         },
         "sko": {
           "name": "Komodo",
-          "full": "Komodo"
+          "full": "Komodo",
+          "image": {
+            "name": "Taman Nasional Komodo",
+            "source": "Mongabay"
+          }
         },
         "sel": {
           "name": "Eltari",
-          "full": "Eltari"
+          "full": "Eltari",
+          "image": {
+            "name": "Gua Kristal Kupang",
+            "source": "Mongotrip"
+          }
         }
-      }
+      },
+      "weather_station": "Stasiun meteorologi",
+      "latitude": "Garis lintang",
+      "longitude": "Garis bujur",
+      "elevation": "Elevasi",
+      "period": "Periode",
+      "complete_case": "Jumlah observasi sempurna",
+      "not_recorded": "Tidak tercatat",
+      "source": "Sumber: "
+    }
+  },
+  "analysis": {
+    "notes": {
+      "title": "Silakan pilih topik berikut",
+      "content": "Topik terpilih akan tersajikan di sebelah kanan pilihan topik ini."
+    },
+    "pmm": {
+      "type": "Imputasi",
+      "title": "Predictive Mean Matching",
+      "content": "Imputasi predictive mean matching mengimputasi nilai missing value berdasarkan nilai observasi yang terdekat dari model."
+    },
+    "det": {
+      "type": "Imputasi",
+      "title": "Regresi Deterministik",
+      "content": "Imputasi regresi deterministik mengimputasi nilai missing value berdasarkan prediksi dari model regresi yang terbentuk. Hal ini mengakibatkan nilai terlalu akurat dan berdampak pada estimasi berlebih pada korelasi antar variabel dependen dan variabel independen."
+    },
+    "sto": {
+      "type": "Imputasi",
+      "title": "Regresi Stokastik",
+      "content": "Imputasi regresi stokasik menyelesaikan permasalahan pada imputasi regresi deterministik, dimana imputasi ini menambahkan nilai error pada nilai terprediksi yang dapat menghasilkan nilai korelasi antar variabel dependen dan independen lebih sesuai."
+    },
+    "pan": {
+      "type": "Regresi",
+      "title": "Regresi Panel",
+      "content": "Regresi panel merupakan metode permodelan pada data panel yang merupakan gabungan antara data cross-section dan data time series."
+    },
+    "com": {
+      "type": "Model",
+      "title": "Model Efek Umum",
+      "content": "Model efek umum mengasumsikan nilai intercept untuk setiap variabel dan nilai koefisien slope untuk setiap unit cross-section dan time series adalah sama."
+    },
+    "fix": {
+      "type": "Model",
+      "title": "Model Efek Tetap",
+      "content": "Model efek tetap mengasumsikan nilai setiap individu dalam model memiliki nilai intercept yang berbeda-beda."
+    },
+    "ame": {
+      "type": "Model",
+      "title": "Model Efek Acak",
+      "desc": "Amemiya",
+      "content": "Model efek acak dengan estimasi Amemiya menggunakan nilai residual model within untuk kedua persamaan kuadratik dalam membuat persamaan varians dari efek individual."
+    },
+    "ner": {
+      "type": "Model",
+      "title": "Model Efek Acak",
+      "desc": "Nerlove",
+      "content": "Model efek acak dengan estimasi Nerlove menggunakan nilai residual model within untuk persamaan kuadratik pertama dan menggunakan nilai residual persamaan kuadratik dengan jumlah observasi dalam membuat persamaan varians dari efek individual."
+    },
+    "swa": {
+      "type": "Model",
+      "title": "Model Efek Acak",
+      "desc": "Swamy-Arora",
+      "content": "Model efek acak dengan estimasi Swamy-Arora menggunakan nilai residual efek model between untuk persamaan kuadratik pertama dan menggunakan nilai residual efek model within untuk persamaan kuadratik kedua dalam membuat persamaa varians dari efek individual."
+    },
+    "wal": {
+      "type": "Model",
+      "title": "Model Efek Acak",
+      "desc": "Wallace-Hussain",
+      "content": "Model efek acak dengan estimasi Wallace-Hussain menggunakan nilai residual efek umum untuk kedua persamaan kuadratik dalam membuat persamaan varians dari efek individual."
     }
   },
   "simulation": {
