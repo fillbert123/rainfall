@@ -56,6 +56,9 @@ export default {
       border-radius: 20px;
       &__label {
         margin-inline-end: 8px;
+        color: var(--dark);
+        font-family: SFRoundedM;
+        font-size: 16px;
       }
     }
   }
