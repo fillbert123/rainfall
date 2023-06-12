@@ -4,15 +4,30 @@
       <img src="" alt="">
     </div>
     <div class="data__info">
-      <div class="data__info__type">KABUPATEN</div>
-      <div class="data__info__name">Manggarai Barat</div>
+      <div v-if="!isLanguageEnglish" class="data__info__type">{{ admArea }}</div>
+      <div class="data__info__name">{{ $t('administrative.admName.' + area) }}</div>
+      <div v-if="isLanguageEnglish" class="data__info__type">{{ admArea }}</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'regencyCityName'
+  name: 'regencyCityName',
+  props: {
+    area: String,
+    admArea: String
+  },
+  computed: {
+    isLanguageEnglish () {
+      return this.$i18n.locale === 'en'
+    }
+  },
+  filters: {
+    uppercase (text) {
+      return text.toUpperCase()
+    }
+  }
 }
 </script>
 

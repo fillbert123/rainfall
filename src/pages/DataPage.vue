@@ -1,5 +1,11 @@
 <template>
   <div class="page">
+    <div v-if="areaModalShowed" class="page__overlay">
+      <AreaModal class="page__overlay__modal"
+        @hideAreaModal="hideAreaModal"
+        :selectedArea="selectedArea"
+        :selectedAdmArea="selectedAdmArea"></AreaModal>
+    </div>
     <div class="page__upper">
       <RegionalMap class="page__upper__map"></RegionalMap>
       <LocationPopup
@@ -7,6 +13,7 @@
         class="page__upper__pin"
         @popupHidden="hidePopup(area.key)"
         @popupShow="showPopup(area.key)"
+        @showAreaModal="showAreaModal(area.key, area.admArea)"
         :staName="area.staName"
         :admArea="area.admArea"
         :admName="area.admName"
@@ -23,15 +30,14 @@
       </div>
     </div>
     <div class="page__lower">
-      <div>{{ popupShowed }}</div>
-      <div>{{ areas.alo.display }}</div>
-      <div>{{ areas.mgr.display }}</div>
-      <div>d</div>
-      <div>e</div>
-      <div>f</div>
-      <div>g</div>
-      <div>h</div>
-      <div>i</div>
+      <div 
+        v-for="area in areas"
+        :key="area.key"
+        @click="showAreaModal(area.key, area.admArea)"
+        class="page__lower__area">
+        <div class="page__lower__area__icon"></div>
+        <div class="page__lower__area__label">{{ $t('administrative.admName.' + area.key) }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -39,6 +45,7 @@
 <script>
 import RegionalMap from '@/map/RegionalMap.vue';
 import LocationPopup from '@/components/LocationPopup.vue';
+import AreaModal from '@/modals/AreaModal.vue';
 
 export default {
   name: 'dataPage',
@@ -47,7 +54,7 @@ export default {
       areas: {
         alo: {
           key: 'alo',
-          top: 194,
+          top: 159,
           left: 1050,
           staName: this.$t(`variable.additional.station.sma.full`),
           admArea: this.$t(`administrative.admArea.district`),
@@ -56,8 +63,8 @@ export default {
         },
         flo: {
           key: 'flo',
-          top: 214,
-          left: 830,
+          top: 184,
+          left: 815,
           staName: this.$t(`variable.additional.station.sga.full`),
           admArea: this.$t(`administrative.admArea.district`),
           admName: this.$t(`administrative.admName.flo`),
@@ -65,7 +72,7 @@ export default {
         },
         rot: {
           key: 'rot',
-          top: 569,
+          top: 529,
           left: 850,
           staName: this.$t(`variable.additional.station.sdc.full`),
           admArea: this.$t(`administrative.admArea.district`),
@@ -74,7 +81,7 @@ export default {
         },
         sab: {
           key: 'sab',
-          top: 579,
+          top: 549,
           left: 665,
           staName: this.$t(`variable.additional.station.sta.full`),
           admArea: this.$t(`administrative.admArea.district`),
@@ -83,8 +90,8 @@ export default {
         },
         mgr: {
           key: 'mgr',
-          top: 259,
-          left: 480,
+          top: 219,
+          left: 470,
           staName: this.$t(`variable.additional.station.sfs.full`),
           admArea: this.$t(`administrative.admArea.district`),
           admName: this.$t(`administrative.admName.mgr`),
@@ -92,7 +99,7 @@ export default {
         },
         mgb: {
           key: 'mgb',
-          top: 244,
+          top: 214,
           left: 390,
           staName: this.$t(`variable.additional.station.sko.full`),
           admArea: this.$t(`administrative.admArea.district`),
@@ -101,7 +108,7 @@ export default {
         },
         sik: {
           key: 'sik',
-          top: 269,
+          top: 239,
           left: 730,
           staName: this.$t(`variable.additional.station.sfx.full`),
           admArea: this.$t(`administrative.admArea.district`),
@@ -110,8 +117,8 @@ export default {
         },
         sbt: {
           key: 'sbt',
-          top: 424,
-          left: 450,
+          top: 389,
+          left: 440,
           staName: this.$t(`variable.additional.station.smk.full`),
           admArea: this.$t(`administrative.admArea.district`),
           admName: this.$t(`administrative.admName.sbt`),
@@ -119,8 +126,8 @@ export default {
         },
         kot: {
           key: 'kot',
-          top: 494,
-          left: 930,
+          top: 449,
+          left: 920,
           staName: this.$t(`variable.additional.station.sel.full`),
           admArea: this.$t(`administrative.admArea.city`),
           admName: this.$t(`administrative.admName.kup`),
@@ -131,52 +138,70 @@ export default {
         ntb: {
           key: 'ntb',
           value: this.$t('administrative.other.ntb'),
-          top: 180,
+          top: 150,
           left: 30
         },
         tim: {
           key: 'tim',
           value: this.$t('administrative.other.tim'),
-          top: 215,
+          top: 185,
           left: 1200
         },
         fls: {
           key: 'fls',
           value: this.$t('administrative.other.fls'),
-          top: 80,
+          top: 50,
           left: 250
         },
         bas: {
           key: 'bas',
           value: this.$t('administrative.other.bas'),
-          top: 80,
+          top: 50,
           left: 1150
         },
         sas: {
           key: 'sas',
           value: this.$t('administrative.other.sas'),
-          top: 350,
+          top: 320,
           left: 670
         },
         tis: {
           key: 'tis',
           value: this.$t('administrative.other.tis'),
-          top: 440,
+          top: 410,
           left: 1150
         },
         ino: {
           key: 'ino',
           value: this.$t('administrative.other.ino'),
-          top: 490,
+          top: 460,
           left: 100
         },
       },
-      popupShowed: false
+      popupShowed: false,
+      areaModalShowed: false,
+      selectedArea: null,
+      selectedAdmArea: null,
     }
   },
   components: {
     RegionalMap,
-    LocationPopup
+    LocationPopup,
+    AreaModal
+  },
+  created () {
+    this.marginLeft = (1440 - window.innerWidth)/2
+    for (let i in this.areas) {
+      this.areas[i].left = this.areas[i].left - this.marginLeft - this.countWindowAdditionalMargin
+    }
+    for (let i in this.geographicalLocation) {
+      this.geographicalLocation[i].left = this.geographicalLocation[i].left - this.marginLeft - this.countWindowAdditionalMargin
+    }
+  },
+  computed: {
+    countWindowAdditionalMargin () {
+      return (15 / 240 * (1440 - window.innerWidth))
+    }
   },
   methods: {
     hidePopup (location) {
@@ -192,6 +217,16 @@ export default {
       for (let i in this.areas){
         this.areas[i].display = 'none'
       }
+    },
+    showAreaModal (location, admArea) {
+      this.hideAllPopup()
+      this.areaModalShowed = true
+      this.selectedArea = location
+      this.selectedAdmArea = admArea
+    },
+    hideAreaModal () {
+      this.areaModalShowed = false
+      this.selectedArea = null
     }
   }
 }
@@ -202,9 +237,24 @@ export default {
   background-color: var(--dark);
   width: 100%;
   height: 100vh;
+  overflow: hidden;
+  &__overlay {
+    position: fixed;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--darker_tr);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__modal {
+      zoom: 80%;
+    }
+  }
   &__upper {
     height: 460px;
-    padding-block-start: 180px;
+    padding-block-start: 150px;
     position: relative;
     &__map {
       zoom: 90%;
@@ -212,7 +262,7 @@ export default {
     }
     &__pin {
       position: absolute;
-      z-index: 100;
+      z-index: 1;
     }
     &__other {
       position: absolute;
@@ -222,6 +272,36 @@ export default {
       text-align: center;
       letter-spacing: 0.35em;
       font-variant: all-small-caps;
+    }
+  }
+  &__lower {
+    margin-block-start: 240x;
+    padding-inline: 48px;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    &__area {
+      margin: 8px;
+      width: 200px;
+      border-radius: 12px;
+      padding: 8px;
+      background-color: var(--light_tr);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      &__icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        background-color: var(--darker_tr);
+        margin-inline-end: 8px;
+      }
+      &__label {
+        color: var(--white);
+        font-family: SFRoundedSB;
+        font-size: 16px;
+      }
     }
   }
 }

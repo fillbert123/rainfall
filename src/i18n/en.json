@@ -24,6 +24,7 @@
       "sab": "Sabu Raijua",
       "rot": "Rote Ndao",
       "kup": "Kupang",
+      "kot": "Kupang",
       "ttu": "North Central Timor",
       "tts": "South Central Timor",
       "mal": "Malaka",
@@ -42,45 +43,131 @@
     }
   },
   "variable": {
+    "main": {
+      "rainfall": {
+        "name": "Rainfall",
+        "full": "Rainfall amount",
+        "unit": "mm"
+      },
+      "temperature": {
+        "name": "Temperature",
+        "full": "Average temperature",
+        "unit": "°C"
+      },
+      "humidity": {
+        "name": "Humidity",
+        "full": "Average humidity",
+        "unit": "%"
+      },
+      "sunshine": {
+        "name": "Sunshine",
+        "full": "Average sunshine duration",
+        "unit": "hour"
+      },
+      "windspeed": {
+        "name": "Wind speed",
+        "full": "Average wind speed",
+        "unit": "m/s"
+      },
+      "winddirection": {
+        "name": "Wind direction",
+        "full": "Average wind direction",
+        "unit": "°",
+        "direction": {
+          "e": "East",
+          "se": "Southeast",
+          "s": "South",
+          "sw": "Southwest",
+          "w": "West",
+          "nw": "Northwest",
+          "n": "West",
+          "ne": "Northeast"
+        }
+      }
+    },
     "additional": {
       "station": {
         "sta": {
           "name": "Tardamu",
-          "full": "Tardamu"
+          "full": "Tardamu",
+          "image": {
+            "name": "Kelabba Maja",
+            "source": "Hibur.id"
+          }
         },
         "sma": {
           "name": "Mali",
-          "full": "Mali"
+          "full": "Mali",
+          "image": {
+            "name": "Selat Pantar Marine Park",
+            "source": "TIC Mitra Praja Utama"
+          }
         },
         "sga": {
           "name": "Gewayantana",
-          "full": "Gewayantana"
+          "full": "Gewayantana",
+          "image": {
+            "name": "Mater Dolorosa Prayer Garden",
+            "source": "Mister Aladin"
+          }
         },
         "sfx": {
           "name": "FX Seda",
-          "full": "Fransiskus Xaverius Seda"
+          "full": "Fransiskus Xaverius Seda",
+          "image": {
+            "name": "Statue of Maria Mother of All Nations",
+            "source": "Indonesia Kaya"
+          }
         },
         "sfs": {
           "name": "FS Lega",
-          "full": "Frans Sales Lega"
+          "full": "Frans Sales Lega",
+          "image": {
+            "name": "Wae Rebo Village",
+            "source": "Good News From Indonesia"
+          }
         },
         "smk": {
           "name": "UM Kunda",
-          "full": "Umbu Mehang Kunda"
+          "full": "Umbu Mehang Kunda",
+          "image": {
+            "name": "Walakiri Beach",
+            "source": "Atourin"
+          }
         },
         "sdc": {
           "name": "DC Saudale",
-          "full": "David Constantijn Saudale"
+          "full": "David Constantijn Saudale",
+          "image": {
+            "name": "Termanu Stone",
+            "source": "Sonny Photo"
+          }
         },
         "sko": {
           "name": "Komodo",
-          "full": "Komodo"
+          "full": "Komodo",
+          "image": {
+            "name": "Komodo National Park",
+            "source": "Mongabay"
+          }
         },
         "sel": {
           "name": "Eltari",
-          "full": "Eltari"
+          "full": "Eltari",
+          "image": {
+            "name": "Kupang Crystal Cave",
+            "source": "Mongotrip"
+          }
         }
-      }
+      },
+      "weather_station": "Weather station",
+      "latitude": "Latitude",
+      "longitude": "longitude",
+      "elevation": "Elevation",
+      "period": "Period",
+      "complete_case": "Total of complete case",
+      "not_recorded": "Not recorded",
+      "source": "Source: "
     }
   },
   "simulation": {
