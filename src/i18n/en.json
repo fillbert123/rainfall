@@ -170,6 +170,66 @@
       "source": "Source: "
     }
   },
+  "analysis": {
+    "notes": {
+      "title": "Please choose one of these topics",
+      "content": "Chosen topic will be presented on the right."
+    },
+    "pmm": {
+      "type": "Imputation",
+      "title": "Predictive Mean Matching",
+      "content": "Predictive Mean Matching Imputation assigns the missing value according to the closest observed value from the model."
+    },
+    "det": {
+      "type": "Imputation",
+      "title": "Deterministic Regression",
+      "content": "Deterministic regression imputation imputs the missing value based on predictions from the regression model that is formed. This results in values that are too inaccurate and have an impact on overestimating the correlation between the dependent variable and the independent variable."
+    },
+    "sto": {
+      "type": "Imputation",
+      "title": "Stochastic Regression",
+      "content": "Stocasic Regression Imputation resolves problems in deterministic regression imputation, where this imputation adds an error value to predict values ​​that can produce correlation values ​​between dependent and independent variables appropriately."
+    },
+    "pan": {
+      "type": "Regression",
+      "title": "Panel Regression",
+      "content": "Panel regression is a modeling method in panel data which is a combination of cross-section data and time series data."
+    },
+    "com": {
+      "type": "Model",
+      "title": "Common Effect Model",
+      "content": "The common effect model assumes the intercept value for each variable and the slope coefficient value for each cross-section and time series unit are similar."
+    },
+    "fix": {
+      "type": "Model",
+      "title": "Fixed Effect Model",
+      "content": "The fixed effect model assumes the value of each individual in the model has a different intercept value."
+    },
+    "ame": {
+      "type": "Model",
+      "title": "Random Effect Model",
+      "desc": "Amemiya",
+      "content": "The random effect model with Amemiya estimation is predicted by using within model residual for both quadratic equations for calculating individual effect of variance equation."
+    },
+    "ner": {
+      "type": "Model",
+      "title": "Random Effect Model",
+      "desc": "Nerlove",
+      "content": "Random effect model with Nerlove estimation is predicted by using within model residual for the first quadratic equation and using quadratic equation residual value divided by the number of observations for calculating individual effect of variance equation."
+    },
+    "swa": {
+      "type": "Model",
+      "title": "Random Effect Model",
+      "desc": "Swamy-Arora",
+      "content": "Random effect model with Swamy-Arora estimation is predicted by using between model residual for the first quadratic equation and using within model residual for the second quadratic equation in order to calculate the individual effect of variance equation."
+    },
+    "wal": {
+      "type": "Model",
+      "title": "Random Effect Model",
+      "desc": "Wallace-Hussain",
+      "content": "Random effect model with Wallace-Hussain estimation is predicted by using common effect residual for both quadratic equations for calculating individual effect of variance equation."
+    }
+  },
   "simulation": {
     "model": {
       "choose": "Choose a model",
