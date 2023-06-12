@@ -1,16 +1,18 @@
 <template>
   <div class="hello">
+    <MainPage></MainPage>
     <VariablePage></VariablePage>
     <DataPage></DataPage>
-    <AnalysisPageVue></AnalysisPageVue>
+    <AnalysisPage></AnalysisPage>
     <SimulationPage></SimulationPage>
   </div>
 </template>
 
 <script>
+import MainPage from '@/pages/MainPage.vue';
 import VariablePage from '@/pages/VariablePage.vue';
 import DataPage from '@/pages/DataPage.vue';
-import AnalysisPageVue from '@/pages/AnalysisPage.vue';
+import AnalysisPage from '@/pages/AnalysisPage.vue';
 import SimulationPage from '@/pages/SimulationPage.vue';
 
 export default {
@@ -19,9 +21,10 @@ export default {
     msg: String
   },
   components: {
+    MainPage,
     VariablePage,
     DataPage,
-    AnalysisPageVue,
+    AnalysisPage,
     SimulationPage
   }
 }
