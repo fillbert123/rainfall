@@ -1,16 +1,28 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <MainPage></MainPage>
+    <VariablePage></VariablePage>
+    <DataPage></DataPage>
+    <AnalysisPage></AnalysisPage>
+    <SimulationPage></SimulationPage>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MainPage from '@/pages/MainPage.vue';
+import VariablePage from '@/pages/VariablePage.vue';
+import DataPage from '@/pages/DataPage.vue';
+import AnalysisPage from '@/pages/AnalysisPage.vue';
+import SimulationPage from '@/pages/SimulationPage.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MainPage,
+    VariablePage,
+    DataPage,
+    AnalysisPage,
+    SimulationPage
   } 
 }
 </script>
@@ -26,7 +38,7 @@ body {
 }
 
 :root {
-  background-color: var(--white);
+  background-color: var(--dark);
   --darker: rgba(49, 60, 68, 1);
   --darker_tr: rgba(24, 31, 35, 0.5);
   --dark: rgba(72, 89, 100, 1);
@@ -44,6 +56,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
 </style>

@@ -41,6 +41,11 @@
       "ino": "Samudera<br>Hindia"
     }
   },
+  "main": {
+    "welcome": "Selamat datang",
+    "learn": "Pelajari",
+    "simulation": "Simulasi"
+  },
   "variable": {
     "main": {
       "rainfall": {

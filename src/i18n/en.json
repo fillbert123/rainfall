@@ -42,6 +42,11 @@
       "ino": "Indian<br>Ocean"
     }
   },
+  "main": {
+    "welcome": "Welcome",
+    "learn": "Learn more",
+    "simulation": "Simulation"
+  },
   "variable": {
     "main": {
       "rainfall": {
