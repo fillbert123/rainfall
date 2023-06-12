@@ -239,7 +239,7 @@ export default {
   height: 100vh;
   overflow: hidden;
   &__overlay {
-    position: fixed;
+    position: sticky;
     z-index: 2;
     width: 100vw;
     height: 100vh;
