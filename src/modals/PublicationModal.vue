@@ -1,10 +1,11 @@
 <template>
   <div class="modal">
+    <img class="modal__close" src="@/assets/icons/close.svg" alt="" @click="hidePublicationModal">
     <div class="modal__upper">
       <div class="modal__upper__icon">
         <img src="@/assets/icons/humidity.high.svg" alt="">
       </div>
-      <div class="modal__upper__title">Curah hujan</div>
+      <div class="modal__upper__title">{{ this.$t('variable.main.' + selectedVariable + '.name') }}</div>
     </div>
     <div class="modal__lower">
       <div class="modal__lower__publication">
@@ -13,12 +14,12 @@
             <img src="@/assets/icons/1.svg" alt="">
           </div>
           <div class="modal__lower__publication__left__info">
-            <div class="modal__lower__publication__left__info__title">Principled Missing Data Treatments</div>
-            <div class="modal__lower__publication__left__info__author">Kyle M. Lang, Todd D. Little</div>
+            <div class="modal__lower__publication__left__info__title">{{ this.$t('variable.main.' + selectedVariable + '.publication.first.title') }}</div>
+            <div class="modal__lower__publication__left__info__author">{{ this.$t('variable.main.' + selectedVariable + '.publication.first.author') }}</div>
           </div>
         </div>
-        <div class="modal__lower__publication__right">
-          <div class="modal__lower__publication__right__label">Baca publikasi</div>
+        <div @click="goToUrl('first')" class="modal__lower__publication__right">
+          <div class="modal__lower__publication__right__label">{{ this.$t('variable.button.read') }}</div>
           <img src="@/assets/icons/link.svg" alt="" class="modal__lower__publication__right__icon">
         </div>
       </div>
@@ -28,12 +29,12 @@
             <img src="@/assets/icons/2.svg" alt="">
           </div>
           <div class="modal__lower__publication__left__info">
-            <div class="modal__lower__publication__left__info__title">Principled Missing Data Treatments</div>
-            <div class="modal__lower__publication__left__info__author">Kyle M. Lang, Todd D. Little</div>
+            <div class="modal__lower__publication__left__info__title">{{ this.$t('variable.main.' + selectedVariable + '.publication.second.title') }}</div>
+            <div class="modal__lower__publication__left__info__author">{{ this.$t('variable.main.' + selectedVariable + '.publication.second.author') }}</div>
           </div>
         </div>
-        <div class="modal__lower__publication__right">
-          <div class="modal__lower__publication__right__label">Baca publikasi</div>
+        <div @click="goToUrl('second')" class="modal__lower__publication__right">
+          <div class="modal__lower__publication__right__label">{{ this.$t('variable.button.read') }}</div>
           <img src="@/assets/icons/link.svg" alt="" class="modal__lower__publication__right__icon">
         </div>
       </div>
@@ -43,12 +44,12 @@
             <img src="@/assets/icons/3.svg" alt="">
           </div>
           <div class="modal__lower__publication__left__info">
-            <div class="modal__lower__publication__left__info__title">Principled Missing Data Treatments</div>
-            <div class="modal__lower__publication__left__info__author">Kyle M. Lang, Todd D. Little</div>
+            <div class="modal__lower__publication__left__info__title">{{ this.$t('variable.main.' + selectedVariable + '.publication.third.title') }}</div>
+            <div class="modal__lower__publication__left__info__author">{{ this.$t('variable.main.' + selectedVariable + '.publication.third.author') }}</div>
           </div>
         </div>
-        <div class="modal__lower__publication__right">
-          <div class="modal__lower__publication__right__label">Baca publikasi</div>
+        <div @click="goToUrl('third')" class="modal__lower__publication__right">
+          <div class="modal__lower__publication__right__label">{{ this.$t('variable.button.read') }}</div>
           <img src="@/assets/icons/link.svg" alt="" class="modal__lower__publication__right__icon">
         </div>
       </div>
@@ -58,7 +59,18 @@
 
 <script>
 export default {
-  name: 'publicationModal'
+  name: 'publicationModal',
+  props: {
+    selectedVariable: String
+  },
+  methods: {
+    hidePublicationModal () {
+      this.$emit('hidePublicationModal')
+    },
+    goToUrl (urlNo) {
+      window.location.href = this.$t('variable.main.' + this.selectedVariable + '.publication.' + urlNo + '.link')
+    }
+  }
 }
 </script>
 
@@ -68,6 +80,13 @@ export default {
   padding: 40px;
   background-color: var(--light_tr);
   border-radius: 30px;
+  position: relative;
+  &__close {
+    position: absolute;
+    zoom: 200%;
+    top: -8px;
+    right: -8px;
+  }
   &__upper {
     display: flex;
     flex-direction: row;
@@ -96,7 +115,7 @@ export default {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       &__left {
         display: flex;
         flex-direction: row;
@@ -111,6 +130,9 @@ export default {
           &__title {
             font-family: SFRoundedSB;
             font-size: 24px;
+            width: 500px;
+            text-align: start;
+            margin-block-end: 4px;
           }
           &__author {
             font-family: SFRoundedR;

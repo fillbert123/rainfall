@@ -5,7 +5,7 @@
         <img class="data__left__icon__img" :src="require(`@/assets/icons/${variable}.high.svg`)" alt="">
       </div>
       <div class="data__left__value">{{ value }}</div>
-      <div class="data__left__unit">mm/bln</div>
+      <div class="data__left__unit">{{ this.$t('variable.main.' + variable + '.unit') }}</div>
     </div>
     <div class="data__right">
       <div class="data__right__minicon">

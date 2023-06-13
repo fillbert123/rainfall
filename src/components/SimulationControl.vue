@@ -12,7 +12,6 @@
       <div class="simulation__lower__left">
         <div class="simulation__lower__left__model">
           <div class="simulation__lower__left__model__label">MODEL</div>
-          <img class="simulation__lower__left__model__info" src="@/assets/icons/info.svg" alt="">
           <ModelSelector 
             @unlockEstimation="unlockEstimation = true"
             @lockEstimation="unlockEstimation = false"
@@ -23,7 +22,6 @@
         </div>
         <div class="simulation__lower__left__method">
           <div class="simulation__lower__left__method__label">METODE</div>
-          <img class="simulation__lower__left__method__info" src="@/assets/icons/info.svg" alt="">
           <EstimationSelector 
             :unlockEstimation="unlockEstimation"
             @amemiyaSelected="amemiyaSelected"
@@ -179,12 +177,9 @@ export default {
         flex-direction: row;
         align-items: center;
         &__label {
-          margin-inline-end: 8px;
+          margin-inline-end: 16px;
           font-family: SFRoundedM;
           font-size: 14px;
-        }
-        &__info {
-          margin-inline-end: 16px;
         }
       }
       &__model {
