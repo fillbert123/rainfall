@@ -3,6 +3,7 @@
     <div class="page__variable">
       <VariableCard 
         v-for="variable in variables" 
+        @viewPublicationModal="viewPublicationModal(variable)"
         :variable="variable"
         :key="variable"
         class="page__variable__card"></VariableCard>
@@ -28,6 +29,11 @@ export default {
   },
   components: {
     VariableCard
+  },
+  methods: {
+    viewPublicationModal (variable) {
+      this.$emit('viewPublicationModal', variable)
+    }
   }
 }
 </script>

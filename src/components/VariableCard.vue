@@ -4,7 +4,7 @@
       <div class="data__upper__icon">
         <img class="data__upper__icon__image" :src="require(`@/assets/icons/${variable}.high.svg`)" alt="">
       </div>
-      <div class="data__upper__button">
+      <div v-if="!isRainfall" @click="viewPublicationModal" class="data__upper__button">
         <div class="data__upper__button__label">{{ this.$t('variable.button.see') }}</div>
         <img class="data__upper__button__icon" src="@/assets/icons/publication.svg" alt="">
       </div>
@@ -21,6 +21,16 @@ export default {
   name: 'variableCard',
   props: {
     variable: String
+  },
+  computed: {
+    isRainfall () {
+      return this.variable === "rainfall" ? true : false
+    }
+  },
+  methods: {
+    viewPublicationModal () {
+      this.$emit('viewPublicationModal')
+    }
   }
 }
 </script>
@@ -29,7 +39,7 @@ export default {
 .data {
   padding: 20px;
   width: 360px;
-  height: 260px;
+  height: 310px;
   background-color: var(--light_tr);
   border-radius: 20px;
   &__upper {

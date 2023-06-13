@@ -8,11 +8,11 @@
     </div>
     <div class="page__title">{{ this.$t('main.welcome') }}</div>
     <div class="page__control">
-      <div class="page__control__learn">
+      <div class="page__control__learn" @click="goToSelected('variable')">
         <div class="page__control__learn__label">{{ this.$t('main.learn') }}</div>
         <img class="page__control__learn__chevron" src="@/assets/icons/chevron.svg" alt="">
       </div>
-      <div class="page__control__simulation">
+      <div class="page__control__simulation" @click="goToSelected('simulation')">
         <div class="page__control__simulation__label">{{ this.$t('main.simulation') }}</div>
         <img class="page__control__simulation__chevron" src="@/assets/icons/chevron.svg" alt="">
       </div>
@@ -22,7 +22,12 @@
 
 <script>
 export default {
-  name: 'mainPage'
+  name: 'mainPage',
+  methods: {
+    goToSelected (id) {
+      this.$emit('goToSelected', id)
+    }
+  }
 }
 </script>
 

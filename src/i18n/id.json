@@ -1,4 +1,23 @@
 {
+  "lang": {
+    "en": {
+      "code": "EN",
+      "entrans": "English",
+      "idtrans": "Bahasa Inggris"
+    },
+    "id": {
+      "code": "ID",
+      "entrans": "Indonesian",
+      "idtrans": "Bahasa Indonesia"
+    }
+  },
+  "navbar": {
+    "main": "Utama",
+    "variable": "Variabel",
+    "data": "Data",
+    "analysis": "Analisis",
+    "simulation": "Simulasi"
+  },
   "administrative": {
     "province": "Nusa Tenggara Timur",
     "admArea": {
@@ -53,31 +72,100 @@
         "name": "Curah hujan",
         "full": "Jumlah curah hujan",
         "desc": "Curah hujan merupakan jumlah air hujan yang tertampung pada bidang data seluas 1 meter persegi dengan asumsi tidak menguap, tidak mengalir, dan tidak meresap. Air hujan yang tertampung akan diukur ketinggiannya dengan satuan milimeter (mm). Pengukuran curah hujan dapat dilakukan dengan menggunakan alat yang bernama ombrometer.",
-        "unit": "mm"
+        "unit": "mm",
+        "month": "bulan"
       },
       "temperature": {
         "name": "Suhu udara",
         "full": "Suhu udara rata-rata",
         "desc": "Suhu udara atau temperatur udara adalah hasil pengukuran energi kinetik rata-rata pada molekul di udara. Dalam mengukur suhu udara, dapat dilakukan dengan alat yang bernama temistor, termokopel, atau termometer. Hasil pengukuran suhu udara dapat dalam satuan derajat Celcius (°C), Fahrenheit (°F), atau dengan satuan internasional, yaitu Kelvin (K)",
-        "unit": "°C"
+        "unit": "°C",
+        "publication": {
+          "first": {
+            "title": "Analisis Arah dan Kecepatan Angin Terhadap Sebaran Curah Hujan di Wilayah Kabupaten Tangerang",
+            "author": "Simbolon C, et al.",
+            "link": "https://jurnal.fmipa.unila.ac.id/jtaf/article/viewFile/2914/2040"
+          },
+          "second": {
+            "title": "Model Fungsi Transfer Multi Input untuk Peramalan Curah Hujan di Kota Surabaya",
+            "author": "Nanlohy Y",
+            "link": "https://repository.its.ac.id/45772/1/1315201021-Master_Thesis.pdf"
+          },
+          "third": {
+            "title": "Prediksi Curah Hujan Di Kabupaten Majalengka Dengan Menggunakan Algoritma Regresi Rainfall Prediction in Majalengka District Using Regression Algorithm",
+            "author": "Mulyani E, et al.",
+            "link": "https://www.neliti.com/publications/495297/prediksi-curah-hujan-di-kabupaten-majalengka-dengan-menggunakan-algoritma-regres"
+          }
+        }
       },
       "humidity": {
         "name": "Kelembapan",
         "full": "Kelembapan rata-rata",
         "desc": "Kelembapan udara adalah jumlah kanduang uap air yang berada pada sebuah ruangan atau udara dalam lapisan atmosfer. Kelembapan udara merupakan faktor penting dalam penentuan iklim dalam suatu daerah, karena mempengaruhi laju penguapan, laju kondensasi, dan laju perpindahan panas. Pengukuran kelembapan udara dapat dilakukan dengan alat yang bernama higrometer, higrograf, atau psikrometer dengan satuan persen (%)",
-        "unit": "%"
+        "unit": "%",
+        "publication": {
+          "first": {
+            "title": "Prediksi Curah Hujan Di Kabupaten Majalengka Dengan Menggunakan Algoritma Regresi Rainfall Prediction in Majalengka District Using Regression Algorithm",
+            "author": "Mulyani E, et al.",
+            "link": "https://www.neliti.com/publications/495297/prediksi-curah-hujan-di-kabupaten-majalengka-dengan-menggunakan-algoritma-regres"
+          },
+          "second": {
+            "title": "Model Fungsi Transfer Multi Input untuk Peramalan Curah Hujan di Kota Surabaya",
+            "author": "Nanlohy Y",
+            "link": "https://repository.its.ac.id/45772/1/1315201021-Master_Thesis.pdf"
+          },
+          "third": {
+            "title": "Why is humidity important?",
+            "author": "Met Office UK",
+            "link": "https://www.metoffice.gov.uk/weather/learn-about/weather/types-of-weather/humidity/effects#:~:text=During%20very%20heavy%20rainfall%2C%20where,we%27re%20likely%20to%20see."
+          }
+        }
       },
       "sunshine": {
         "name": "Penyinaran matahari",
         "full": "Durasi penyinaran matahari",
         "desc": "Durasi penyinaran matahari adalah periode matahari bersinar cerah pada permukaan bumi yang dihitung mulai dari matahari terbit hingga terbenam. Pengukuran durasi penyinaran matahari dilakukan dengan alat yang bernama Campbell stokes atau stokes sphere. Pada umumnya, variabel durasi penyinaran matahari ditulis dalam satuan jam.",
-        "unit": "jam"
+        "unit": "jam",
+        "publication": {
+          "first": {
+            "title": "Prediksi Curah Hujan Di Kabupaten Majalengka Dengan Menggunakan Algoritma Regresi Rainfall Prediction in Majalengka District Using Regression Algorithm",
+            "author": "Mulyani E, et al.",
+            "link": "https://www.neliti.com/publications/495297/prediksi-curah-hujan-di-kabupaten-majalengka-dengan-menggunakan-algoritma-regres"
+          },
+          "second": {
+            "title": "Spatiotemporal Characteristics and Influencing Factors of Sunshine Duration in China from 1970 to 2019",
+            "author": "Tang C, et al.",
+            "link": "https://www.mdpi.com/2073-4433/13/12/2015"
+          },
+          "third": {
+            "title": "Climatological Indicator of Sunshine Hours in Association with other Climatic Factors in Nigeria",
+            "author": "Akinpelu J, Atteh Y",
+            "link": "https://www.globalscientificjournal.com/researchpaper/Climatological_Indicator_of_Sunshine_Hours_in_Association_with_other_Climatic_Factors_in_Nigeria.pdf"
+          }
+        }
       },
       "windspeed": {
         "name": "Kecepatan angin",
         "full": "Kecepatan angin rata-rata",
         "desc": "Kecepatan angin adalah sebuah pengukuran yang dilakukan karena adanya pergerakan udara dari tekanan tinggi ke tekanan rendah. Pergerakan udara ini dipengaruhi oleh gradien barometris letak tempat, tinggi tempat, dan keadaan. Pada umumnya, pengukuran kecepatan angin dilakukan dengan alat yang bernama anemometer dengan satuan meter per sekon (m/s).",
-        "unit": "m/s"
+        "unit": "m/s",
+        "publication": {
+          "first": {
+            "title": "Analisis Arah dan Kecepatan Angin Terhadap Sebaran Curah Hujan di Wilayah Kabupaten Tangerang",
+            "author": "Simbolon C, et al.",
+            "link": "https://jurnal.fmipa.unila.ac.id/jtaf/article/viewFile/2914/2040"
+          },
+          "second": {
+            "title": "Model Fungsi Transfer Multi Input untuk Peramalan Curah Hujan di Kota Surabaya",
+            "author": "Nanlohy Y",
+            "link": "https://repository.its.ac.id/45772/1/1315201021-Master_Thesis.pdf"
+          },
+          "third": {
+            "title": "Prediksi Curah Hujan Di Kabupaten Majalengka Dengan Menggunakan Algoritma Regresi Rainfall Prediction in Majalengka District Using Regression Algorithm",
+            "author": "Mulyani E, et al.",
+            "link": "https://www.neliti.com/publications/495297/prediksi-curah-hujan-di-kabupaten-majalengka-dengan-menggunakan-algoritma-regres"
+          }
+        }
       },
       "winddirection": {
         "name": "Arah angin",
@@ -186,6 +274,7 @@
     "see_data": "Lihat data"
   },
   "analysis": {
+    "syntax": "Sintaks R untuk melakukan ",
     "notes": {
       "title": "Silakan pilih topik berikut",
       "content": "Topik terpilih akan tersajikan di sebelah kanan pilihan topik ini."
@@ -193,16 +282,19 @@
     "pmm": {
       "type": "Imputasi",
       "title": "Predictive Mean Matching",
+      "syntax": "complete(mice(data), method = \"pmm\")",
       "content": "Imputasi predictive mean matching mengimputasi nilai missing value berdasarkan nilai observasi yang terdekat dari model."
     },
     "det": {
       "type": "Imputasi",
       "title": "Regresi Deterministik",
+      "syntax": "complete(mice(data), method = \"norm.predict\")",
       "content": "Imputasi regresi deterministik mengimputasi nilai missing value berdasarkan prediksi dari model regresi yang terbentuk. Hal ini mengakibatkan nilai terlalu akurat dan berdampak pada estimasi berlebih pada korelasi antar variabel dependen dan variabel independen."
     },
     "sto": {
       "type": "Imputasi",
       "title": "Regresi Stokastik",
+      "syntax": "complete(mice(data), method = \"norm.nob\")",
       "content": "Imputasi regresi stokasik menyelesaikan permasalahan pada imputasi regresi deterministik, dimana imputasi ini menambahkan nilai error pada nilai terprediksi yang dapat menghasilkan nilai korelasi antar variabel dependen dan independen lebih sesuai."
     },
     "pan": {
@@ -211,38 +303,44 @@
       "content": "Regresi panel merupakan metode permodelan pada data panel yang merupakan gabungan antara data cross-section dan data time series."
     },
     "com": {
-      "type": "Model",
+      "type": "Permodelan",
       "title": "Model Efek Umum",
+      "syntax": "plm(formula, data, model = \"pooling\")",
       "content": "Model efek umum mengasumsikan nilai intercept untuk setiap variabel dan nilai koefisien slope untuk setiap unit cross-section dan time series adalah sama."
     },
     "fix": {
-      "type": "Model",
+      "type": "Permodelan",
       "title": "Model Efek Tetap",
+      "syntax": "plm(formula, data, model = \"within\")",
       "content": "Model efek tetap mengasumsikan nilai setiap individu dalam model memiliki nilai intercept yang berbeda-beda."
     },
     "ame": {
-      "type": "Model",
+      "type": "Permodelan",
       "title": "Model Efek Acak",
       "desc": "Amemiya",
+      "syntax": "plm(formula, data, model = \"random\", random.method = \"amemiya\")",
       "content": "Model efek acak dengan estimasi Amemiya menggunakan nilai residual model within untuk kedua persamaan kuadratik dalam membuat persamaan varians dari efek individual."
     },
     "ner": {
-      "type": "Model",
+      "type": "Permodelan",
       "title": "Model Efek Acak",
       "desc": "Nerlove",
-      "content": "Model efek acak dengan estimasi Nerlove menggunakan nilai residual model within untuk persamaan kuadratik pertama dan menggunakan nilai residual persamaan kuadratik dengan jumlah observasi dalam membuat persamaan varians dari efek individual."
+      "syntax": "plm(formula, data, model = \"random\", random.method = \"nerlove\")",
+      "content": "Model efek acak dengan estimasi Nerlove menggunakan varians empiris dari efek tetap dari model within."
     },
     "swa": {
-      "type": "Model",
+      "type": "Permodelan",
       "title": "Model Efek Acak",
       "desc": "Swamy-Arora",
+      "syntax": "plm(formula, data, model = \"random\", random.method = \"swar\")",
       "content": "Model efek acak dengan estimasi Swamy-Arora menggunakan nilai residual efek model between untuk persamaan kuadratik pertama dan menggunakan nilai residual efek model within untuk persamaan kuadratik kedua dalam membuat persamaa varians dari efek individual."
     },
     "wal": {
-      "type": "Model",
+      "type": "Permodelan",
       "title": "Model Efek Acak",
       "desc": "Wallace-Hussain",
-      "content": "Model efek acak dengan estimasi Wallace-Hussain menggunakan nilai residual efek umum untuk kedua persamaan kuadratik dalam membuat persamaan varians dari efek individual."
+      "syntax": "plm(formula, data, model = \"random\", random.method = \"walhus\")",
+      "content": "Model efek acak dengan estimasi Wallace-Hussain menggunakan nilai residual efek model OLS (ordinary least square) untuk kedua persamaan kuadratik dalam membuat persamaan varians dari efek individual."
     }
   },
   "simulation": {
