@@ -11,10 +11,18 @@
         <LanguageModal @showHideLangOpt="showHideLangOpt" v-if="langOptShowed" class="app__navbar__navigation__opt"></LanguageModal>
       </div>
     </div>
+    <div v-if="dataModalShowed" class="app__secondoverlay">
+      <DataModal
+        class="app__overlay__modal"
+        @hideDataModal="hideDataModal"
+        :area="selectedArea"
+        :admArea="selectedAdmArea"></DataModal>
+    </div>
     <div v-if="areaModalShowed || publicationModalShowed" class="app__overlay">
       <AreaModal
         v-if="areaModalShowed"
         class="app__overlay__modal"
+        @emitShowData="showDataModal"
         @hideAreaModal="hideAreaModal"
         :selectedArea="selectedArea"
         :selectedAdmArea="selectedAdmArea"></AreaModal>
@@ -49,6 +57,7 @@ import SimulationPage from '@/pages/SimulationPage.vue';
 import AreaModal from '@/modals/AreaModal.vue';
 import PublicationModal from '@/modals/PublicationModal.vue'
 import LanguageModal from './modals/LanguageModal.vue';
+import DataModal from './modals/DataModal.vue';
 
 export default {
   name: 'App',
@@ -59,7 +68,8 @@ export default {
       areaModalShowed: false,
       selectedVariable: null,
       publicationModalShowed: false,
-      langOptShowed: false
+      langOptShowed: false,
+      dataModalShowed: false
     }
   },
   components: {
@@ -71,7 +81,8 @@ export default {
     SimulationPage,
     AreaModal,
     PublicationModal,
-    LanguageModal
+    LanguageModal,
+    DataModal
   },
   methods: {
     setSelectedAdmArea (value) {
@@ -99,6 +110,12 @@ export default {
     },
     goToSelected (id) {
       this.$scrollTo('#' + id, 1000, { easing: 'ease-in-out' });
+    },
+    showDataModal () {
+      this.dataModalShowed = true
+    },
+    hideDataModal () {
+      this.dataModalShowed = false
     }
   }
 }
@@ -119,14 +136,18 @@ body {
   background-color: var(--dark);
   --darker: rgba(49, 60, 68, 1);
   --darker_tr: rgba(24, 31, 35, 0.5);
+  --darker_tr2: rgba(24, 31, 35, 0.75);
   --dark: rgba(72, 89, 100, 1);
   --dark_tr: rgba(70, 88, 101, 0.5);
+  --dark_tr2: rgba(70, 88, 101, 0.75);
   --light: rgba(97, 118, 131, 1);
   --light_tr: rgba(122, 147, 161, 0.5);
+  --light_tr2: rgba(122, 147, 161, 0.75);
   --lighter: rgba(127, 144, 153, 1);
   --lighter_tr: rgba(181, 198, 207, 0.5);
-  --lighter_tr2: rgba(181, 198, 207, 0.25);
+  --lighter_tr2: rgba(181, 198, 207, 0.75);
   --white: rgba(255, 255, 255, 1);
+  --white_tr: rgba(255, 255, 255, 0.5);
 }
 
 .app {
@@ -163,6 +184,9 @@ body {
           justify-content: center;
           backdrop-filter: blur(8px);
           margin-inline-start: 16px;
+          &:hover {
+            background-color: var(--light_tr2);
+          }
         }
       }
       &__opt {
@@ -173,6 +197,21 @@ body {
   &__overlay {
     position: fixed;
     z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--darker_tr);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__modal {
+      margin-block-start: 50px;
+      zoom: 80%;
+    }
+  }
+  &__secondoverlay {
+    position: fixed;
+    z-index: 3;
     width: 100vw;
     height: 100vh;
     background-color: var(--darker_tr);

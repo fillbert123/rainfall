@@ -48,7 +48,7 @@ export default {
   align-items: flex-start;
   justify-content: space-between;
   &:hover {
-    background-color: var(--dark_tr);
+    background-color: var(--light_tr2);
   }
   &__text {
     display: flex;

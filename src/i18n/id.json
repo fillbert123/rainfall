@@ -271,7 +271,21 @@
   "data": {
     "view_button": "Lihat data",
     "see_detail": "Lihat detail",
-    "see_data": "Lihat data"
+    "see_data": "Lihat data",
+    "type": {
+      "raw": "Data mentah",
+      "pmm": "Imputasi PMM",
+      "det": "Imputasi regresi",
+      "sto": "Imputasi stokastik"
+    },
+    "header": {
+      "date": "Tanggal",
+      "Tavg": "Suhu udara",
+      "RH_avg": "Kelembapan",
+      "RR": "Curah hujan",
+      "ss": "Penyinaran matahari",
+      "ff_avg": "Kecepatan angin"
+    }
   },
   "analysis": {
     "syntax": "Sintaks R untuk melakukan ",

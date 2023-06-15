@@ -272,7 +272,21 @@
   "data": {
     "view_button": "View data",
     "see_detail": "View detail",
-    "see_data": "View data"
+    "see_data": "View data",
+    "type": {
+      "raw": "Raw data",
+      "pmm": "PMM imputation",
+      "det": "Regression imputation",
+      "sto": "Stochastic imputation"
+    },
+    "header": {
+      "date": "Date",
+      "Tavg": "Temperature",
+      "RH_avg": "Humidity",
+      "RR": "Rainfall",
+      "ss": "Sunshine",
+      "ff_avg": "Wind speed"
+    }
   },
   "analysis": {
     "syntax": "R syntax to perform ",
@@ -290,7 +304,7 @@
       "type": "Imputation",
       "title": "Deterministic Regression",
       "syntax": "complete(mice(data), method = \"norm.predict\")",
-      "content": "Deterministic regression imputation imputs the missing value based on predictions from the regression model that is formed. This results in values that are too inaccurate and have an impact on overestimating the correlation between the dependent variable and the independent variable."
+      "content": "Deterministic regression imputation imputs the missing value based on predictions from the regression model that is formed. This results in values that are too accurate and have an impact on overestimating the correlation between the dependent variable and the independent variable."
     },
     "sto": {
       "type": "Imputation",

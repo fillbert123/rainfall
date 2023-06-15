@@ -53,6 +53,10 @@ export default {
     padding-inline: 20px;
     padding-block: 12px;
     border-radius: 25px;
+    &:hover {
+      background-color: var(--light_tr2);
+      border-radius: 50px;
+    }
     &__icon {
       margin-inline-end: 10px;
     }

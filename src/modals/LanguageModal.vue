@@ -52,6 +52,10 @@ export default {
     padding-inline: 20px;
     padding-block: 12px;
     color: var(--white);
+    &:hover {
+      background-color: var(--light_tr2);
+      border-radius: 20px;
+    }
     &__icon {
       width: 21px;
       font-family: SFRoundedB;

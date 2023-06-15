@@ -95,6 +95,9 @@ export default {
       flex-direction: row;
       justify-content: center;
       align-items: center;
+      &:hover {
+        background-color: var(--white_tr);
+      }
       &__label {
         font-family: SFRoundedSB;
         font-size: 12px;
