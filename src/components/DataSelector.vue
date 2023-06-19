@@ -1,9 +1,13 @@
 <template>
   <div class="data">
-    <div @click="emitSelectionRaw" class="data__option">{{ this.$t('data.type.raw') }}</div>
-    <div @click="emitSelectionPmm" class="data__option">{{ this.$t('data.type.pmm') }}</div>
-    <div @click="emitSelectionDet" class="data__option">{{ this.$t('data.type.det') }}</div>
-    <div @click="emitSelectionSto" class="data__option">{{ this.$t('data.type.sto') }}</div>
+    <div v-if="this.rawSelected" @click="emitSelectionRaw" class="data__option selected">{{ this.$t('data.type.raw') }}</div>
+    <div v-if="!this.rawSelected" @click="emitSelectionRaw" class="data__option">{{ this.$t('data.type.raw') }}</div>
+    <div v-if="this.pmmSelected" @click="emitSelectionPmm" class="data__option selected">{{ this.$t('data.type.pmm') }}</div>
+    <div v-if="!this.pmmSelected" @click="emitSelectionPmm" class="data__option">{{ this.$t('data.type.pmm') }}</div>
+    <div v-if="this.detSelected" @click="emitSelectionDet" class="data__option selected">{{ this.$t('data.type.det') }}</div>
+    <div v-if="!this.detSelected" @click="emitSelectionDet" class="data__option">{{ this.$t('data.type.det') }}</div>
+    <div v-if="this.stoSelected" @click="emitSelectionSto" class="data__option selected">{{ this.$t('data.type.sto') }}</div>
+    <div v-if="!this.stoSelected" @click="emitSelectionSto" class="data__option">{{ this.$t('data.type.sto') }}</div>
   </div>
 </template>
 
@@ -12,24 +16,38 @@ export default {
   name: 'dataSelector',
   data () {
     return {
-      selectedType: 'raw'
+      selectedType: 'raw',
+      rawSelected: true,
+      pmmSelected: false,
+      detSelected: false,
+      stoSelected: false
     }
   },
   methods: {
+    unsetAll () {
+      this.rawSelected = false
+      this.pmmSelected = false
+      this.detSelected = false
+      this.stoSelected = false
+    },
     emitSelectionRaw () {
-      this.selectedType = 'raw'
+      this.unsetAll()
+      this.rawSelected = true
       this.$emit('emitSelectionRaw')
     },
     emitSelectionPmm () {
-      this.selectedType = 'pmm'
+      this.unsetAll()
+      this.pmmSelected = true
       this.$emit('emitSelectionPmm')
     },
     emitSelectionDet () {
-      this.selectedType = 'det'
+      this.unsetAll()
+      this.detSelected = true
       this.$emit('emitSelectionDet')
     },
     emitSelectionSto () {
-      this.selectedType = 'sto'
+      this.unsetAll()
+      this.stoSelected = true
       this.$emit('emitSelectionSto')
     }
   }
@@ -56,5 +74,8 @@ export default {
       border-radius: 25px;
     }
   }
+}
+.selected {
+  background-color: var(--darker_tr);
 }
 </style>
