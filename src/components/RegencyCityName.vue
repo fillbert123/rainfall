@@ -1,7 +1,7 @@
 <template>
   <div class="data">
     <div class="data__icon">
-      <img src="" alt="">
+      <img class="data__icon__img" :src="require(`@/assets/emblem/${area}.png`)" alt="">
     </div>
     <div class="data__info">
       <div v-if="!isLanguageEnglish" class="data__info__type">{{ admArea }}</div>
@@ -43,6 +43,12 @@ export default {
     background-color: var(--dark_tr);
     border-radius: 20px;
     margin-inline-end: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__img {
+      height: 90px;
+    }
   }
   &__info {
     color: var(--white);

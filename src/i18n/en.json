@@ -1,6 +1,22 @@
 {
-  "data": {
-    "view_button": "View data"
+  "lang": {
+    "en": {
+      "code": "EN",
+      "entrans": "English",
+      "idtrans": "Bahasa Inggris"
+    },
+    "id": {
+      "code": "ID",
+      "entrans": "Indonesian",
+      "idtrans": "Bahasa Indonesia"
+    }
+  },
+  "navbar": {
+    "main": "Main",
+    "variable": "Variable",
+    "data": "Data",
+    "analysis": "Analysis",
+    "simulation": "Simulation"
   },
   "administrative": {
     "province": "East Nusa Tenggara",
@@ -42,37 +58,115 @@
       "ino": "Indian<br>Ocean"
     }
   },
+  "main": {
+    "welcome": "Welcome",
+    "learn": "Learn more",
+    "simulation": "Simulation"
+  },
   "variable": {
+    "button": {
+      "see": "See publications",
+      "read": "Read publication"
+    },
     "main": {
       "rainfall": {
         "name": "Rainfall",
         "full": "Rainfall amount",
         "desc": "Rainfall is the amount of rainwater that is accommodated in the data area of ​​1 square meter assuming no evaporation occur, does not flow, and does not permeate. Rainwater that is accommodated will be measured in height with millimeter units (mm). Measurement of rainfall can be done using a device called the ombrometer.",
-        "unit": "mm"
+        "unit": "mm",
+        "month": "month"
       },
       "temperature": {
         "name": "Temperature",
         "full": "Average temperature",
         "desc": "Air temperature is the result of measuring the average of kinetic energy in the molecule in the air. In measuring air temperatures, devices such as called a temistor, thermocouple, or thermometer could be utilized. The results of the measurement of air temperature can be in units of Celsius (°C), Fahrenheit (°F), or in international units, Kelvin (K)",
-        "unit": "°C"
+        "unit": "°C",
+        "publication": {
+          "first": {
+            "title": "Analisis Arah dan Kecepatan Angin Terhadap Sebaran Curah Hujan di Wilayah Kabupaten Tangerang",
+            "author": "Simbolon C, et al.",
+            "link": "https://jurnal.fmipa.unila.ac.id/jtaf/article/viewFile/2914/2040"
+          },
+          "second": {
+            "title": "Model Fungsi Transfer Multi Input untuk Peramalan Curah Hujan di Kota Surabaya",
+            "author": "Nanlohy Y",
+            "link": "https://repository.its.ac.id/45772/1/1315201021-Master_Thesis.pdf"
+          },
+          "third": {
+            "title": "Prediksi Curah Hujan Di Kabupaten Majalengka Dengan Menggunakan Algoritma Regresi Rainfall Prediction in Majalengka District Using Regression Algorithm",
+            "author": "Mulyani E, et al.",
+            "link": "https://www.neliti.com/publications/495297/prediksi-curah-hujan-di-kabupaten-majalengka-dengan-menggunakan-algoritma-regres"
+          }
+        }
       },
       "humidity": {
         "name": "Humidity",
         "full": "Average humidity",
         "desc": "Air humidity is the amount of water vapor in a room or total air in the atmospheric layer. Air humidity is an important factor in determining the climate of an area, because it directly affects the rate of evaporation, condensation rate, and heat transfer rate. Measurement of air humidity can be done using a device called a hygrometer, a hyigrograph, or psychrometer with a percentage (%) as their unit.",
-        "unit": "%"
+        "unit": "%",
+        "publication": {
+          "first": {
+            "title": "Prediksi Curah Hujan Di Kabupaten Majalengka Dengan Menggunakan Algoritma Regresi Rainfall Prediction in Majalengka District Using Regression Algorithm",
+            "author": "Mulyani E, et al.",
+            "link": "https://www.neliti.com/publications/495297/prediksi-curah-hujan-di-kabupaten-majalengka-dengan-menggunakan-algoritma-regres"
+          },
+          "second": {
+            "title": "Model Fungsi Transfer Multi Input untuk Peramalan Curah Hujan di Kota Surabaya",
+            "author": "Nanlohy Y",
+            "link": "https://repository.its.ac.id/45772/1/1315201021-Master_Thesis.pdf"
+          },
+          "third": {
+            "title": "Why is humidity important?",
+            "author": "Met Office UK",
+            "link": "https://www.metoffice.gov.uk/weather/learn-about/weather/types-of-weather/humidity/effects#:~:text=During%20very%20heavy%20rainfall%2C%20where,we%27re%20likely%20to%20see."
+          }
+        }
       },
       "sunshine": {
         "name": "Sunshine",
         "full": "Average sunshine duration",
         "desc": "The duration of solar radiation is the period where the sun shine to the surface of the earth which is calculated from sunrise to sunset. Measurement of solar radiation duration is done with a device called Campbell Stokes or Stokes Sphere. In general, the solar radiation duration variable is written in units of hours.",
-        "unit": "hour"
+        "unit": "hour",
+        "publication": {
+          "first": {
+            "title": "Prediksi Curah Hujan Di Kabupaten Majalengka Dengan Menggunakan Algoritma Regresi Rainfall Prediction in Majalengka District Using Regression Algorithm",
+            "author": "Mulyani E, et al.",
+            "link": "https://www.neliti.com/publications/495297/prediksi-curah-hujan-di-kabupaten-majalengka-dengan-menggunakan-algoritma-regres"
+          },
+          "second": {
+            "title": "Spatiotemporal Characteristics and Influencing Factors of Sunshine Duration in China from 1970 to 2019",
+            "author": "Tang C, et al.",
+            "link": "https://www.mdpi.com/2073-4433/13/12/2015"
+          },
+          "third": {
+            "title": "Climatological Indicator of Sunshine Hours in Association with other Climatic Factors in Nigeria",
+            "author": "Akinpelu J, Atteh Y",
+            "link": "https://www.globalscientificjournal.com/researchpaper/Climatological_Indicator_of_Sunshine_Hours_in_Association_with_other_Climatic_Factors_in_Nigeria.pdf"
+          }
+        }
       },
       "windspeed": {
         "name": "Wind speed",
         "full": "Average wind speed",
         "desc": "Wind speed is a measurement taken from the movement of air from high pressure to low pressure. This air movement is influenced by the barometric gradient of the location, the height, and the environment. In general, the measurement of wind speed is done with a device called anemometer with a meter per second (m/s) as its unit.",
-        "unit": "m/s"
+        "unit": "m/s",
+        "publication": {
+          "first": {
+            "title": "Analisis Arah dan Kecepatan Angin Terhadap Sebaran Curah Hujan di Wilayah Kabupaten Tangerang",
+            "author": "Simbolon C, et al.",
+            "link": "https://jurnal.fmipa.unila.ac.id/jtaf/article/viewFile/2914/2040"
+          },
+          "second": {
+            "title": "Model Fungsi Transfer Multi Input untuk Peramalan Curah Hujan di Kota Surabaya",
+            "author": "Nanlohy Y",
+            "link": "https://repository.its.ac.id/45772/1/1315201021-Master_Thesis.pdf"
+          },
+          "third": {
+            "title": "Prediksi Curah Hujan Di Kabupaten Majalengka Dengan Menggunakan Algoritma Regresi Rainfall Prediction in Majalengka District Using Regression Algorithm",
+            "author": "Mulyani E, et al.",
+            "link": "https://www.neliti.com/publications/495297/prediksi-curah-hujan-di-kabupaten-majalengka-dengan-menggunakan-algoritma-regres"
+          }
+        }
       },
       "winddirection": {
         "name": "Wind direction",
@@ -175,7 +269,27 @@
       "source": "Source: "
     }
   },
+  "data": {
+    "view_button": "View data",
+    "see_detail": "View detail",
+    "see_data": "View data",
+    "type": {
+      "raw": "Raw data",
+      "pmm": "PMM imputation",
+      "det": "Regression imputation",
+      "sto": "Stochastic imputation"
+    },
+    "header": {
+      "date": "Date",
+      "Tavg": "Temperature",
+      "RH_avg": "Humidity",
+      "RR": "Rainfall",
+      "ss": "Sunshine",
+      "ff_avg": "Wind speed"
+    }
+  },
   "analysis": {
+    "syntax": "R syntax to perform ",
     "notes": {
       "title": "Please choose one of these topics",
       "content": "Chosen topic will be presented on the right."
@@ -183,16 +297,19 @@
     "pmm": {
       "type": "Imputation",
       "title": "Predictive Mean Matching",
+      "syntax": "complete(mice(data), method = \"pmm\")",
       "content": "Predictive Mean Matching Imputation assigns the missing value according to the closest observed value from the model."
     },
     "det": {
       "type": "Imputation",
       "title": "Deterministic Regression",
-      "content": "Deterministic regression imputation imputs the missing value based on predictions from the regression model that is formed. This results in values that are too inaccurate and have an impact on overestimating the correlation between the dependent variable and the independent variable."
+      "syntax": "complete(mice(data), method = \"norm.predict\")",
+      "content": "Deterministic regression imputation imputs the missing value based on predictions from the regression model that is formed. This results in values that are too accurate and have an impact on overestimating the correlation between the dependent variable and the independent variable."
     },
     "sto": {
       "type": "Imputation",
       "title": "Stochastic Regression",
+      "syntax": "complete(mice(data), method = \"norm.nob\")",
       "content": "Stocasic Regression Imputation resolves problems in deterministic regression imputation, where this imputation adds an error value to predict values ​​that can produce correlation values ​​between dependent and independent variables appropriately."
     },
     "pan": {
@@ -201,38 +318,44 @@
       "content": "Panel regression is a modeling method in panel data which is a combination of cross-section data and time series data."
     },
     "com": {
-      "type": "Model",
+      "type": "Modeling",
       "title": "Common Effect Model",
+      "syntax": "plm(formula, data, model = \"pooled\")",
       "content": "The common effect model assumes the intercept value for each variable and the slope coefficient value for each cross-section and time series unit are similar."
     },
     "fix": {
-      "type": "Model",
+      "type": "Modeling",
       "title": "Fixed Effect Model",
+      "syntax": "plm(formula, data, model = \"within\")",
       "content": "The fixed effect model assumes the value of each individual in the model has a different intercept value."
     },
     "ame": {
-      "type": "Model",
+      "type": "Modeling",
       "title": "Random Effect Model",
       "desc": "Amemiya",
+      "syntax": "plm(formula, data, model = \"random\", random.method = \"amemiya\")",
       "content": "The random effect model with Amemiya estimation is predicted by using within model residual for both quadratic equations for calculating individual effect of variance equation."
     },
     "ner": {
-      "type": "Model",
+      "type": "Modeling",
       "title": "Random Effect Model",
       "desc": "Nerlove",
-      "content": "Random effect model with Nerlove estimation is predicted by using within model residual for the first quadratic equation and using quadratic equation residual value divided by the number of observations for calculating individual effect of variance equation."
+      "syntax": "plm(formula, data, model = \"random\", random.method = \"nerlove\")",
+      "content": "Random effect model with Nerlove estimation is predicted by using empirical variance of the fixed effect of the within model."
     },
     "swa": {
-      "type": "Model",
+      "type": "Modeling",
       "title": "Random Effect Model",
       "desc": "Swamy-Arora",
+      "syntax": "plm(formula, data, model = \"random\", random.method = \"swar\")",
       "content": "Random effect model with Swamy-Arora estimation is predicted by using between model residual for the first quadratic equation and using within model residual for the second quadratic equation in order to calculate the individual effect of variance equation."
     },
     "wal": {
-      "type": "Model",
+      "type": "Modeling",
       "title": "Random Effect Model",
       "desc": "Wallace-Hussain",
-      "content": "Random effect model with Wallace-Hussain estimation is predicted by using common effect residual for both quadratic equations for calculating individual effect of variance equation."
+      "syntax": "plm(formula, data, model = \"random\", random.method = \"walhus\")",
+      "content": "Random effect model with Wallace-Hussain estimation is predicted by using OLS (ordinary least square) model residual for both quadratic equations for calculating individual effect of variance equation."
     }
   },
   "simulation": {

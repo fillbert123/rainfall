@@ -1,17 +1,17 @@
 <template>
   <div class="modal">
-    <div class="modal__option">
-      <div class="modal__option__icon">ID</div>
+    <div @click="changeLangId" class="modal__option">
+      <div class="modal__option__icon">{{ this.$t('lang.id.code') }}</div>
       <div class="modal__option__info">
-        <div class="modal__option__info__en">Indonesian</div>
-        <div class="modal__option__info__id">Bahasa Indonesia</div>
+        <div class="modal__option__info__en">{{ this.$t('lang.id.entrans') }}</div>
+        <div class="modal__option__info__id">{{ this.$t('lang.id.idtrans') }}</div>
       </div>
     </div>
-    <div class="modal__option">
-      <div class="modal__option__icon">EN</div>
+    <div @click="changeLangEn" class="modal__option">
+      <div class="modal__option__icon">{{ this.$t('lang.en.code') }}</div>
       <div class="modal__option__info">
-        <div class="modal__option__info__en">English</div>
-        <div class="modal__option__info__id">Bahasa Inggris</div>
+        <div class="modal__option__info__en">{{ this.$t('lang.en.entrans') }}</div>
+        <div class="modal__option__info__id">{{ this.$t('lang.en.idtrans') }}</div>
       </div>
     </div>
   </div>
@@ -19,7 +19,21 @@
 
 <script>
 export default {
-  name: 'languageModal'
+  name: 'languageModal',
+  methods: {
+    changeLangId () {
+      this.$i18n.locale = 'id'
+      this.$emit('showHideLangOpt')
+      localStorage.setItem('lang', 'id')
+      window.location.reload()
+    },
+    changeLangEn () {
+      this.$i18n.locale = 'en'
+      this.$emit('showHideLangOpt')
+      localStorage.setItem('lang', 'en')
+      window.location.reload()
+    }
+  }
 }
 </script>
 
@@ -30,6 +44,7 @@ export default {
   background-color: var(--light_tr);
   width: 175px;
   border-radius: 20px;
+  backdrop-filter: blur(8px);
   &__option {
     display: flex;
     flex-direction: row;
@@ -37,6 +52,10 @@ export default {
     padding-inline: 20px;
     padding-block: 12px;
     color: var(--white);
+    &:hover {
+      background-color: var(--light_tr2);
+      border-radius: 20px;
+    }
     &__icon {
       width: 21px;
       font-family: SFRoundedB;

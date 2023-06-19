@@ -12,7 +12,7 @@
         <div v-if="isLanguageEnglish" class="data__right__info__name">{{ admName | uppercase }} {{ admArea | uppercase }}</div>
       </div>
       <div class="data__right__button" @click="showAreaModal">
-        <div class="data__right__button__label">Lihat detail</div>
+        <div class="data__right__button__label">{{ this.$t('data.see_detail') }}</div>
         <img class="data__right__button__icon" src="@/assets/icons/forward.svg" alt="">
       </div>
       <div class="data__right__close">
@@ -95,6 +95,9 @@ export default {
       flex-direction: row;
       justify-content: center;
       align-items: center;
+      &:hover {
+        background-color: var(--white_tr);
+      }
       &__label {
         font-family: SFRoundedSB;
         font-size: 12px;

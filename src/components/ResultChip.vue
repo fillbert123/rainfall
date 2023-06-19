@@ -11,7 +11,7 @@
       </div>
       <div class="chip__data__value">
         <div class="chip__data__value__rainfall">{{ value }}</div>
-        <div class="chip__data__value__unit">mm/bln</div>
+        <div class="chip__data__value__unit">{{ this.$t('variable.main.rainfall.unit') }}/{{ this.$t('variable.main.rainfall.month') }}</div>
       </div>
     </div>
   </div>

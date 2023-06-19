@@ -1,11 +1,5 @@
 <template>
   <div class="page">
-    <div v-if="areaModalShowed" class="page__overlay">
-      <AreaModal class="page__overlay__modal"
-        @hideAreaModal="hideAreaModal"
-        :selectedArea="selectedArea"
-        :selectedAdmArea="selectedAdmArea"></AreaModal>
-    </div>
     <div class="page__upper">
       <RegionalMap class="page__upper__map"></RegionalMap>
       <LocationPopup
@@ -33,9 +27,11 @@
       <div 
         v-for="area in areas"
         :key="area.key"
-        @click="showAreaModal(area.key, area.admArea)"
+        @click="showPopup(area.key)"
         class="page__lower__area">
-        <div class="page__lower__area__icon"></div>
+        <div class="page__lower__area__icon">
+          <img class="page__lower__area__icon__img" :src="require(`@/assets/emblem/${area.key}.png`)" alt="">
+        </div>
         <div class="page__lower__area__label">{{ $t('administrative.admName.' + area.key) }}</div>
       </div>
     </div>
@@ -45,7 +41,6 @@
 <script>
 import RegionalMap from '@/map/RegionalMap.vue';
 import LocationPopup from '@/components/LocationPopup.vue';
-import AreaModal from '@/modals/AreaModal.vue';
 
 export default {
   name: 'dataPage',
@@ -187,7 +182,6 @@ export default {
   components: {
     RegionalMap,
     LocationPopup,
-    AreaModal
   },
   created () {
     this.marginLeft = (1440 - window.innerWidth)/2
@@ -220,13 +214,12 @@ export default {
     },
     showAreaModal (location, admArea) {
       this.hideAllPopup()
-      this.areaModalShowed = true
-      this.selectedArea = location
-      this.selectedAdmArea = admArea
+      this.$emit('setSelectedAdmArea', admArea)
+      this.$emit('showAreaModal', location)
     },
     hideAreaModal () {
       this.areaModalShowed = false
-      this.selectedArea = null
+      this.$emit('hideAreaModal')
     }
   }
 }
@@ -238,20 +231,6 @@ export default {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  &__overlay {
-    position: sticky;
-    z-index: 2;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--darker_tr);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &__modal {
-      zoom: 80%;
-    }
-  }
   &__upper {
     height: 460px;
     padding-block-start: 150px;
@@ -290,12 +269,21 @@ export default {
       display: flex;
       flex-direction: row;
       align-items: center;
+      &:hover {
+        background-color: var(--light_tr2);
+      }
       &__icon {
         width: 28px;
         height: 28px;
         border-radius: 8px;
-        background-color: var(--darker_tr);
+        background-color: var(--dark_tr);
         margin-inline-end: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &__img {
+          width: 20px;
+        }
       }
       &__label {
         color: var(--white);

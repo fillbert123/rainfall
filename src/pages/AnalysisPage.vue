@@ -26,8 +26,16 @@
         <div class="page__analysis__lower__content">
           {{ this.$t('analysis.' + this.selectedTopic + '.content') }}
         </div>
-        <div class="page__analysis__lower__figure">
-          
+        <div v-if="!isNoSyntax" class="page__analysis__lower__syntax">
+          <div v-if="!isLanguageEnglish" class="page__analysis__lower__syntax__label">
+            {{ this.$t('analysis.syntax') }} {{ this.$t('analysis.' + this.selectedTopic + '.type') | lowercase }} {{ this.$t('analysis.' + this.selectedTopic + '.title') | lowercase }}
+          </div>
+          <div v-if="isLanguageEnglish" class="page__analysis__lower__syntax__label">
+            {{ this.$t('analysis.syntax') }} {{ this.$t('analysis.' + this.selectedTopic + '.title') | lowercase }} {{ this.$t('analysis.' + this.selectedTopic + '.type') | lowercase }}
+          </div>
+          <div class="page__analysis__lower__syntax__code">
+            {{ this.$t('analysis.' + this.selectedTopic + '.syntax') }}
+          </div>
         </div>
       </div>
     </div>
@@ -92,11 +100,22 @@ export default {
   computed: {
     isDescEmpty () {
       return this.$t('analysis.' + this.selectedTopic + '.desc').startsWith('analysis')
+    },
+    isNoSyntax () {
+      return this.$t('analysis.' + this.selectedTopic + '.syntax').startsWith('analysis')
+    },
+    isLanguageEnglish () {
+      return this.$i18n.locale === 'en'
     }
   },
   methods: {
     setContent (area) {
       this.selectedTopic = area
+    }
+  },
+  filters: {
+    lowercase (text) {
+      return text.toLowerCase()
     }
   }
 }
@@ -174,6 +193,18 @@ export default {
     &__lower {
       margin-block-start: 24px;
       text-align: start;
+      &__syntax {
+        margin-block-start: 16px;
+        &__code {
+          margin-block-start: 8px;
+          width: calc(100% - 16px);
+          padding: 8px;
+          border-radius: 8px;
+          background-color: var(--dark_tr);
+          font-family: SFMono;
+          font-size: 16px;
+        }
+      }
     }
   }
 }
