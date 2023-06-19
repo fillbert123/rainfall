@@ -148,6 +148,9 @@ export default {
         background-color: var(--white);
         border-radius: 30px;
         height: fit-content;
+        &:hover {
+          background-color: var(--white_tr);
+        }
         &__label {
           margin-inline-end: 8px;
           color: var(--dark);

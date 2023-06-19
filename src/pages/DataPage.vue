@@ -27,7 +27,7 @@
       <div 
         v-for="area in areas"
         :key="area.key"
-        @click="showAreaModal(area.key, area.admArea)"
+        @click="showPopup(area.key)"
         class="page__lower__area">
         <div class="page__lower__area__icon">
           <img class="page__lower__area__icon__img" :src="require(`@/assets/emblem/${area.key}.png`)" alt="">
@@ -269,6 +269,9 @@ export default {
       display: flex;
       flex-direction: row;
       align-items: center;
+      &:hover {
+        background-color: var(--light_tr2);
+      }
       &__icon {
         width: 28px;
         height: 28px;

@@ -70,6 +70,9 @@ export default {
         font-family: SFRoundedM;
         font-size: 16px;
       }
+      &:hover {
+        background-color: var(--white_tr);
+      }
     }
   }
   &__lower {

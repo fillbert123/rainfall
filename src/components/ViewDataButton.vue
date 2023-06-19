@@ -1,5 +1,5 @@
 <template>
-  <div class="button">
+  <div @click="emitShowData" class="button">
     <div class="button__text">{{ $t('data.view_button') }}</div>
     <img class="button__icon" src="@/assets/icons/forward.svg" alt="">
   </div>
@@ -7,7 +7,12 @@
 
 <script>
 export default {
-  name: 'viewDataButton'
+  name: 'viewDataButton',
+  methods: {
+    emitShowData () {
+      this.$emit('emitShowData')
+    }
+  }
 }
 </script>
 
@@ -22,6 +27,9 @@ export default {
   width: fit-content;
   padding-inline: 16px;
   border-radius: 20px;
+  &:hover {
+    background-color: var(--white_tr);
+  }
   &__text {
     font-family: SFRoundedM;
     font-size: 20px;

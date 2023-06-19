@@ -23,7 +23,7 @@
           class="modal__right__row1__name"
           :area="selectedArea"
           :admArea="selectedAdmArea"></RegencyCityName>
-        <ViewDataButton class="modal__right__row1__button"></ViewDataButton>
+        <ViewDataButton @emitShowData="emitShowData" class="modal__right__row1__button"></ViewDataButton>
       </div>
       <div class="modal__right__row2">
         <HalfSizeInfo 
@@ -106,6 +106,9 @@ export default{
   methods: {
     hideAreaModal () {
       this.$emit('hideAreaModal')
+    },
+    emitShowData () {
+      this.$emit('emitShowData')
     }
   }
 }

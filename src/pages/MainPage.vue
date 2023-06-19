@@ -72,6 +72,9 @@ export default {
         margin-inline-start: 8px;
         transform: rotate(90deg);
       }
+      &:hover>&__label {
+        color: var(--white_tr);
+      }
     }
     &__learn {
       margin-inline-end: 32px;
