@@ -292,7 +292,7 @@
     "syntax": "R syntax to perform ",
     "notes": {
       "title": "Please choose one of these topics",
-      "content": "Chosen topic will be presented on the right."
+      "content": "Chosen topic will be presented on the right panel."
     },
     "pmm": {
       "type": "Imputation",
@@ -360,12 +360,14 @@
   },
   "simulation": {
     "model": {
+      "label": "MODEL",
       "choose": "Choose a model",
       "common": "Common effect model",
       "fixed": "Fixed effect model",
       "random": "Random effect model"
     },
     "method": {
+      "label": "METHOD",
       "choose": "Choose an estimation method",
       "amemiya": "Amemiya method",
       "nerlove": "Nerlove method",
@@ -386,6 +388,9 @@
       "10": "October",
       "11": "November",
       "12": "December"
+    },
+    "parameter": {
+      "label": "PARAMETERS"
     }
   }
 }

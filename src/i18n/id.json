@@ -291,7 +291,7 @@
     "syntax": "Sintaks R untuk melakukan ",
     "notes": {
       "title": "Silakan pilih topik berikut",
-      "content": "Topik terpilih akan tersajikan di sebelah kanan pilihan topik ini."
+      "content": "Topik terpilih akan tersajikan di panel sebelah kanan pilihan topik ini."
     },
     "pmm": {
       "type": "Imputasi",
@@ -359,12 +359,14 @@
   },
   "simulation": {
     "model": {
+      "label": "MODEL",
       "choose": "Pilih model",
       "common": "Model efek umum",
       "fixed": "Model efek tetap",
       "random": "Model efek acak"
     },
     "method": {
+      "label": "METODE",
       "choose": "Pilih metode estimasi",
       "amemiya": "Metode Amemiya",
       "nerlove": "Metode Nerlove",
@@ -385,6 +387,9 @@
       "10": "Oktober",
       "11": "November",
       "12": "Desember"
+    },
+    "parameter": {
+      "label": "PARAMETER"
     }
   }
 }
