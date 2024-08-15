@@ -72,6 +72,7 @@ export default {
       }
       &:hover {
         background-color: var(--white_tr);
+        cursor: pointer;
       }
     }
   }

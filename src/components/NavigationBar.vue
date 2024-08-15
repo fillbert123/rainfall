@@ -56,6 +56,7 @@ export default {
     &:hover {
       background-color: var(--light_tr2);
       border-radius: 50px;
+      cursor: pointer;
     }
     &__icon {
       margin-inline-end: 10px;

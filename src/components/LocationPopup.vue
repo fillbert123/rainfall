@@ -64,6 +64,10 @@ export default {
   &__icon {
     margin-block-start: 4px;
     margin-inline: 8px;
+    cursor: pointer;
+    & > img:hover {
+      filter: invert(10%);
+    }
   }
   &__right {
     padding: 8px;
@@ -97,6 +101,7 @@ export default {
       align-items: center;
       &:hover {
         background-color: var(--white_tr);
+        cursor: pointer;
       }
       &__label {
         font-family: SFRoundedSB;

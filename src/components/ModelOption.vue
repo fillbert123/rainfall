@@ -45,6 +45,7 @@ export default {
     &:hover {
       background-color: var(--dark_tr);
       border-radius: 20px;
+      cursor: pointer;
     }
   }
 }

@@ -271,6 +271,7 @@ export default {
       align-items: center;
       &:hover {
         background-color: var(--light_tr2);
+        cursor: pointer;
       }
       &__icon {
         width: 28px;

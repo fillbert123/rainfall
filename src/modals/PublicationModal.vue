@@ -150,6 +150,7 @@ export default {
         height: fit-content;
         &:hover {
           background-color: var(--white_tr);
+          cursor: pointer;
         }
         &__label {
           margin-inline-end: 8px;

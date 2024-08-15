@@ -74,6 +74,7 @@ export default {
       }
       &:hover>&__label {
         color: var(--white_tr);
+        cursor: pointer;
       }
     }
     &__learn {

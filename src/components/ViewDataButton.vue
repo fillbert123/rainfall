@@ -29,6 +29,7 @@ export default {
   border-radius: 20px;
   &:hover {
     background-color: var(--white_tr);
+    cursor: pointer;
   }
   &__text {
     font-family: SFRoundedM;

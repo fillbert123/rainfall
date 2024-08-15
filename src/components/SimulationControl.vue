@@ -11,7 +11,7 @@
     <div class="simulation__lower">
       <div class="simulation__lower__left">
         <div class="simulation__lower__left__model">
-          <div class="simulation__lower__left__model__label">MODEL</div>
+          <div class="simulation__lower__left__model__label">{{ $t('simulation.model.label') }}</div>
           <ModelSelector 
             @unlockEstimation="unlockEstimation = true"
             @lockEstimation="unlockEstimation = false"
@@ -21,7 +21,7 @@
           </ModelSelector>
         </div>
         <div class="simulation__lower__left__method">
-          <div class="simulation__lower__left__method__label">METODE</div>
+          <div class="simulation__lower__left__method__label">{{ $t('simulation.method.label') }}</div>
           <EstimationSelector 
             :unlockEstimation="unlockEstimation"
             @amemiyaSelected="amemiyaSelected"
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="simulation__lower__right">
-        <div class="simulation__lower__right__label">PARAMETER</div>
+        <div class="simulation__lower__right__label">{{ $t('simulation.parameter.label') }}</div>
         <div class="simulation__lower__right__parameter">
           <div class="simulation__lower__right__parameter__row1">
             <ComponentSlider 

@@ -49,6 +49,7 @@ export default {
   justify-content: space-between;
   &:hover {
     background-color: var(--light_tr2);
+    cursor: pointer;
   }
   &__text {
     display: flex;

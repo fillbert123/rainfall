@@ -186,6 +186,7 @@ body {
           margin-inline-start: 16px;
           &:hover {
             background-color: var(--light_tr2);
+            cursor: pointer;
           }
         }
       }
