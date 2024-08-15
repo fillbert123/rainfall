@@ -16,7 +16,7 @@
     <div class="page__analysis">
       <div class="page__analysis__upper">
         <div class="page__analysis__upper__tag">
-          <img src="@/assets/icons/m.svg" alt="" class="page__analysis__upper__tag__icon">
+          <img :src="require(`@/assets/icons/${selectedType}.svg`)" alt="" class="page__analysis__upper__tag__icon">
           <div class="page__analysis__upper__tag__name">{{ this.$t('analysis.' + this.selectedTopic + '.type') }}</div>
         </div>
         <div class="page__analysis__upper__title">{{ this.$t('analysis.' + this.selectedTopic + '.title') }}</div>
@@ -50,6 +50,7 @@ export default {
   data () {
     return {
       selectedTopic: 'pmm',
+      selectedType: 'i',
       analysis: {
         pmm: {
           key: 'pmm',
@@ -109,8 +110,9 @@ export default {
     }
   },
   methods: {
-    setContent (area) {
+    setContent (area, type) {
       this.selectedTopic = area
+      this.selectedType = type
     }
   },
   filters: {

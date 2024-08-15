@@ -1,5 +1,5 @@
 <template>
-  <div class="data" @click="emitTopic(area)">
+  <div class="data" @click="emitTopic(area, type)">
     <img :src="require(`@/assets/icons/${type}.svg`)" alt="" class="data__icon">
     <div class="data__text">
       <div class="data__text__tag">{{ this.$t('analysis.' + this.area + '.type') }}</div>
@@ -22,8 +22,8 @@ export default {
     }
   },
   methods: {
-    emitTopic (area) {
-      this.$emit('selected', area)
+    emitTopic (area, type) {
+      this.$emit('selected', area, type)
     }
   },
   filters: {
