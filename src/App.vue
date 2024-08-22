@@ -8,7 +8,7 @@
             <img class="app__navbar__navigation__bar__lang__icon" src="@/assets/icons/bubble.svg" alt="">
           </div>
         </div>
-        <LanguageModal @showHideLangOpt="showHideLangOpt" v-if="langOptShowed" class="app__navbar__navigation__opt"></LanguageModal>
+        <LanguageModal v-if="langOptShowed" @showHideLangOpt="showHideLangOpt" class="app__navbar__navigation__opt"></LanguageModal>
       </div>
     </div>
     <div v-if="dataModalShowed" class="app__secondoverlay">
