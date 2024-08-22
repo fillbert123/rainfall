@@ -91,6 +91,53 @@ export default {
     countWindowAdditionalMargin () {
       return (30 / 240 * (1440 - window.innerWidth))
     }
+  // },
+  // props: {
+  //   value: {
+  //     group1: {
+  //       top: Number, left: Number,
+  //       mgb: {adm: String, admName: String, value: Number},
+  //       mgr: {adm: String, admName: String, value: Number},
+  //       mgt: {adm: String, admName: String, value: Number}
+  //     },
+  //     group2: {
+  //       top: Number, left: Number,
+  //       lem: {adm: String, admName: String, value: Number},
+  //       alo: {adm: String, admName: String, value: Number}
+  //     },
+  //     group3: {
+  //       top: Number, left: Number,
+  //       sbd: {adm: String, admName: String, value: Number},
+  //       sbb: {adm: String, admName: String, value: Number},
+  //       sbg: {adm: String, admName: String, value: Number},
+  //       sbt: {adm: String, admName: String, value: Number}
+  //     },
+  //     group4: {
+  //       top: Number, left: Number,
+  //       dummy: {adm: String, admName: String, value: Number},
+  //       bel: {adm: String, admName: String, value: Number},
+  //       ttu: {adm: String, admName: String, value: Number},
+  //       mal: {adm: String, admName: String, value: Number},
+  //       tts: {adm: String, admName: String, value: Number}
+  //     },
+  //     group5: {
+  //       top: Number, left: Number,
+  //       dummy2: {adm: String, admName: String, value: Number},
+  //       dummy3: {adm: String, admName: String, value: Number},
+  //       kot: {adm: String, admName: String, value: Number},
+  //       sab: {adm: String, admName: String, value: Number},
+  //       rot: {adm: String, admName: String, value: Number},
+  //       kup: {adm: String, admName: String, value: Number}
+  //     },
+  //     group6: {
+  //       top: Number, left: Number,
+  //       nga: {adm: String, admName: String, value: Number},
+  //       nag: {adm: String, admName: String, value: Number},
+  //       end: {adm: String, admName: String, value: Number},
+  //       sik: {adm: String, admName: String, value: Number},
+  //       flo: {adm: String, admName: String, value: Number}
+  //     }
+  //   }
   }
 }
 </script>
@@ -104,8 +151,8 @@ export default {
   &>* {
     position: absolute;
   }
-  &__tim {
-    // filter: invert(72%) sepia(94%) saturate(4919%) hue-rotate(178deg) brightness(96%) contrast(82%);
+  &__tim, &__ntb {
+    filter: brightness(0) saturate(100%) invert(49%) sepia(10%) saturate(800%) hue-rotate(159deg) brightness(88%) contrast(84%);
   }
 }
 </style>
